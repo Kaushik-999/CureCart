@@ -1,0 +1,46 @@
+:root {
+    --offcanvas-width:270px;
+    --topNavbar-height:56px;
+}
+
+.sidebar-nav {
+    width: var(--offcanvas-width) !important;
+    background-color: #50577A;
+}
+
+@media (min-width:992px) {
+    body {
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop {
+        display: none !important;
+    }
+
+    .sidebar-nav {
+        transform: none !important;
+        visibility: visible !important;
+        top:var(--topNavbar-height) !important;
+        height: calc(100% - var(--topNavbar-height));
+    }
+
+    .offcanvas-header .btn-close{
+        visibility: hidden !important; 
+    }
+}
+
+.search-bar {
+    width: 400px !important;
+}
+
+
+.offcanvas-body .navbar-nav{
+    width: 100%;
+}
+
+.offcanvas-body .dropdown-divider {
+    border-top: 1px solid #d6cbba;
+}
+
+.offcanvas-body .tags {
+    color: #9ca3c1;
+}

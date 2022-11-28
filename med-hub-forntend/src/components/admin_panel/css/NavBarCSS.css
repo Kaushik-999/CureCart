@@ -1,0 +1,8 @@
+.authentication-button,  .authentication-button:hover, .authentication-button:focus
+{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+}
