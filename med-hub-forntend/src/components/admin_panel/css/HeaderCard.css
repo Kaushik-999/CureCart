@@ -1,0 +1,16 @@
+.header-cards .card {
+    border-left: 5px solid #869b9c;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.card-head {
+    font-size:smaller;
+}
+.card-text {
+    color: #497174
+}
+
+

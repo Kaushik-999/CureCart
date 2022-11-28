@@ -3,7 +3,7 @@ import "./css/NavBarCSS.css"
 function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+      <nav className="navbar fixed-top navbar-dark navbar-expand-lg bg-dark">
         <div className="container-fluid">
           {/* sidebar button */}
           <button
