@@ -1,6 +1,5 @@
 import React from "react";
-import "./css/SideBarCSS.css";
-
+import "./css/SideBar.css";
 function SideBar() {
   return (
     <div>
@@ -28,7 +27,7 @@ function SideBar() {
             <ul className="navbar-nav">
               <li className="small fw-bold text-uppercase tags">CORE</li>
               <li>
-                <a href="..." className="nav-link active text-white">
+                <a href="/" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-speedometer2"></i>
                   </span>
@@ -44,7 +43,7 @@ function SideBar() {
                 Medicine Store
               </li>
               <li>
-                <a href="..." className="nav-link active text-white">
+                <a href="/medical-sales" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-currency-rupee"></i>
                   </span>
@@ -52,7 +51,7 @@ function SideBar() {
                 </a>
               </li>
               <li>
-                <a href="..." className="nav-link active text-white">
+                <a href="/medical-stock" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-capsule-pill"></i>
                   </span>
@@ -68,13 +67,13 @@ function SideBar() {
                 Blood Bank
               </li>
               <li>
-                <a href="..." className="nav-link active text-white">
+                <a href="/blood-donations" className="nav-link active text-white">
                   <i className="bi bi-droplet"></i>
-                  <span className="ms-2">Donations</span>
+                  <span className="ms-2">Blood Donations</span>
                 </a>
               </li>
               <li>
-                <a href="..." className="nav-link active text-white">
+                <a href="/active-donor-request" className="nav-link active text-white">
                 <i className="bi bi-moisture"></i>
                   <span className="ms-2">Active Donor / Request</span>
                 </a>

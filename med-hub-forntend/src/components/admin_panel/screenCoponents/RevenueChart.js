@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
+
+
 function RevenueChart() {
   const [revenueData, setRevenueData] = useState({
     labels: ["Sales", "Social", "Referral"],

@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/NavBarCSS.css"
+import "./css/NavBar.css"
 function Navbar() {
   return (
     <div>
@@ -20,7 +20,7 @@ function Navbar() {
 
           <a
             className="navbar-brand fw-bolder text-uppercase me-auto"
-            href="..."
+            href="/"
           >
             Med-Hub
           </a>
@@ -42,7 +42,7 @@ function Navbar() {
           {/* Authentication Dropdown */}
           <div className="nav-item dropdown">
             <a
-              href="..."
+              href="/"
               className="btn dropdown-toggle authentication-button"
               type="button"
               data-bs-toggle="dropdown"
@@ -52,12 +52,12 @@ function Navbar() {
             </a>
             <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-end">
               <li>
-                <a className="dropdown-item" href="...">
+                <a className="dropdown-item" href="/">
                   Sign In
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="....">
+                <a className="dropdown-item" href="/.">
                   Sign Up
                 </a>
               </li>
@@ -65,7 +65,7 @@ function Navbar() {
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="...">
+                <a className="dropdown-item" href="/">
                   Log Out
                 </a>
               </li>

@@ -1,10 +1,10 @@
-import './App.css';
-import Admin from './components/admin_panel/Admin';
+import "./App.css";
+import Admin from "./components/admin_panel/Admin";
 
 function App() {
   return (
     <div className="App">
-      <Admin/>
+        <Admin />
       {/* Client */}
       {/* Pharmacy */}
     </div>

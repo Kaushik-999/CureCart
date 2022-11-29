@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/HeaderCard.css"
 
 function HeaderCards({cardHead, cardText}) {
   return (

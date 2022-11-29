@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import { SalesData } from "../temp-data/SalesData";
 import { Chart as ChartJS } from "chart.js/auto";
-import "../css/SalesChart.css";
 
 function AnnunalSalesChart() {
   
@@ -30,7 +29,7 @@ function AnnunalSalesChart() {
           Annual Earning Overvew
         </div>
         <div className="card-body">
-          <Line data={salesData} />
+          <Line data={salesData} options={{maintainAspectRatio: false, responsive: true}}/>
         </div>
       </div>
     </div>
