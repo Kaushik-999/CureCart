@@ -3,9 +3,16 @@
     padding: 10px;
 }
 
+
 @media (min-width:992px){
     .main_screen {
         margin-left: var(--offcanvas-width) !important;
+    }
+}
+
+@media (max-width:992px) {
+    .main_screen .title {
+        text-align: center !important;
     }
 }
 

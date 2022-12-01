@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+// eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
 
 function RevenueChart() {
+  // eslint-disable-next-line
   const [revenueData, setRevenueData] = useState({
     labels: ["Sales", "Social", "Referral"],
     datasets: [

@@ -1,18 +1,18 @@
 import React from "react";
-import "./css/Screen.css";
-import AddAdminCard from "./screenCoponents/AddAdminCard";
-import AdminTable from "./screenCoponents/AdminTable";
-import AnnunalSalesChart from "./screenCoponents/AnnunalSalesChart";
-import DeleteAdminCard from "./screenCoponents/DeleteAdminCard";
-import HeaderCards from "./screenCoponents/HeaderCards";
-import RevenueChart from "./screenCoponents/RevenueChart";
-import UpdateAdminCard from "./screenCoponents/UpdateAdminCard";
+import "./AdminDashboard.css"
+import AddAdminCard from "./adminDashboardComponents/AddAdminCard";
+import AdminTable from "./adminDashboardComponents/AdminTable";
+import AnnunalSalesChart from "./adminDashboardComponents/AnnunalSalesChart";
+import DeleteAdminCard from "./adminDashboardComponents/DeleteAdminCard";
+import HeaderCards from "./adminDashboardComponents/HeaderCards";
+import RevenueChart from "./adminDashboardComponents/RevenueChart";
+import UpdateAdminCard from "./adminDashboardComponents/UpdateAdminCard";
 
-function Screen() {
+function AdminDashboard() {
   return (
     <div className="main_screen">
       {/* header */}
-      <div className="fw-bold fs-3 mb-4 mt-5">Admin Dashboard</div>
+      <div className="fw-bold fs-3 mb-4 mt-5 title">Admin Dashboard</div>
       {/* header ends */}
 
       {/* header cards */}
@@ -66,4 +66,4 @@ function Screen() {
   );
 }
 
-export default Screen;
+export default AdminDashboard;

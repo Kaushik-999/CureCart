@@ -1,11 +1,12 @@
 import React from "react";
-import "./css/SideBar.css";
+import { Link } from "react-router-dom";
+import "./SideBar.css";
 function SideBar() {
   return (
     <div>
       <div
         className="offcanvas offcanvas-start sidebar-nav text-white"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"
       >
@@ -27,12 +28,12 @@ function SideBar() {
             <ul className="navbar-nav">
               <li className="small fw-bold text-uppercase tags">CORE</li>
               <li>
-                <a href="/" className="nav-link active text-white">
+                <Link to="/" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-speedometer2"></i>
                   </span>
                   <span className="ms-2">Admin Dashboard</span>
-                </a>
+                </Link>
               </li>
               <li className="my-2">
                 <hr className="dropdown-divider" />
@@ -43,20 +44,20 @@ function SideBar() {
                 Medicine Store
               </li>
               <li>
-                <a href="/medical-sales" className="nav-link active text-white">
+                <Link to="/medical-sales" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-currency-rupee"></i>
                   </span>
                   <span className="ms-2">Medicine Sales</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/medical-stock" className="nav-link active text-white">
+                <Link to="/medicine-stock" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-capsule-pill"></i>
                   </span>
                   <span className="ms-2">Medicine Stock</span>
-                </a>
+                </Link>
               </li>
               <li className="my-2">
                 <hr className="dropdown-divider" />
@@ -82,8 +83,6 @@ function SideBar() {
                 <hr className="dropdown-divider" />
               </li>
             </ul>
-
-
           </nav>
         </div>
       </div>

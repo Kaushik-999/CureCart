@@ -1,0 +1,27 @@
+.main{
+    margin-top: var(--topNavbar-height);
+    padding: 10px;
+}
+
+@media (min-width:992px){
+    .main {
+        margin-left: var(--offcanvas-width) !important;
+    }
+}
+
+/* header-card */
+.header-cards .card {
+    border-left: 5px solid #869b9c;
+}
+
+@media (max-width:576px) {
+    .sales-table {
+        overflow: auto;
+        white-space: nowrap;
+        width: fit-content;
+    }
+}
+
+.sales-table .card-header{
+    background-color: #e5e5e5;
+}

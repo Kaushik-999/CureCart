@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Line } from "react-chartjs-2";
 import { SalesData } from "../temp-data/SalesData";
+import { Line } from "react-chartjs-2";
+// eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 
 function AnnunalSalesChart() {
-  
+  // eslint-disable-next-line
   const [salesData, setSalesData] = useState({
     labels: SalesData.map((data) => data.year),
     datasets: [
@@ -14,12 +15,10 @@ function AnnunalSalesChart() {
         fill: true,
         borderColor: "#497174",
         tension: 0.3,
-        xAxisID: "Year",
-        yAxisID: "Annual Sales in ₹",
         pointStyle: "circle",
         pointRadius: 5
-      },
-    ],
+      }
+    ]
   });
  
   return (
