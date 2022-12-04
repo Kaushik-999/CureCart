@@ -1,0 +1,12 @@
+/* main div */
+.main {
+    margin-top:  var(--topNavbar-height);
+}
+
+@media (min-width:992px){
+    .main {
+        margin-left: var(--offcanvas-width) !important;
+    }
+}
+
+

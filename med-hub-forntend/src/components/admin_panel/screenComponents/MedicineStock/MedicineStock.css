@@ -7,3 +7,25 @@
         margin-left: var(--offcanvas-width) !important;
     }
 }
+
+/* header cards */
+.header-cards .card {
+    border-left: 5px solid #869b9c;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+/* medicine type chart */
+.medicine-types-chart .card-header{
+    background-color: #e5e5e5;
+}
+
+/* medicine-review-table */
+.medicine-review-table .card-header{
+    background-color: #e5e5e5;
+}
+.medicine-types-chart .card-header{
+    background-color: #e5e5e5;
+}

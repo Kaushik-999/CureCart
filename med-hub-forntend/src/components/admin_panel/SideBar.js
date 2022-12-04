@@ -44,7 +44,10 @@ function SideBar() {
                 Medicine Store
               </li>
               <li>
-                <Link to="/medical-sales" className="nav-link active text-white">
+                <Link
+                  to="/medical-sales"
+                  className="nav-link active text-white"
+                >
                   <span>
                     <i className="bi bi-currency-rupee"></i>
                   </span>
@@ -52,7 +55,10 @@ function SideBar() {
                 </Link>
               </li>
               <li>
-                <Link to="/medicine-stock" className="nav-link active text-white">
+                <Link
+                  to="/medicine-stock"
+                  className="nav-link active text-white"
+                >
                   <span>
                     <i className="bi bi-capsule-pill"></i>
                   </span>
@@ -68,16 +74,22 @@ function SideBar() {
                 Blood Bank
               </li>
               <li>
-                <a href="/blood-donations" className="nav-link active text-white">
+                <Link
+                  to="/blood-donation"
+                  className="nav-link active text-white"
+                >
                   <i className="bi bi-droplet"></i>
-                  <span className="ms-2">Blood Donations</span>
-                </a>
+                  <span className="ms-2">Blood Donation</span>
+                </Link>
               </li>
               <li>
-                <a href="/active-donor-request" className="nav-link active text-white">
-                <i className="bi bi-moisture"></i>
+                <Link
+                  to="/active-donor-request"
+                  className="nav-link active text-white"
+                >
+                  <i className="bi bi-moisture"></i>
                   <span className="ms-2">Active Donor / Request</span>
-                </a>
+                </Link>
               </li>
               <li className="my-2">
                 <hr className="dropdown-divider" />

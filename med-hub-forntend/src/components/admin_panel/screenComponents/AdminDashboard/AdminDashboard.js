@@ -8,7 +8,7 @@ import HeaderCards from "./adminDashboardComponents/HeaderCards";
 import RevenueChart from "./adminDashboardComponents/RevenueChart";
 import UpdateAdminCard from "./adminDashboardComponents/UpdateAdminCard";
 
-function AdminDashboard() {
+function AdminDashboard() { 
   return (
     <div className="main_screen">
       {/* header */}

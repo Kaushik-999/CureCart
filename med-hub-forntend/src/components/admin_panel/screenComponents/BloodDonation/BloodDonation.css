@@ -1,0 +1,43 @@
+.main {
+    margin-top:  var(--topNavbar-height);
+}
+
+@media (min-width:992px){
+    .main {
+        margin-left: var(--offcanvas-width) !important;
+    }
+}
+
+/* header card */
+.header-cards .card {
+    border-left: 5px solid #869b9c;
+}
+
+/* available blood type chart */
+.available-blood-types-chart .card-header {
+    background-color: #e5e5e5 ;
+}
+
+.available-blood-types-chart .card-body {
+    height: 360px;
+    /* max-width:700px; */
+}
+
+/* cards */
+.add-blood-card .card-body {
+    background-color: #e5e5e5 ;
+}
+.update-blood-card .card-body {
+    background-color: #e5e5e5 ;
+}
+.delete-blood-card .card-body {
+    background-color: #e5e5e5 ;
+}
+.get-blood-card .card-body {
+    background-color: #e5e5e5 ;
+}
+
+/* members table */
+.members-table .card-header {
+    background-color: #e5e5e5 ;
+}

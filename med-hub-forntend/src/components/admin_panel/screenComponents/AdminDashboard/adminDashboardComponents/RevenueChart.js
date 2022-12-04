@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
-
 function RevenueChart() {
   // eslint-disable-next-line
   const [revenueData, setRevenueData] = useState({
@@ -30,7 +29,10 @@ function RevenueChart() {
         <div className="card-header text-uppercase fw-bold text-primary">
           Revenue
         </div>
-        <div className="card-body ms-auto me-auto" style={{paddingBottom:"30px", paddingTop:"30px"}}>
+        <div
+          className="card-body ms-auto me-auto"
+          style={{ paddingBottom: "30px", paddingTop: "30px" }}
+        >
           <Doughnut data={revenueData} />
         </div>
       </div>
