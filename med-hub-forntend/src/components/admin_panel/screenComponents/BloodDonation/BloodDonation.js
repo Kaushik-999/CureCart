@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "../../SideBar";
 import HeaderCard from "./bloodDonationComponent/HeaderCard";
 import "./BloodDonation.css";
 import AvailableBloodTypeChart from "./bloodDonationComponent/AvailableBloodTypeChart";
@@ -11,6 +12,10 @@ import MemebersTable from "./bloodDonationComponent/MemebersTable";
 function BloodDonation() {
   return (
     <div className="main">
+      {/* sidebar */}
+      <SideBar />
+      {/* sidebar ends */}
+
       {/* header */}
       <div className="fw-bold fs-3 mb-4 title">Blood Donation</div>
       {/* header ends */}
@@ -31,7 +36,7 @@ function BloodDonation() {
         <MemebersTable />
       </div>
       {/* members table end */}
-      
+
       {/* available blood types chart */}
       <div className="container-fluid mt-3">
         <div className="row">

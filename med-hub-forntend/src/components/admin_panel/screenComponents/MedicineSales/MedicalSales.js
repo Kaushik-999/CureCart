@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "../../SideBar";
 import "./MedicalSales.css";
 import HeaderCard from "./medicalSalesComponents/HeaderCard";
 import MonthlySalesChart from "./medicalSalesComponents/MonthlySalesChart";
@@ -8,6 +9,9 @@ import SalesTable from "./medicalSalesComponents/SalesTable";
 function MedicalSales() {
   return (
     <div className="main">
+      {/* sidebar */}
+      <SideBar />
+      {/* sidebar ends */}
       {/* header */}
       <div className="fw-bold fs-3 mb-4  title">Medical Sales</div>
       {/* header ends */}
@@ -30,7 +34,7 @@ function MedicalSales() {
             <MonthlySalesChart />
           </div>
           <div className="col-lg-5 col-md-12">
-            <MonthlyUsersChart/>
+            <MonthlyUsersChart />
           </div>
         </div>
       </div>

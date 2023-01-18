@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "../../SideBar";
 import "./AdminDashboard.css"
 import AddAdminCard from "./adminDashboardComponents/AddAdminCard";
 import AdminTable from "./adminDashboardComponents/AdminTable";
@@ -11,6 +12,11 @@ import UpdateAdminCard from "./adminDashboardComponents/UpdateAdminCard";
 function AdminDashboard() { 
   return (
     <div className="main_screen">
+
+      {/* sidebar */}
+      <SideBar/>
+      {/* sidebar ends */}
+
       {/* header */}
       <div className="fw-bold fs-3 mb-4 mt-5 title">Admin Dashboard</div>
       {/* header ends */}

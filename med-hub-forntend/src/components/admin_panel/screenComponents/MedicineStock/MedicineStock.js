@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "../../SideBar";
 import "./MedicineStock.css";
 import HeaderCard from "./medicineStockComponents/HeaderCard";
 import MedicineReviewTable from "./medicineStockComponents/MedicineReviewTable";
@@ -8,6 +9,9 @@ import MedicineTypesChart from "./medicineStockComponents/MedicineTypesChart";
 function MedicineStock() {
   return (
     <div className="main">
+      {/* sidebar */}
+      <SideBar />
+      {/* sidebar ends */}
       {/* header */}
       <div className="fw-bold fs-3 mb-4 title">Medicine Stock</div>
       {/* header ends */}
@@ -39,7 +43,7 @@ function MedicineStock() {
       {/* Medicine Chart */}
       <div className="container-fluid mt-3">
         <MedicinesTable />
-      </div>   
+      </div>
       {/* Medicine Chart End */}
     </div>
   );

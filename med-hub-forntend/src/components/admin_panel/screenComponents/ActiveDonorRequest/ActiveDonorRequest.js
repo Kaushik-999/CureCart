@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "../../SideBar";
 import ActiveDonorTable from "./activeDonorRequestComponent/ActiveDonorTable";
 import ActiveRequestTable from "./activeDonorRequestComponent/ActiveRequestTable";
 import HeaderCard from "./activeDonorRequestComponent/HeaderCards";
@@ -6,6 +7,9 @@ import HeaderCard from "./activeDonorRequestComponent/HeaderCards";
 function ActiveDonorRequest() {
   return (
     <div className="main">
+      {/* sidebar */}
+      <SideBar />
+      {/* sidebar ends */}
       {/* header */}
       <div className="fw-bold fs-3 mb-4 title">Active Donor / Requests</div>
       {/* header ends */}
