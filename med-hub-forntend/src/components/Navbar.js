@@ -1,5 +1,6 @@
 import React from "react";
-import "./NavBar.css"
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 function Navbar() {
   return (
     <div>
@@ -18,26 +19,25 @@ function Navbar() {
 
           {/* BrandName */}
 
-          <a
+          <Link
             className="navbar-brand fw-bolder text-uppercase me-auto"
-            href="/"
+            to="/admin"
           >
             Med-Hub
-          </a>
+          </Link>
 
           {/* SearchBar */}
-
-          <form className="d-flex me-auto " role="search">
-            <input
-              className="form-control me-1 search-bar"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-primary" type="submit">
-              <i className="bi bi-search"></i>
-            </button>
-          </form>
+            <form className="d-flex me-auto " role="search">
+              <input
+                className="form-control me-1 search-bar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-primary" type="submit">
+                <i className="bi bi-search"></i>
+              </button>
+            </form>
 
           {/* Authentication Dropdown */}
           <div className="nav-item dropdown">
@@ -50,16 +50,16 @@ function Navbar() {
             >
               <i className="bi bi-person"></i>
             </a>
-            <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <ul className="dropdown-menu  dropdown-menu-dark dropdown-menu-end">
               <li>
-                <a className="dropdown-item" href="/">
+                <Link className="dropdown-item" to="/sign-in">
                   Sign In
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="/.">
+                <Link className="dropdown-item" to="/sign-up">
                   Sign Up
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className="dropdown-divider" />

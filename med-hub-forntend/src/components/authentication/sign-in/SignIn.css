@@ -1,0 +1,19 @@
+.sign-in-main {
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sign-in-main .sign-in-form {
+    max-width: 450px !important;
+}
+
+.sign-in-main .divider:after,
+.sign-in-main .divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(159, 153, 153);
+}

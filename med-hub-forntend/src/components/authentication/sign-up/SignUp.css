@@ -1,0 +1,19 @@
+.sign-up-main {
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sign-up-main .sign-up-form {
+    max-width: 450px !important;
+}
+
+.sign-up-main .divider:after,
+.sign-up-main .divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(159, 153, 153);
+}

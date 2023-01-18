@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./SideBar.css";
 function SideBar() {
   return (
@@ -28,7 +28,7 @@ function SideBar() {
             <ul className="navbar-nav">
               <li className="small fw-bold text-uppercase tags">CORE</li>
               <li>
-                <Link to="/" className="nav-link active text-white">
+                <Link to="/admin" className="nav-link active text-white">
                   <span>
                     <i className="bi bi-speedometer2"></i>
                   </span>
@@ -45,7 +45,7 @@ function SideBar() {
               </li>
               <li>
                 <Link
-                  to="/medical-sales"
+                  to="/admin/medical-sales"
                   className="nav-link active text-white"
                 >
                   <span>
@@ -56,7 +56,7 @@ function SideBar() {
               </li>
               <li>
                 <Link
-                  to="/medicine-stock"
+                  to="/admin/medicine-stock"
                   className="nav-link active text-white"
                 >
                   <span>
@@ -75,7 +75,7 @@ function SideBar() {
               </li>
               <li>
                 <Link
-                  to="/blood-donation"
+                  to="/admin/blood-donation"
                   className="nav-link active text-white"
                 >
                   <i className="bi bi-droplet"></i>
@@ -84,7 +84,7 @@ function SideBar() {
               </li>
               <li>
                 <Link
-                  to="/active-donor-request"
+                  to="/admin/active-donor-request"
                   className="nav-link active text-white"
                 >
                   <i className="bi bi-moisture"></i>
@@ -96,6 +96,8 @@ function SideBar() {
               </li>
             </ul>
           </nav>
+          
+
         </div>
       </div>
     </div>
