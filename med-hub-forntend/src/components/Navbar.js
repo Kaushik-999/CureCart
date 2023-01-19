@@ -36,11 +36,15 @@ function Navbar() {
                   Admin
                 </Link>
               </li>
+              
+                {/* Blood Bank */}
+
               <li class="nav-item">
-                <Link className="nav-link  fw-semibold" aria-current="page" to="/admin">
+                <Link className="nav-link  fw-semibold" aria-current="page" to="/bloodbank">
                   Blood Bank
                 </Link>
               </li>
+
             </ul>
           </div>
           {/* <li class="nav-item">
