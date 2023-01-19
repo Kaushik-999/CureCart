@@ -20,12 +20,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -50,12 +50,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -80,12 +80,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -110,12 +110,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -140,12 +140,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -170,12 +170,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -200,12 +200,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -230,12 +230,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
@@ -260,12 +260,12 @@ export const MedicineReviewData = [
     {
         id:4,
         user: "Gourab",
-        medicine: "Vigra",
+        medicine: "Ondem",
         ratings: 4
     },
     {
         id:5,
-        user: "Bhuyassi",
+        user: "Pankaj",
         medicine: "Vitamin B3",
         ratings: 2
     },
