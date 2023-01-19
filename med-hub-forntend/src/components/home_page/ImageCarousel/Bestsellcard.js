@@ -5,12 +5,12 @@ function Bestsellcard(props) {
   const [hover, setHover] = useState(false);
   return (
     <div
-      class={`card ${hover ? "hovered" : ""}`}
+      class={`card bsc ${hover ? "hovered" : ""}`}
       style={{ minWidth: 350, marginRight: 25 }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img src={props.link} class="card-img-top" alt="..." />
+      <img src={props.link} class="card-img-top bsc-cit" alt="..." />
       <button className={`btn btn-bstsell btn-primary ${hover ? "slide-in" : "slide-out"}`}>
         ADD TO CART
       </button>

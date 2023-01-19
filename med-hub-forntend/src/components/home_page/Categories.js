@@ -22,9 +22,9 @@ export default function Categories() {
           </div>
           <div className="row mt-3 ms-1 me-1">
             <div className="col-sm">
-              <div className="card">
+              <div className="card bsc">
                 <img
-                  className="card-img-top"
+                  className="card-img-top bsc-cit"
                   src="https://www.netmeds.com/images/category/l2/thumb/ayurvedic.jpg?v=1670340140"
                   alt="Card  cap"
                 />
@@ -37,9 +37,9 @@ export default function Categories() {
               </div>
             </div>
             <div className="col-sm">
-              <div className="card">
+              <div className="card bsc">
                 <img
-                  className="card-img-top"
+                  className="card-img-top bsc-cit"
                   src="https://www.netmeds.com/images/category/l2/thumb/health_food_and_drinks.jpg?v=1670340140"
                   alt="Card ap"
                 />
@@ -51,9 +51,9 @@ export default function Categories() {
               </div>
             </div>
             <div className="col-sm">
-              <div className="card">
+              <div className="card bsc">
                 <img
-                  className="card-img-top"
+                  className="card-img-top bsc-cit"
                   src="https://www.netmeds.com/images/category/l2/thumb/oxygen_can.jpg?v=1670340140"
                   alt="Card cap"
                 />
@@ -65,9 +65,9 @@ export default function Categories() {
               </div>
             </div>
             <div className="col-sm">
-              <div className="card">
+              <div className="card bsc">
                 <img
-                  className="card-img-top"
+                  className="card-img-top bsc-cit"
                   src="https://www.netmeds.com/images/category/v1/3108/thumb/bandages_1.jpg"
                   alt="Card  cap"
                 />
@@ -79,9 +79,9 @@ export default function Categories() {
               </div>
             </div>
             <div className="col-sm">
-              <div className="card">
+              <div className="card bsc">
                 <img
-                  className="card-img-top"
+                  className="card-img-top bsc-cit"
                   src="https://www.netmeds.com/images/category/v1/3108/thumb/bandages_1.jpg"
                   alt="Card cap"
                 />
@@ -97,9 +97,9 @@ export default function Categories() {
             
               <div className="row mt-3 ms-1 me-1">
                 <div className="col-sm">
-                  <div className="card">
+                  <div className="card bsc">
                     <img
-                      className="card-img-top"
+                      className="card-img-top bsc-cit"
                       src="https://www.netmeds.com/images/category/l2/thumb/ayurvedic.jpg?v=1670340140"
                       alt="Card  cap"
                     />
@@ -112,9 +112,9 @@ export default function Categories() {
                   </div>
                 </div>
                 <div className="col-sm">
-                  <div className="card">
+                  <div className="card bsc">
                     <img
-                      className="card-img-top"
+                      className="card-img-top bsc-cit"
                       src="https://www.netmeds.com/images/category/l2/thumb/health_food_and_drinks.jpg?v=1670340140"
                       alt="Card ap"
                     />
@@ -126,9 +126,9 @@ export default function Categories() {
                   </div>
                 </div>
                 <div className="col-sm">
-                  <div className="card">
+                  <div className="card bsc">
                     <img
-                      className="card-img-top"
+                      className="card-img-top bsc-cit"
                       src="https://www.netmeds.com/images/category/l2/thumb/oxygen_can.jpg?v=1670340140"
                       alt="Card cap"
                     />
@@ -140,9 +140,9 @@ export default function Categories() {
                   </div>
                 </div>
                 <div className="col-sm">
-                  <div className="card">
+                  <div className="card bsc">
                     <img
-                      className="card-img-top"
+                      className="card-img-top bsc-cit"
                       src="https://www.netmeds.com/images/category/v1/3108/thumb/bandages_1.jpg"
                       alt="Card  cap"
                     />
@@ -154,9 +154,9 @@ export default function Categories() {
                   </div>
                 </div>
                 <div className="col-sm">
-                  <div className="card">
+                  <div className="card bsc">
                     <img
-                      className="card-img-top"
+                      className="card-img-top bsc-cit"
                       src="https://www.netmeds.com/images/category/v1/3108/thumb/bandages_1.jpg"
                       alt="Card cap"
                     />
