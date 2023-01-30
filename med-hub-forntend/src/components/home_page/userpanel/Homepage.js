@@ -7,6 +7,12 @@ import { tdata, bestselldata } from "../ImageCarousel/trendingdata";
 import Bestsellcard from "../ImageCarousel/Bestsellcard";
 import Footer from "../Footer";
 import "./Homepage.css"
+
+const images = ["https://www.ashland.com/file_source/Ashland/images/Slider_antaronSoja_desktop%20c.jpg",
+"https://www.ashland.com/file_source/Ashland/images/Slider_sensiveGoNat_desktopFINAL.jpg",
+"https://www.ashland.com/file_source/Ashland/images/Slider_caressense_desktop-final.jpg"];
+
+
 const ncard = (val) => {
   return <Mycard link={val.link} title={val.title} />;
 };
@@ -18,7 +24,7 @@ function Homepage() {
   return (
     <>
       <div className="container-fluid pt-3" style={{"margin-top":"50px"}}>
-        <Carousel />
+        <Carousel images={images}/>
       </div>
 
       <div className="container-fluid mt-5 p-3 mb-5 bg-body rounded">

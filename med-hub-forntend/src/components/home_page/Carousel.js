@@ -1,66 +1,29 @@
-import React from "react";
-import "./Carousel.css";
+import React, { useState } from 'react';
 
-export default function Carousel() {
+
+
+
+const Carousel = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrevious = () => {
+    setCurrentImageIndex((currentImageIndex + images.length - 1) % images.length);
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((currentImageIndex + 1) % images.length);
+  };
+
   return (
-    <>
-      <div
-        id="carouselExampleIndicators"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="https://www.ashland.com/file_source/Ashland/images/Slider_antaronSoja_desktop%20c.jpg" className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src="https://www.ashland.com/file_source/Ashland/images/Slider_sensiveGoNat_desktopFINAL.jpg" className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src="https://www.ashland.com/file_source/Ashland/images/Slider_caressense_desktop-final.jpg" className="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-    </>
+    <div className="relative">
+      <button onClick={handlePrevious}>Previous</button>
+      <img className="relative" src={images[currentImageIndex]} alt="slide" />
+      <button className="absolute bottom-1/2 right-28 translate" onClick={handleNext}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</button>
+    </div>
   );
-}
+};
+
+export default Carousel;
