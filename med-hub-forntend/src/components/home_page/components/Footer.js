@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-sky-700 container text-white pt-3">
+    <footer className="bg-teal-700 container text-white pt-3">
       <div className="flex flex-row justify-evenly text-xs ">
         <div className="flex flex-col">
           <h5 className="font-bold">MedHub</h5>
@@ -37,18 +37,18 @@ function Footer() {
           <ul className="list-unstyled">
             <li className="pt-2">
               <a className=" hover:text-amber-300" href="/">
-                <i class="bi bi-twitter"></i> Twitter
+                <i className="bi bi-twitter"></i> Twitter
               </a>
             </li>
             <li>
               <a className=" hover:text-amber-300" href="/">
-                <i class="bi bi-facebook"></i> Facebook
+                <i className="bi bi-facebook"></i> Facebook
               </a>
             </li>
 
             <li>
               <a className=" hover:text-amber-300" href="/">
-                <i class="bi bi-instagram"></i> Instagram
+                <i className="bi bi-instagram"></i> Instagram
               </a>
             </li>
           </ul>
@@ -65,7 +65,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div class="footer-copyright text-center text-xs py-3">
+      <div className="footer-copyright text-center text-xs py-3">
         <p>Copyright © 2023 MedHub. All rights reserved.</p>
       </div>
     </footer>

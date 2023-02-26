@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AdminDashboard from "./components/admin_panel/screenComponents/AdminDashboard/AdminDashboard";
@@ -8,7 +7,8 @@ import BloodDonation from "./components/admin_panel/screenComponents/BloodDonati
 import ActiveDonorRequest from "./components/admin_panel/screenComponents/ActiveDonorRequest/ActiveDonorRequest";
 import SignUp from "./components/authentication/sign-up/SignUp";
 import SignIn from "./components/authentication/sign-in/SignIn";
-import Homepage from "./components/home_page/userpanel/Homepage";
+import Homepage from "./components/home_page/Homepage";
+import Productpage from "./components/home_page/Productpage";
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/" element={<Productpage/>} />
+        <Route exact path="/abcd" element={<Homepage />} />
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/admin/medical-sales" element={<MedicalSales />} />
         <Route exact path="/admin/medicine-stock" element={<MedicineStock />} />
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/sign-up" element={<SignUp />} />
       </Routes>
       {/* Client */}
+      
     </div>
   );
 }

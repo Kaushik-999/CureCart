@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isAdmin, setIsOpen] = useState(true);
 
-  
-  
 
   return (
     <>
-      <nav className="bg-sky-700 sticky top-0 z-10">
+      <nav className="bg-teal-700 sticky top-0 z-20">
         <ul className="flex px-16 py-4 text-lg">
           <li className="px-2 cursor-pointer text-white text-xl font-bold font-sans">
             <Link to="/" className="nav-title hover:text-slate-200">
@@ -42,7 +39,7 @@ const Navbar = () => {
               </form>
             </div>
           </li>
-          <li className="ml-80 text-white">
+          <li className="ml-80 pl-10 text-white">
             <Link to="/cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,9 +51,9 @@ const Navbar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mx-4 font-bold text-sm whitespace-nowrap">
+          <li className="mx-4  text-sm ">
             <div className="nav-links">
-              <div className="group" >
+              <div className="group">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -69,91 +66,89 @@ const Navbar = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <ul class="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
-                <li class="">
-                  <a
-                    class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                    href="/sign-in" 
-                  >
-                    Sign In
-                  </a>
-                </li>
-                <li class="">
-                  <a
-                    class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                    href="/"
-                  >
-                    Sign Up
-                  </a>
-                </li>
-                <li class="">
-                  <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                    href="/"
-                  >
-                    Sign in as Admin
-                  </a>
-                </li>
-                
-              </ul>
+                <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
+                  <li className="">
+                    <Link
+                      className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                      to="/sign-in"
+                    >
+                      Sign In
+                    </Link>
+                  </li>
+                  <li className="">
+                    <a
+                      className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                      href="/"
+                    >
+                      Sign Up
+                    </a>
+                  </li>
+                  <li className="">
+                    <a
+                      className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                      href="/"
+                    >
+                      Sign in as Admin
+                    </a>
+                  </li>
+                </ul>
               </div>
-              
             </div>
           </li>
         </ul>
       </nav>
       <nav>
-        <ul className="flex px-80 py-1 bg-slate-50 ">
+        <ul className="flex px-80 py-1 bg-white ">
           <li className="mx-14 text-sm font-bold my-2">
             <Link>Home</Link>
           </li>
           <li className="mx-14 text-sm  my-2">
             <div className="group">
               <Link className="font-bold">Categories</Link>
-              <ul class="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
-                <li class="">
+              <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
+                <li className="">
                   <a
-                    class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Aurvedic
                   </a>
                 </li>
-                <li class="">
+                <li className="">
                   <a
-                    class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Covid Essentials
                   </a>
                 </li>
-                <li class="">
+                <li className="">
                   <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Homeopathy
                   </a>
                 </li>
-                <li class="">
+                <li className="">
                   <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Mom & Baby
                   </a>
                 </li>
-                <li class="">
+                <li className="">
                   <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Orthopaedics
                   </a>
                 </li>
-                <li class="">
+                <li className="">
                   <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Fitness
@@ -170,11 +165,11 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <path d="M5.3,11.214A6.791,6.791,0,0,0,10.792,22h2.416A6.791,6.791,0,0,0,18.7,11.214L12,2Zm5.946,8.036a5.24,5.24,0,0,1-4.631-2.779,1,1,0,1,1,1.766-.942,3.239,3.239,0,0,0,2.865,1.721,1,1,0,0,1,0,2Z"></path>
@@ -190,47 +185,58 @@ const Navbar = () => {
           <li className="mx-14 text-sm font-sans my-2">
             <div className="group">
               <Link className="font-bold">Pages</Link>
-              <ul class="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
-                <li class="font-sans">
+              <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
+                <li className="font-sans">
                   <a
-                    class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     About
                   </a>
                 </li>
-                <li class="font-sans">
+                <li className="font-sans">
                   <a
-                    class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
                     Contact Us
                   </a>
                 </li>
-                <li class="font-sans">
+                <li className="font-sans">
                   <a
-                    class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                    className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="/"
                   >
-                    FAQ! 
+                    FAQ!
                   </a>
                 </li>
               </ul>
             </div>
           </li>
           <li className="ml-4">
-          <Link>
-            <div className="w-32 h-10 bg-sky-700 rounded-full flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-2 my-2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-</svg>
-<span className="text-xs text-white px-1 py-1">Upload Prescription</span>
-
-
-            </div></Link>
+            <Link>
+              <div className="w-32 h-10 bg-teal-700 rounded-full flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6 mx-2 my-2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+                  />
+                </svg>
+                <span className="text-xs text-white px-1 py-1">
+                  Upload Prescription
+                </span>
+              </div>
+            </Link>
           </li>
         </ul>
-        
       </nav>
     </>
   );

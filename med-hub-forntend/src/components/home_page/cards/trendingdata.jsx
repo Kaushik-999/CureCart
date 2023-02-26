@@ -1,77 +1,18 @@
 const tdata = [
     {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1669975066_United_Medicare_mini_web.jpg",
+        link: "https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/banner-21.png",
         title: 1
 
     },
     {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673370818_Anchor_mini_web.jpg",
+        link: "https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/banner-22.png",
         title: 2
     },
     {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1672944011_01-01.jpg",
+        link: "https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/banner-23.png",
         title: 3
     },
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673371224_Swadeshi_mini_web.jpg",
-        title: 4
-    }
     
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673370993_Wildstone_web_1.jpg",
-        title: 5
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673371144_Aroma_Magic_Mini_banner_web.jpg",
-        title: 6
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673372610_Playwin_Mini_banner_web.jpg",
-        title: 7
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673376350_Organic_India_mini_web.jpg",
-        title: 8
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673372005_Pure_Nutrition_mini_web.jpg",
-        title: 9
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673371669_Klar_Eye_mini_web.jpg",
-        title: 10
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1673371059_Skin-Elements_web_45.jpg",
-        title: 11
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1670565346_Volini_mini_web.jpg",
-        title: 12
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1668767149_bpl_Mini_banner_web.jpg",
-        title: 13
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1670565207_Amrutanjan_mini_web.jpg",
-        title: 14
-    }
-    ,
-    {
-        link: "https://www.netmeds.com/images/cms/aw_rbslider/slides/1669975066_United_Medicare_mini_web.jpg",
-        title: 15
-    }
 
 
 ]
