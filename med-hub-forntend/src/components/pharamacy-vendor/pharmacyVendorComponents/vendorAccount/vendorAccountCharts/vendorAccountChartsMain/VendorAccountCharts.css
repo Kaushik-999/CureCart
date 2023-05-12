@@ -1,0 +1,30 @@
+.vendor-account-charts-main{
+    padding: 16px 24px;
+}
+
+.vendor-account-charts-main .vendor-account-chart-container {
+    display: flex;
+    justify-content: space-between;
+} 
+.vendor-account-chart-container .chart-card{
+    width: 49%;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #869b9c;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px #d2d2d2;
+}
+
+.vendor-account-chart-container .chart-card-head{
+    border-bottom: 1px solid #869b9c;
+    padding: 7px 15px;
+    background-color: #e5f6dc;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #00897b;
+}
+
+.vendor-account-chart-container .chart-card-body{
+    padding: 7px 15px;
+    /* height: 100%; */
+}

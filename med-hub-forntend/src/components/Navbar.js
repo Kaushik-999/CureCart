@@ -19,32 +19,45 @@ function Navbar() {
 
           {/* BrandName */}
 
-          <Link
-            className="navbar-brand fw-bolder text-uppercase me-2"
-            to="/"
-          >
+          <Link className="navbar-brand fw-bolder text-uppercase me-2" to="/">
             Med-Hub
           </Link>
 
           <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {/* Admin */}
 
-              <li class="nav-item">
-                <Link className="nav-link  fw-semibold" aria-current="page" to="/admin">
+              <li className="nav-item">
+                <Link
+                  className="nav-link  fw-semibold"
+                  aria-current="page"
+                  to="/admin"
+                >
                   Admin
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link className="nav-link  fw-semibold" aria-current="page" to="/admin">
+              <li className="nav-item">
+                <Link
+                  className="nav-link  fw-semibold"
+                  aria-current="page"
+                  to="/blood-bank"
+                >
                   Blood Bank
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link  fw-semibold"
+                  aria-current="page"
+                  to="/pharmacy-vendor"
+                >
+                  Pharmacy Vendor
                 </Link>
               </li>
             </ul>
           </div>
-          {/* <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="...">
+          {/* <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href="...">
               Home
             </a>
           </li> */}

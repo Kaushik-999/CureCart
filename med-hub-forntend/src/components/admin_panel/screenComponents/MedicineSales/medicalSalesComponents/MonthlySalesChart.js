@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 import { MonthlySalesData } from "../temp-data/MonthlySalesData";
-
+ 
 function MonthlySalesChart() {
     // eslint-disable-next-line
   const [salesData, setSalesData] = useState({

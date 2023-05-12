@@ -1,0 +1,38 @@
+.vendor-account-cards-main {
+    padding: 16px 24px;
+}
+
+.vendor-account-cards {
+    /* display: flex;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+}
+
+.vendor-account-card-single{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding:1rem 2rem;
+    align-items: center;
+    border-radius: 8px;
+    border-left: 6px solid #869b9c;
+    box-shadow: 0px 5px 5px #d2d2d2;
+}
+
+/* #8390a2 */
+
+.vendor-account-card-single i {
+    color: grey;
+    font-size: 2rem;
+}
+
+.vendor-account-card-single h3{
+    color: #40513B;
+}
+
+.vendor-account-card-single span {
+    color: grey;
+    font-weight: bolder;
+}

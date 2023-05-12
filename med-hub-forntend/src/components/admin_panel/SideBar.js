@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./SideBar.css";
 function SideBar() {
   return (
@@ -96,8 +96,6 @@ function SideBar() {
               </li>
             </ul>
           </nav>
-          
-
         </div>
       </div>
     </div>

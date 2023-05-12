@@ -1,0 +1,11 @@
+.vendor-accout-main{
+    margin-left: var(--offcanvas-width);
+    margin-top: var(--topNavbar-height);
+    
+} 
+
+.vendor-accout-main>h3{
+    padding:1rem 2rem 0;
+    font-weight: bold;
+    color: #000;
+}

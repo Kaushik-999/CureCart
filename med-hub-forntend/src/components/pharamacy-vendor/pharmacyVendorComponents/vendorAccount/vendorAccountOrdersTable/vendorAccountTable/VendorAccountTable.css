@@ -1,0 +1,34 @@
+ .vendor-account-table-container{
+    padding: 16px 24px;
+ }
+
+ .vendors-account-table {
+    width: 100%;
+    border-collapse: collapse;
+ }
+
+ .vendors-account-table tr:nth-child(2n){
+    background-color: #f2f2f2;
+ }
+
+ .vendors-account-table .hover-row:hover{
+    background-color: #ddd;
+ }
+
+ .vendors-account-table td{
+    padding: 5px;
+ }
+
+ .vendors-account-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    text-align: left;
+ }
+
+ .vendors-account-table .hover{
+   width: 100%;
+   padding-left: 25px;
+   cursor: pointer;
+ }
+
