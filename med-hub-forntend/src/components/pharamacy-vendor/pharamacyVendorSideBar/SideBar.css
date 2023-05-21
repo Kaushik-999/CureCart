@@ -3,11 +3,12 @@
     /* background-image: linear-gradient(#529b1a); */
     width: var(--offcanvas-width);
     height: 100%;
-    position: fixed;
+    position: relative;
     top: var(--topNavbar-height);
     left: 0;
     display: flex;
     flex-direction: column;
+    z-index: 0;
   }
 
   .pharmacy-sidebar-header{
