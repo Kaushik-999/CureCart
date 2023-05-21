@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AdminDashboard from "./components/admin_panel/screenComponents/AdminDashboard/AdminDashboard";
@@ -8,7 +7,16 @@ import BloodDonation from "./components/admin_panel/screenComponents/BloodDonati
 import ActiveDonorRequest from "./components/admin_panel/screenComponents/ActiveDonorRequest/ActiveDonorRequest";
 import SignUp from "./components/authentication/sign-up/SignUp";
 import SignIn from "./components/authentication/sign-in/SignIn";
-import Homepage from "./components/home_page/userpanel/Homepage";
+import Homepage from "./components/home_page/Homepage";
+import Productpage from "./components/home_page/Productpage";
+import Footer from "./components/home_page/components/Footer";
+import Cart from "./components/home_page/components/Cart";
+
+import ScrollToTop from "./components/ScrollToTop";
+import Checkout from "./components/home_page/components/Checkout";
+import UserFile from "./components/home_page/components/UserFile";
+
+
 
 import VendorAccount from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorAccount/vendorAccountMain/VendorAccount";
 import VendorRegistration from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorRegistration/VendorRegistration";
@@ -21,10 +29,11 @@ import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain
 function App() {
   return (
     <div className="App">
+      <ScrollToTop/>
       <NavBar />
 
       <Routes>
-        {/* HomePage */}
+        
         <Route exact path="/" element={<Homepage />} />
 
         {/* Admin Dashboard */}
@@ -64,7 +73,20 @@ function App() {
         {/* Blood Bank */}
         <Route exact path="/blood-bank" element={<BloodBank/>}/>
 
+      
+        <Route exact path="/cart" element={<Cart/>} />
+        <Route exact path="/productpage/:productId" element={<Productpage />} />
+        <Route exact path="/checkout" element={<Checkout/>} />
+        <Route exact path="/user" element={<UserFile/>}/>
+        
+        
+        
       </Routes>
+      {/* Client */}
+      
+      
+        <Footer/>
+     
     </div>
   );
 }

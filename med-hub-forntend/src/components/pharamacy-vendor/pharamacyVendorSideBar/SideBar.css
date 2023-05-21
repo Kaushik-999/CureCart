@@ -8,6 +8,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    z-index: 0;
   }
 
   .pharmacy-sidebar-header{
