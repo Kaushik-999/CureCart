@@ -68,6 +68,7 @@ const Navbar = () => {
                   />
                 </svg>
                 </Link>
+<<<<<<< HEAD
                 <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
                   <li className="">
                     <Link
@@ -172,6 +173,47 @@ const Navbar = () => {
               height="20px"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+=======
+              </li>
+              
+                {/* Blood Bank */}
+
+              <li class="nav-item">
+                <Link className="nav-link  fw-semibold" aria-current="page" to="/bloodbank">
+                  Blood Bank
+                </Link>
+              </li>
+
+            </ul>
+          </div>
+          {/* <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="...">
+              Home
+            </a>
+          </li> */}
+
+          {/* SearchBar */}
+          <form className="d-flex ms-auto me-auto" role="search">
+            <input
+              className="form-control me-1 search-bar"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button className="btn btn-primary" type="submit">
+              <i className="bi bi-search"></i>
+            </button>
+          </form>
+
+          {/* Authentication Dropdown */}
+          <div className="nav-item dropdown">
+            <a
+              href="/"
+              className="btn dropdown-toggle authentication-button"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+>>>>>>> af9a77095135276e5f37ab9306a606c0e295fca0
             >
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
