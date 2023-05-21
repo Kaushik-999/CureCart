@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-teal-700 container text-white pt-3">
       <div className="flex flex-row justify-evenly text-xs ">
         <div className="flex flex-col">
-          <h5 className="font-bold">MedHub</h5>
+          <h5 className="font-bold">CureCart</h5>
           <ul className="list-unstyled ">
             <li className="pt-2">
               <a className=" hover:text-amber-300" href="/">About Us</a>
@@ -66,7 +66,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-copyright text-center text-xs py-3">
-        <p>Copyright © 2023 MedHub. All rights reserved.</p>
+        <p>Copyright © 2023 CureCart. All rights reserved.</p>
       </div>
     </footer>
   );

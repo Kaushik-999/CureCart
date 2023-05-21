@@ -1,4 +1,5 @@
 import {React,useRef} from "react";
+import { Link } from "react-router-dom";
 
 
 function NewArrival(props) {
@@ -27,7 +28,7 @@ function NewArrival(props) {
             {props.title}
           </span>
         </div>
-        <button className="ml-12 pt-2 text-teal-600">See all</button>
+        <Link to={{pathname : `/productpage/${"_"}`,search : "?v=seeall"}} className="ml-12 pt-2 text-teal-600">See all</Link>
         <div className="flex ml-auto mt-2">
           <button
             className="inline-flex absolute z-10 mr-5"

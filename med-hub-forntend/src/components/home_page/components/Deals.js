@@ -1,6 +1,7 @@
 import React from 'react'
 import { bestselldata } from '../cards/trendingdata';
 import Cards from '../cards/Cards';
+import { Link } from 'react-router-dom';
 function Deals() {
     const array = [];
 for (let i = 0; i < 8; i++) {
@@ -16,7 +17,7 @@ for (let i = 0; i < 8; i++) {
             Fitness Deals
           </span>
         </div>
-        <button className="ml-12 pt-2 text-teal-600">See all</button>
+        <Link to={{pathname : `/productpage/${"_"}`,search : "?v=seeall"}} className="ml-auto text-teal-600">See all</Link>
       </div>
 
       <div className="flex mt-3 mb-3 ml-14 ">
@@ -33,7 +34,9 @@ for (let i = 0; i < 8; i++) {
             <Cards
               link={val.link}
               key={index}
-              title={"Vitamin C With Zinc – 30 Tablets"}
+              title={val.title}
+              id = {val.id}
+              price = {val.price}
               x="30"
             />
           ))}

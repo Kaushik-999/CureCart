@@ -1,6 +1,22 @@
 import React from "react";
+import Productdetails from "./components/Productdetails";
+import { seealldata } from "./cards/trendingdata";
+import Seeitemcard from "./cards/Seeitemcard";
+import { useLocation,useParams } from "react-router-dom";
+import { bestselldata } from './cards/trendingdata';
 
 function Productpage() {
+  //Quantity buttons
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const component = queryParams.get('v');
+  const { productId } = useParams();
+  const item =bestselldata.find((p) => p.id === productId);
+
+  console.log(productId);
+  console.log(item);
+
+
   return (
     <>
       <div className="ml-16 mr-16 mt-2">
@@ -11,7 +27,7 @@ function Productpage() {
         <div className="grid grid-cols-5 gap-2 mt-6">
           <div className="">
             <div className="text-lg font-medium">PRODUCT CATEGORIES</div>
-            <div className="mt-4 h-48 overflow-scroll">
+            <div className="mt-4 h-48 overflow-scroll scrollbar">
               <ul>
                 <a href="/">
                   <li className="flex mt-3">
@@ -83,22 +99,19 @@ function Productpage() {
               </ul>
             </div>
           </div>
-          <div className="col-span-2">
-            <div className="product-details">
-              <div className="flex">
-                <a href="/" className="">
-                  <img
-                    classname=""
-                    src="https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/Vitamin-C-with-Zinc-30-Tablets.jpg"
-                    alt=""
-                  />
-                </a>
-                <div className="inline mt-3 mr-3 h-6 px-1 pb-1 align-middle ml-auto bg-teal-500 text-white">
-                  -30%
-                </div>
-              </div>
+
+          <div className="col-span-4 mb-10">
+
+          {component === 'seeall' && seealldata.map((val, index) => (
+            < Seeitemcard
+              link={val.link}
+              key={index}
+              title={val.title}
               
-            </div>
+            />
+          ))}
+      {component === 'product' && <Productdetails id={productId} title = {item.title} link = {item.link} />}
+  
           </div>
         </div>
       </div>

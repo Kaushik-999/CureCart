@@ -9,8 +9,8 @@ const Navbar = () => {
       <nav className="bg-teal-700 sticky top-0 z-20">
         <ul className="flex px-16 py-4 text-lg">
           <li className="px-2 cursor-pointer text-white text-xl font-bold font-sans">
-            <Link to="/" className="nav-title hover:text-slate-200">
-              MEDHUB
+            <Link to="/" className=" hover:text-slate-200">
+              CureCart
             </Link>
           </li>
           <li className="ml-96">
@@ -39,7 +39,7 @@ const Navbar = () => {
               </form>
             </div>
           </li>
-          <li className="ml-80 pl-10 text-white">
+          <li className="ml-auto pl-10 text-white">
             <Link to="/cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +51,10 @@ const Navbar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mx-4  text-sm ">
+          <li className="mr-3 ml-5  text-sm ">
             <div className="nav-links">
               <div className="group">
+                <Link to="/user">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -66,6 +67,7 @@ const Navbar = () => {
                     clipRule="evenodd"
                   />
                 </svg>
+                </Link>
                 <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
                   <li className="">
                     <Link

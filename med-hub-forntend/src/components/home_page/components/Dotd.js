@@ -2,6 +2,7 @@ import {React,useState,useEffect,useRef} from 'react'
 import { bestselldata } from '../cards/trendingdata';
 import Cards from '../cards/Cards';
 import gift from '../cards/gift.png';
+import { Link } from 'react-router-dom';
 
 
 function Dotd() {
@@ -55,7 +56,8 @@ function Dotd() {
             <span className="text-teal-600  text-2xl pl-7 pt-3">
               {days}:{hours}:{minutes}:{seconds}
             </span>
-            <button className="ml-auto text-teal-600">See all</button>
+            <Link to={{pathname : `/productpage/${"_"}`,search : "?v=seeall"}} className="ml-auto text-teal-600">See all</Link>
+            
           </div>
           <button
             className="hidden group-hover:inline-flex absolute left-0 bottom-1/2 z-10 shadow-xl justify-center items-center rounded-full w-12 h-12 group-hover:visible "
@@ -104,7 +106,9 @@ function Dotd() {
                 <Cards
                   link={val.link}
                   key={index}
-                  title={"Vitamin C With Zinc – 30 Tablets"}
+                  title={val.title}
+                  id = {val.id}
+                  price = {val.price}
                   x="20"
                 />
               ))}

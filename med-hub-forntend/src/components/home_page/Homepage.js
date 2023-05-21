@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "./components/Carousel";
 import { bestselldata, tdata } from "./cards/trendingdata";
-import Footer from "./components/Footer";
+
 import Cards from "./cards/Cards";
 import Banner from "./cards/Banner";
 import Brandcard from "./cards/Brandcard";
@@ -60,7 +60,9 @@ function Homepage() {
           <Cards
             link={val.link}
             key={index}
-            title={"Vitamin C With Zinc – 30 Tablets"}
+            title={val.title}
+            id = {val.id}
+            price ={val.price}
             x="30"
           />
         ))}
@@ -75,12 +77,13 @@ function Homepage() {
           <Brandcard
             link={val.link}
             key={index}
-            title={"Vitamin C With Zinc – 30 Tablets"}
+            title={val.title}
+
             x="30"
           />
         ))}
       />
-      <Footer />
+      
     </>
   );
 }
