@@ -43,7 +43,7 @@ function SideBar() {
         </div>
       </Link>
       <hr />
-
+ 
       {/* Raise Complaint */}
       <Link to="/pharmacy-vendor/feeback" className="link">
         <div className="pharmacy-sidebar-items">
