@@ -1,0 +1,88 @@
+.blood-donation-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+    background-color: red;
+  }
+  
+  .blood-donation-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .blood-donation-navbar-logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+  }
+  
+  .blood-donation-navbar-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .blood-donation-navbar-item {
+    margin: 0 10px;
+  }
+  
+  .blood-donation-navbar-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+  }
+  
+  .bd-navbar-social-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .bd-navbar-social-icon {
+    font-size: 24px;
+    margin-left: 10px;
+    color: #333;
+  }
+  .blood-donation-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .blood-donation-navbar-logo {
+    margin: 0;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .bd-navbar-social-icons {
+    display: flex;
+  }
+  
+  .bd-navbar-social-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .blood-donation-navbar-logo {
+    margin-left: 0;
+  }
+    

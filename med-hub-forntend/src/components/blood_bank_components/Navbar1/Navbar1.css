@@ -1,0 +1,36 @@
+.navbar1{
+  background-color: rgb(150, 3, 3);
+  box-shadow: antiquewhite;
+}
+.navbar1-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  
+}
+
+.navbar1-logo {
+  margin: 0;
+  margin-left: 0;
+  margin-right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: white;
+}
+.social-icon:hover {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color:wheat
+}
+

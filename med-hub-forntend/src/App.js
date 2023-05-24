@@ -23,7 +23,7 @@ import VendorRegistration from "./components/pharamacy-vendor/pharmacyVendorComp
 import VendorAddMedicine from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorAddMedicine/VendorAddMedicine";
 import VendorInvoices from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorInvoices/VendorInvoices";
 import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorFeedback/VendorFeeback";
-import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain/BloodBank";
+import BloodBank from "./components/blood_bank_components/BloodBank";
 
 
 function App() {
