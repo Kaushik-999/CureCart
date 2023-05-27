@@ -18,13 +18,15 @@ import UserFile from "./components/home_page/components/UserFile";
 
 
 
+
 import VendorAccount from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorAccount/vendorAccountMain/VendorAccount";
 import VendorRegistration from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorRegistration/VendorRegistration";
 import VendorAddMedicine from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorAddMedicine/VendorAddMedicine";
 import VendorInvoices from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorInvoices/VendorInvoices";
 import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorFeedback/VendorFeeback";
-import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain/BloodBank";
+// import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain/BloodBank";
 import BlogPageMain from "./components/blog_page/BlogPageMain";
+import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
 
 
 function App() {

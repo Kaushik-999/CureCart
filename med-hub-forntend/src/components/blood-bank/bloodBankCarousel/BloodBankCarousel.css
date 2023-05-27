@@ -4,7 +4,7 @@
   background-image: linear-gradient(
     rgba(56, 54, 54, 0.4),
     rgba(56, 54, 54, 0.4)
-  ),url('./images/backgroundBlood.jpg');
+  ),url('../BloodBankCarouselImages/carousel_backgound.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

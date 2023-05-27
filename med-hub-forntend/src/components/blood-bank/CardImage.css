@@ -1,0 +1,41 @@
+.card-image-container {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8; /* set opacity to 80% */
+    background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tbXVuaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60');
+    background-size: cover;
+    background-position: center center;
+    height: 500px; /* set the desired height of the image */
+  }
+  
+  .card1 {
+    flex-basis: 20%; /* distribute the cards equally */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    margin: 100px 10px;
+    text-align: center;
+  }
+  
+  .icons-container1 {
+    margin-top: auto;
+    font-size: 50px;
+    color: #111519;
+  }
+  
+  .card1 h2 {
+    color: red;
+    font-size: 54px;
+    margin-bottom: 70px;
+
+
+  }
+  
+  .card1 p {
+    color: black;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    margin-bottom: 1000px;
+  }
+  
