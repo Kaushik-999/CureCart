@@ -8,7 +8,7 @@ function FormComponents() {
     password: "",
     confirmPassword: "",
   });
-
+ 
   const [processing, setProcessing] = useState(false); // State for tracking request processing
 
   const handleChange = (e) => {

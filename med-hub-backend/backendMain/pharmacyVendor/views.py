@@ -4,28 +4,48 @@ from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 import uuid
+import jwt
+
+secret_key = "CURE_CART_BACKEND"
 
 # Register Vendor View
 @csrf_exempt
 def pharmacyVendorRegister(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
         
-        first_name = data.get('first_name')
-        last_name = data.get('last_name')
-        work_email = data.get('work_email')
-        phone_number = data.get('phone_number')
-        organization_name = data.get('organization_name')
+        token = request.headers.get("token")
+        
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        
+        data = json.loads(request.body)
+        print(data)
+        firstName = data.get('firstName')
+        lastName = data.get('lastName')
+        workEmail = data.get('workEmail')
+        phoneNumber = data.get('phoneNumber')
+        organizationName = data.get('organizationName')
         gstin = data.get('gstin')
-        address_line1 = data.get('address_line1')
+        address = data.get('address')
         district = data.get('district')
         state = data.get('state')
         zipcode = data.get('zipcode')
+        print(firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode)
 
-        if None in [first_name, last_name, work_email, phone_number, organization_name, gstin, address_line1, district, state, zipcode]:
+        if None in [firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode]:
             return JsonResponse({'error': 'All fields are required.'})
         
-        if len(phone_number) != 10 or not phone_number.isdigit():
+        if len(phoneNumber) != 10 or not phoneNumber.isdigit():
             return JsonResponse({'error': 'Invalid phone number.'})
         
         if len(gstin) != 15 or not gstin.isdigit():
@@ -37,13 +57,14 @@ def pharmacyVendorRegister(request):
         try:
             pharmacy = PharmacyVendorRegisterDB(
                 id=str(uuid.uuid4()),
-                first_name=first_name,
-                last_name=last_name,
-                work_email=work_email,
-                phone_number=phone_number,
-                organization_name=organization_name,
+                userIdEmail=userIdEmail,
+                firstName=firstName,
+                lastName=lastName,
+                workEmail=workEmail,
+                phoneNumber=phoneNumber,
+                organizationName=organizationName,
                 gstin=gstin,
-                address_line1=address_line1,
+                address=address,
                 district=district,
                 state=state,
                 zipcode=zipcode
@@ -62,8 +83,24 @@ def pharmacyVendorRegister(request):
 @csrf_exempt
 def pharmacyVendorAddMedicine(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
+
+        token = request.headers.get("token")
         
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+
+        data = json.loads(request.body)
+        print(data)
         medicine_name = data.get('medicine_name')
         price_per_strip = data.get('price_per_strip')
         composition_name = data.get('composition_name')
@@ -96,6 +133,7 @@ def pharmacyVendorAddMedicine(request):
             
             medicine = AddMedicineDB(
                 id=str(uuid.uuid4()),
+                userIdEmail=userIdEmail,
                 medicine_name=medicine_name,
                 price_per_strip=price_per_strip,
                 composition_name=composition_name,

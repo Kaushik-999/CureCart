@@ -8,7 +8,7 @@ function VendorFeeback() {
       <div className="vendor-feedback-main">
         <div className="vendor-feeback-form-container">
           <form>
-            <h2>Feedback Form</h2>
+          <h2>Query Form</h2>
             <p>
               We would love to hear your thoughts, suggestions, concerns or
               problems with anything so we can improve!
@@ -37,7 +37,7 @@ function VendorFeeback() {
                     </label>
                   </div>
 
-                  <div className="vendor-feedback-type-radio-group-single">
+                  {/* <div className="vendor-feedback-type-radio-group-single">
                     <input
                       type="radio"
                       id="suggestions"
@@ -50,7 +50,7 @@ function VendorFeeback() {
                     >
                       Suggestions
                     </label>
-                  </div>
+                  </div> */}
                   <div className="vendor-feedback-type-radio-group-single">
                     <input
                       type="radio"
@@ -63,6 +63,20 @@ function VendorFeeback() {
                       className="vendor-feedback-feedbacktype-label"
                     >
                       Questions
+                    </label>
+                  </div>
+                  <div className="vendor-feedback-type-radio-group-single">
+                    <input
+                      type="radio"
+                      id="deleteMedicine"
+                      name="feedbackType"
+                      value="deleteMedicine"
+                    />
+                    <label
+                      for="deleteMedicine"
+                      className="vendor-feedback-feedbacktype-label"
+                    >
+                      Delete Medicine
                     </label>
                   </div>
                 </div>
