@@ -1,0 +1,39 @@
+.blog-page-small-card{
+    width: 400px;
+}
+
+.blog-page-small-card-img img{
+    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.blog-page-small-card-title{
+    margin:3px 10px;
+    color:#0d9488;
+    font-size: 1rem; 
+    font-weight: bold;
+    text-align: justify;
+}
+
+.blog-page-small-card-description{
+    margin: 3px 10px;
+    text-align: justify;
+}
+
+.blog-page-small-card-author-date {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.blog-page-small-card-read-more-link {
+    color: #0d9488;
+}
+
+.blog-page-small-card-read-more-link:hover {
+    color: #73d9ad;
+}
