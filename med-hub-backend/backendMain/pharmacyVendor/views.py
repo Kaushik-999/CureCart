@@ -1,6 +1,6 @@
 import json
 from django.http import JsonResponse
-from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB
+from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB, QueryDB
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 import uuid
@@ -27,7 +27,7 @@ def pharmacyVendorRegister(request):
         except jwt.InvalidTokenError:
             return JsonResponse({'error': 'Invalid token'})
         
-        
+         
         data = json.loads(request.body)
         print(data)
         firstName = data.get('firstName')
@@ -150,3 +150,50 @@ def pharmacyVendorAddMedicine(request):
         return JsonResponse({'success': 'Medicine saved successfully.'})
     
     return JsonResponse({'success': 'Invalid request method.'})
+
+# Add Medicine View
+@csrf_exempt
+def pharmacyQuery(request):
+    if request.method == 'POST':
+
+        token = request.headers.get("token")
+        
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        data = json.loads(request.body)
+        print(data)
+        feedbackType = data.get('feedbackType')
+        describeYourFeedback = data.get('describeYourFeedback')
+
+        if None in [feedbackType, describeYourFeedback]:
+            return JsonResponse({'error': 'All fields are required.'})
+        
+        try:
+            query = QueryDB(
+                id=str(uuid.uuid4()),
+                userIdEmail=userIdEmail,
+                feedbackType = feedbackType,
+                describeYourFeedback = describeYourFeedback
+            )
+            query.save()
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while saving the data.'})
+        else:
+            return JsonResponse({'success': 'Pharmacy Query saved successfully.'})
+    
+    return JsonResponse({'error': 'Invalid request method.'})
+
+        
+

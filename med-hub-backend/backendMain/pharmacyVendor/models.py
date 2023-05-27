@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
-
-# Register Model
+ 
+# Pharmacy Register Model
 class PharmacyVendorRegisterDB(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     userIdEmail = models.EmailField()
@@ -19,7 +19,7 @@ class PharmacyVendorRegisterDB(models.Model):
     def __str__(self):
         return self.organizationName
     
-# Add Medicine Model
+# Pharmacy Add Medicine Model
 class AddMedicineDB(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     userIdEmail = models.EmailField()
@@ -34,3 +34,13 @@ class AddMedicineDB(models.Model):
     
     def __str__(self):
         return self.medicine_name
+    
+# Pharmacy Query Model
+class QueryDB(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    userIdEmail = models.EmailField()
+    feedbackType = models.CharField(max_length=20)
+    describeYourFeedback = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.feedbackType + " by " + self.userIdEmail 
