@@ -26,13 +26,14 @@ SECRET_KEY = 'django-insecure-$^chk*7=1#@05_&@g2^f#n6e4^$x$809m#kq(fn5dr1=hli1_5
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ 
 
 # Application definition
 
 INSTALLED_APPS = [
     'userAuthentication.apps.UserauthenticationConfig', #custom added
     'pharmacyVendor.apps.PharmacyvendorConfig', #custom added
+    'utilitiesApi.apps.UtilitiesapiConfig', #custom added
     'corsheaders', #custom added
     'django.contrib.admin',
     'django.contrib.auth',

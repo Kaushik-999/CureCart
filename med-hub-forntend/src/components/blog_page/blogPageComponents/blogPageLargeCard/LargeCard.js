@@ -21,7 +21,7 @@ function LargeCard(props) {
   // importing props
   const image = props.image;
   const title = props.title;
-  const description = props.description;
+  const description = props.description || '';
   const article = props.article;
   const date = props.date;
   const author = props.author;

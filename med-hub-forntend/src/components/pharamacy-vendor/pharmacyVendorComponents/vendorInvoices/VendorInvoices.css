@@ -1,6 +1,13 @@
+.vendor-invoices-loading-message{
+    margin-left: var(--offcanvas-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:70vh;
+    font-size: 3rem;
+}
 .vendor-invoices-main{
     margin-left: var(--offcanvas-width);
-    margin-top: var(--topNavbar-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,16 +19,18 @@
     box-shadow: 0 15px 20px #ABB289;
     padding: 15px 30px;
     margin-bottom: 36px;
+    
 }
 
 .vendor-invoice-container h2 {
     font-size: 26px;
-    font-weight: 600px;
+    font-weight: bold;
     text-align: center;
     color: #00897b;
     /* padding-bottom: 8px; */
     /* border-bottom: 1px solid silver; */
     padding: 20px 0;
+    margin-top: 36px;
 }
 
 .vendor-invoice-container .vendor-invoice-table{

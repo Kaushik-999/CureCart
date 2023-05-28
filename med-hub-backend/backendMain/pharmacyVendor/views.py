@@ -1,13 +1,15 @@
 import json
 from django.http import JsonResponse
 from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB, QueryDB
+from utilitiesApi.models import InvoiceDB
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 import uuid
-import jwt
+import jwt 
+from bson import Decimal128
 
 secret_key = "CURE_CART_BACKEND"
-
+ 
 # Register Vendor View
 @csrf_exempt
 def pharmacyVendorRegister(request):
@@ -40,6 +42,7 @@ def pharmacyVendorRegister(request):
         district = data.get('district')
         state = data.get('state')
         zipcode = data.get('zipcode')
+
         print(firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode)
 
         if None in [firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode]:
@@ -195,5 +198,42 @@ def pharmacyQuery(request):
     
     return JsonResponse({'error': 'Invalid request method.'})
 
+
+# Get all invoice of a certain user
+@csrf_exempt
+def getAllInvoices(request):
+    if request.method == "GET":
+
+        token = request.headers.get("token")
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
         
+        try:
+             invoices = InvoiceDB.objects.filter(userIdEmail="kaushiksarmah999@gmail.com")
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving invoices.'})
+        else:
+            data = []
+            for invoice in invoices:
+                data.append({
+                    'id': str(invoice.id),
+                    'date': str(invoice.date),
+                    'product': invoice.product,
+                    'payement': invoice.payement,
+                    'delivery': invoice.delivery,
+                    'amount': float(invoice.amount.to_decimal())
+                })
+            return JsonResponse({'success': 'Invoices retrived successfully.','invoices':data}, safe=False)
+    
+    return JsonResponse({'error': 'Invalid request method.'})
 
