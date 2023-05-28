@@ -27,6 +27,21 @@ function Cart() {
                   <th className="font-semibold w-24 border-2">Subtotal</th>
                 </tr>
               </thead>
+              {
+                len===0 && (
+                  <tbody className="">
+                    <tr>
+                      <td className="" colSpan="5">
+                      <div className="text-slate-600 flex justify-center" > <div className="my-5">Your Cart is Empty</div>
+                      </div>
+
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                )
+              }
+
               <tbody>
                 {list.map((val, index) => (
                   <Tdbody

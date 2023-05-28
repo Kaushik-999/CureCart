@@ -25,6 +25,7 @@ import VendorAddMedicine from "./components/pharamacy-vendor/pharmacyVendorCompo
 import VendorInvoices from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorInvoices/VendorInvoices";
 import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorFeedback/VendorFeeback";
 import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
+import OrderPlaced from "./components/home_page/components/OrderPlaced";
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
         <Route exact path="/productpage/:productId" element={<Productpage />} />
         <Route exact path="/checkout" element={<Checkout/>} />
         <Route exact path="/user" element={<UserFile/>}/>
+        <Route exact path="/orderplaced" element={<OrderPlaced/>}/>
         
         
         
