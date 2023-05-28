@@ -1,6 +1,6 @@
 .vendor-add-medicine-main{
     margin-left: var(--offcanvas-width);
-    margin-top: var(--topNavbar-height);
+    /* margin-top: var(--topNavbar-height); */
     display: flex;
     align-items: center;
     justify-content: center;

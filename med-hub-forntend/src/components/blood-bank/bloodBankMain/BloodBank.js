@@ -5,7 +5,7 @@ import BloodBankRequestAppointment from '../bloodBankRequestAppointment/BloodBan
 import BloodDonationJumbotron from "../BloodDonationJumbotron/BloodDonationJumbotron";
 import CardImage from '../CardImage';
 import CardGrid from '../CardGrid';
-import OpinionCarousel from '..\/OpinionCarousel/OpinionCarousel';
+import OpinionCarousel from '../OpinionCarousel/OpinionCarousel';
 import ImageWithButton from '../ImageWithButton/ImageWithButton';
 import CampaignJumbotron from '../CampaignJumbotron/CampaignJumbotron';
 import Campaign from '../Campaign/Campaign';

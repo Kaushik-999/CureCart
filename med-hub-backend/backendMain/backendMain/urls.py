@@ -24,5 +24,8 @@ urlpatterns = [
     path('user/auth/',include('userAuthentication.urls')),
 
     # Pharamcy Vendor path (send to pharmacyVendor)
-    path('pharmacy-vendor/', include('pharmacyVendor.urls'))
+    path('pharmacy-vendor/', include('pharmacyVendor.urls')),
+
+    # Utilities Api Path (send to utilitiesAPI)
+    path('utilities/', include('utilitiesApi.urls'))
 ]

@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
-
   return (
     <>
       <nav className="bg-teal-700 sticky top-0 z-20">
@@ -55,18 +53,18 @@ const Navbar = () => {
             <div className="nav-links">
               <div className="group">
                 <Link to="/user">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                  className="w-6 h-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                 </Link>
                 <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
                   <li className="">
@@ -78,12 +76,12 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="">
-                    <a
-                      className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                      href="/"
+                    <Link
+                      className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                      to="/sign-up"
                     >
                       Sign Up
-                    </a>
+                    </Link>
                   </li>
                   <li className="">
                     <a
@@ -94,9 +92,11 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <Link className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                      to="/pharmacy-vendor">
-                    Pharmacy Vendor
+                    <Link
+                      className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                      to="/pharmacy-vendor"
+                    >
+                      Pharmacy Vendor
                     </Link>
                   </li>
                 </ul>
@@ -108,7 +108,9 @@ const Navbar = () => {
       <nav>
         <ul className="flex px-80 py-1 bg-white ">
           <li className="mx-14 text-sm font-bold my-2">
-            <Link>Home</Link>
+            <Link to="/">
+              Home
+            </Link>
           </li>
           <li className="mx-14 text-sm  my-2">
             <div className="group">
@@ -188,7 +190,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="mx-14 text-sm font-bold my-2">
-            <Link>Blog</Link>
+            <Link to="/blogs">
+              Blogs
+            </Link>
           </li>
           <li className="mx-14 text-sm font-sans my-2">
             <div className="group">
