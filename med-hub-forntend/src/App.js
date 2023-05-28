@@ -24,6 +24,8 @@ import VendorRegistration from "./components/pharamacy-vendor/pharmacyVendorComp
 import VendorAddMedicine from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorAddMedicine/VendorAddMedicine";
 import VendorInvoices from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorInvoices/VendorInvoices";
 import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponents/vendorFeedback/VendorFeeback";
+// import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain/BloodBank";
+import BlogPageMain from "./components/blog_page/BlogPageMain";
 import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
 
 
@@ -73,13 +75,13 @@ function App() {
 
         {/* Blood Bank */}
         <Route exact path="/blood-bank" element={<BloodBank/>}/>
-
-      
         <Route exact path="/cart" element={<Cart/>} />
         <Route exact path="/productpage/:productId" element={<Productpage />} />
         <Route exact path="/checkout" element={<Checkout/>} />
         <Route exact path="/user" element={<UserFile/>}/>
         
+        {/* Blog Page */}
+        <Route exact path="/blogs" element={<BlogPageMain/>} />
         
         
       </Routes>

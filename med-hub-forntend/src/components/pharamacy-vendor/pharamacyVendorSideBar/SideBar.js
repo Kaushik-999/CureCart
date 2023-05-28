@@ -47,8 +47,8 @@ function SideBar() {
       {/* Raise Complaint */}
       <Link to="/pharmacy-vendor/feeback" className="link">
         <div className="pharmacy-sidebar-items">
-          <i class="fa-light fa-bug"></i>
-          <span>Feeback</span>
+          <i className="fa-light fa-bug"></i>
+          <span>Query Form</span>
         </div>
       </Link>
       <hr />

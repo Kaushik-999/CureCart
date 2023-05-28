@@ -1,31 +1,54 @@
 import json
 from django.http import JsonResponse
-from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB
+from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB, QueryDB
+from utilitiesApi.models import InvoiceDB
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 import uuid
+import jwt 
+from bson import Decimal128
 
+secret_key = "CURE_CART_BACKEND"
+ 
 # Register Vendor View
 @csrf_exempt
 def pharmacyVendorRegister(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
         
-        first_name = data.get('first_name')
-        last_name = data.get('last_name')
-        work_email = data.get('work_email')
-        phone_number = data.get('phone_number')
-        organization_name = data.get('organization_name')
+        token = request.headers.get("token")
+        
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+         
+        data = json.loads(request.body)
+        print(data)
+        firstName = data.get('firstName')
+        lastName = data.get('lastName')
+        workEmail = data.get('workEmail')
+        phoneNumber = data.get('phoneNumber')
+        organizationName = data.get('organizationName')
         gstin = data.get('gstin')
-        address_line1 = data.get('address_line1')
+        address = data.get('address')
         district = data.get('district')
         state = data.get('state')
         zipcode = data.get('zipcode')
 
-        if None in [first_name, last_name, work_email, phone_number, organization_name, gstin, address_line1, district, state, zipcode]:
+        print(firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode)
+
+        if None in [firstName, lastName, workEmail, phoneNumber, organizationName, gstin, address, district, state, zipcode]:
             return JsonResponse({'error': 'All fields are required.'})
         
-        if len(phone_number) != 10 or not phone_number.isdigit():
+        if len(phoneNumber) != 10 or not phoneNumber.isdigit():
             return JsonResponse({'error': 'Invalid phone number.'})
         
         if len(gstin) != 15 or not gstin.isdigit():
@@ -37,13 +60,14 @@ def pharmacyVendorRegister(request):
         try:
             pharmacy = PharmacyVendorRegisterDB(
                 id=str(uuid.uuid4()),
-                first_name=first_name,
-                last_name=last_name,
-                work_email=work_email,
-                phone_number=phone_number,
-                organization_name=organization_name,
+                userIdEmail=userIdEmail,
+                firstName=firstName,
+                lastName=lastName,
+                workEmail=workEmail,
+                phoneNumber=phoneNumber,
+                organizationName=organizationName,
                 gstin=gstin,
-                address_line1=address_line1,
+                address=address,
                 district=district,
                 state=state,
                 zipcode=zipcode
@@ -62,8 +86,24 @@ def pharmacyVendorRegister(request):
 @csrf_exempt
 def pharmacyVendorAddMedicine(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
+
+        token = request.headers.get("token")
         
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+
+        data = json.loads(request.body)
+        print(data)
         medicine_name = data.get('medicine_name')
         price_per_strip = data.get('price_per_strip')
         composition_name = data.get('composition_name')
@@ -96,6 +136,7 @@ def pharmacyVendorAddMedicine(request):
             
             medicine = AddMedicineDB(
                 id=str(uuid.uuid4()),
+                userIdEmail=userIdEmail,
                 medicine_name=medicine_name,
                 price_per_strip=price_per_strip,
                 composition_name=composition_name,
@@ -112,3 +153,87 @@ def pharmacyVendorAddMedicine(request):
         return JsonResponse({'success': 'Medicine saved successfully.'})
     
     return JsonResponse({'success': 'Invalid request method.'})
+
+# Add Medicine View
+@csrf_exempt
+def pharmacyQuery(request):
+    if request.method == 'POST':
+
+        token = request.headers.get("token")
+        
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        data = json.loads(request.body)
+        print(data)
+        feedbackType = data.get('feedbackType')
+        describeYourFeedback = data.get('describeYourFeedback')
+
+        if None in [feedbackType, describeYourFeedback]:
+            return JsonResponse({'error': 'All fields are required.'})
+        
+        try:
+            query = QueryDB(
+                id=str(uuid.uuid4()),
+                userIdEmail=userIdEmail,
+                feedbackType = feedbackType,
+                describeYourFeedback = describeYourFeedback
+            )
+            query.save()
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while saving the data.'})
+        else:
+            return JsonResponse({'success': 'Pharmacy Query saved successfully.'})
+    
+    return JsonResponse({'error': 'Invalid request method.'})
+
+
+# Get all invoice of a certain user
+@csrf_exempt
+def getAllInvoices(request):
+    if request.method == "GET":
+
+        token = request.headers.get("token")
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        try:
+             invoices = InvoiceDB.objects.filter(userIdEmail="kaushiksarmah999@gmail.com")
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving invoices.'})
+        else:
+            data = []
+            for invoice in invoices:
+                data.append({
+                    'id': str(invoice.id),
+                    'date': str(invoice.date),
+                    'product': invoice.product,
+                    'payement': invoice.payement,
+                    'delivery': invoice.delivery,
+                    'amount': float(invoice.amount.to_decimal())
+                })
+            return JsonResponse({'success': 'Invoices retrived successfully.','invoices':data}, safe=False)
+    
+    return JsonResponse({'error': 'Invalid request method.'})
+

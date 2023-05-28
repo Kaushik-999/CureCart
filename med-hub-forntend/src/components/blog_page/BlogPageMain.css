@@ -1,0 +1,28 @@
+.blog-page-main-div{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.blog-page-main-div h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color:#1a8e84;
+}
+
+.blog-page-main-large-card {
+    margin-top: 16px;
+}
+
+.blog-page-main-small-card {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.blog-page-main-small-card > * {
+    flex-basis: calc(33.33% - 30px); 
+    margin:10px auto;
+
+  }

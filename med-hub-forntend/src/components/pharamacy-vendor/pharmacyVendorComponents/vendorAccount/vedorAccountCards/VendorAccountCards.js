@@ -10,7 +10,7 @@ function VendorAccountCards() {
             <span>Customers</span>
           </div>
           <div>
-            <i class="fa-solid fa-wallet"></i>
+            <i className="fa-solid fa-wallet"></i>
           </div>
         </div>
         <div className="vendor-account-card-single">
@@ -19,7 +19,7 @@ function VendorAccountCards() {
             <span>Total Medicines</span>
           </div>
           <div>
-            <i class="fa-solid fa-wallet"></i>
+            <i className="fa-solid fa-wallet"></i>
           </div>
         </div>
         <div className="vendor-account-card-single">
@@ -28,7 +28,7 @@ function VendorAccountCards() {
             <span>Profit</span>
           </div>
           <div>
-            <i class="fa-solid fa-wallet"></i>
+            <i className="fa-solid fa-wallet"></i>
           </div>
         </div>
         <div className="vendor-account-card-single">
@@ -37,7 +37,7 @@ function VendorAccountCards() {
             <span>Total Sales</span>
           </div>
           <div>
-            <i class="fa-solid fa-wallet"></i>
+            <i className="fa-solid fa-wallet"></i>
           </div>
         </div>
       </div>
