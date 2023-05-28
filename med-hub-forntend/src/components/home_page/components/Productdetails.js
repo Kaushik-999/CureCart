@@ -31,6 +31,9 @@ function Productdetails(props) {
   
   const [myState,setmyState] = useState(1)
   const dispatch = useDispatch();
+  const [buttonText, setButtonText] = useState('ADD TO CART');
+
+ 
   
 
   
@@ -42,7 +45,10 @@ function Productdetails(props) {
     link : props.link,
     quantity : myState
   }
-
+  const handleClick = () => {
+    setButtonText('ADDED TO CART');
+    dispatch(addToCart(val));
+  };
   
   return (
     <div>
@@ -105,8 +111,8 @@ function Productdetails(props) {
 
           <div className="flex mt-10">
             <button className="bg-black px-10 py-3 text-white "
-            onClick={()=>dispatch(addToCart(val))}>
-              ADD TO CART
+            onClick={handleClick}>
+              {buttonText}
             </button>
             <button className="bg-teal-700 ml-5 px-10 py-3 text-white">
               BUY NOW

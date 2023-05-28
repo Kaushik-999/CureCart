@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Checkout() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,12 @@ function Checkout() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -243,13 +250,66 @@ function Checkout() {
           </div>
         </div>
 
-        <div className="bg-gray">
-          <div>
-            
+        <div className="bg-gray-200 mt-3 w-4/5">
+          <div className="pt-4 ml-2">Payment Method</div>
+          <div className="space-y-2 mt-3 ml-2">
+            <label className="flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="paymentOption"
+                value="phonepe"
+                checked={selectedOption === "phonepe"}
+                onChange={handleOptionChange}
+              />
+              <span className="ml-2 text-gray-600">PhonePe</span>
+            </label>
+
+            <label className="flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="paymentOption"
+                value="paytm"
+                checked={selectedOption === "paytm"}
+                onChange={handleOptionChange}
+              />
+              <span className="ml-2 text-gray-600">Paytm</span>
+            </label>
+
+            <label className="flex items-center">
+              <input
+                type="radio"
+                className="form-radio "
+                name="paymentOption"
+                value="upi"
+                checked={selectedOption === "upi"}
+                onChange={handleOptionChange}
+              />
+              <span className="ml-2 text-gray-600">UPI</span>
+            </label>
+
+            <label className="flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="paymentOption"
+                value="cod"
+                checked={selectedOption === "cod"}
+                onChange={handleOptionChange}
+              />
+              <span className="ml-2 text-gray-600">COD</span>
+            </label>
           </div>
+          <div className="flex justify-end">
+            <Link to="/orderplaced">
+          <button className="mx-3 mb-3 px-5 py-2 bg-teal-500 rounded-sm text-white font-semibold" type="submit">Place Order</button>
+          </Link>
+          </div>
+          
         </div>
 
-        <button type="submit">Submit</button>
+        
       </form>
     </div>
   );
