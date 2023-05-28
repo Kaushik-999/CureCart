@@ -16,7 +16,7 @@ const Campaign = ({ imageUrl, title, paragraph }) => {
               <a className="author" href="/">
          10.00am - 3.00pm
       </a>
-      <a className="comments" href="#">
+      <a className="comments" href="/">
          California, USA
       </a>
           </div>
@@ -27,10 +27,10 @@ const Campaign = ({ imageUrl, title, paragraph }) => {
             <h3>20 Sep, 2017</h3>
               <h2>O- BLOOD DONORS NEEDED</h2>
               <p>O Negative blood cells are called universal meaning they can be transfused to almost any patient in need and blood cells are safest.</p>
-              <a className="author" href="#">
+              <a className="author" href="/">
          10.00am - 3.00pm
       </a>
-      <a className="comments" href="#">
+      <a className="comments" href="/">
          California, USA
       </a>
           </div>
@@ -42,10 +42,10 @@ const Campaign = ({ imageUrl, title, paragraph }) => {
                 <h3>20 Sep, 2017</h3>
                   <h2>YOU ARE SOMEBODY'S TYPE</h2>
                   <p>Many people has same blood group like you. so donate now and bring smiles in their face and encourage others for donate blood.</p>
-                  <a className="author" href="#">
+                  <a className="author" href="/">
          10.00am - 3.00pm
       </a>
-      <a className="comments" href="#">
+      <a className="comments" href="/">
          California, USA
       </a>
               </div>
@@ -56,10 +56,10 @@ const Campaign = ({ imageUrl, title, paragraph }) => {
                 <h3>20 Sep, 2017</h3>
                   <h2>DONATION - FEEL REAL PEACE</h2>
                   <p>You're the real hero because you can gift a new life for patient.So donate your blood and enjoy a precious life. Don't fear, it's really easy.</p>
-                  <a className="author" href="#">
+                  <a className="author" href="/">
          10.00am - 3.00pm
       </a>
-      <a className="comments" href="#">
+      <a className="comments" href="/">
          California, USA
       </a>
               </div>
