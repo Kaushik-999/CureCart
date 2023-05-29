@@ -1,0 +1,62 @@
+.register-form-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #e74c3c;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  margin-right: 50px;
+  margin-top: -725px;
+}
+
+.register-form-container h2 {
+  text-align: center;
+  color: #e74c3c;
+}
+
+.register-form-group {
+  margin-bottom: 20px;
+}
+
+.register-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.register-form-group input,
+.register-form-group select,
+.register-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #555;
+}
+
+.register-form-group textarea {
+  height: 80px;
+}
+
+.register-form-group select {
+  appearance: none;
+  padding-right: 30px;
+  background: url('https://th.bing.com/th/id/R.aba7d65e91f6b1a9116e11c88f6ce2ba?rik=7sUZWdy1csiHJw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_256831.png&ehk=ZJ0HEF437Ta8T6bORfs2LJ%2b%2bfHqf1KNxsP6iXXTJr1Y%3d&risl=&pid=ImgRaw&r=0') no-repeat right center;
+  background-size: 20px;
+}
+
+.custom-submit-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-submit-button:hover {
+  background-color: #c0392b;
+}
