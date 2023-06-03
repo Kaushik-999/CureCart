@@ -54,6 +54,9 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware', # custom added
     'corsheaders.middleware.CorsMiddleware', #custom added
 ]
+# custom added
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1']
+
 
 # custom added
 CORS_ALLOWED_ORIGINS = [
