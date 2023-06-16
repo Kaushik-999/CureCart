@@ -3,13 +3,14 @@ from django.http import JsonResponse
 from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB, QueryDB
 from utilitiesApi.models import InvoiceDB
 from django.views.decorators.csrf import csrf_exempt
-from datetime import date
+from datetime import date, datetime
 import uuid
 import jwt 
-from bson import Decimal128
+from decimal import Decimal
+from collections import defaultdict
 
 secret_key = "CURE_CART_BACKEND"
- 
+  
 # Register Vendor View
 @csrf_exempt
 def pharmacyVendorRegister(request):
@@ -154,7 +155,7 @@ def pharmacyVendorAddMedicine(request):
     
     return JsonResponse({'success': 'Invalid request method.'})
 
-# Add Medicine View
+# Get pharmacy query View
 @csrf_exempt
 def pharmacyQuery(request):
     if request.method == 'POST':
@@ -237,3 +238,131 @@ def getAllInvoices(request):
     
     return JsonResponse({'error': 'Invalid request method.'})
 
+# DashBoard View
+@csrf_exempt
+def getDashboardData(request):
+    if request.method == 'GET':
+
+        #token verification
+        token = request.headers.get("token")
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+        try:
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        try:
+            # invoices = InvoiceDB.objects.filter(userIdEmail=userIdEmail)
+            # medicine = AddMedicineDB.objects.filter(userIdEmail=userIdEmail)
+            invoices = InvoiceDB.objects.filter(userIdEmail="curecart@gmail.com")
+            medicines = AddMedicineDB.objects.filter(userIdEmail="ruchi@gmail.com")
+
+
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving customer count.'})
+        else:
+
+            # totalsales
+            totalSales = Decimal('0')
+            for invoice in invoices:
+                totalSales = totalSales + Decimal(str(invoice.amount))
+            
+            # profit
+            profit = 0.3*float(totalSales)
+
+            header_data = []
+            header_data.append({'customerCount':str(invoices.count())})
+            header_data.append({'medicineCount':str(medicines.count())})
+            header_data.append({'totalSales':str(totalSales)})
+            header_data.append({'profit':str(profit)})
+
+            # invoices
+            invoicesData = []
+            for invoice in invoices:
+                invoicesData.append({
+                    'id': str(invoice.id),
+                    'date': str(invoice.date),
+                    'product': invoice.product,
+                    'payement': invoice.payement,
+                    'delivery': invoice.delivery,
+                    'category':invoice.category,
+                    'amount': float(invoice.amount.to_decimal())
+                })
+
+            # List of months
+            months = {
+                1: 'January',
+                2: 'February',
+                3: 'March',
+                4: 'April',
+                5: 'May',
+                6: 'June',
+                7: 'July',
+                8: 'August',
+                9: 'September',
+                10: 'October',
+                11: 'November',
+                12: 'December'
+            }
+
+            # Dictionary to store invoices by month
+            invoices_by_month = defaultdict(list)
+
+            # Iterate over the invoicesData
+            for invoice in invoicesData:
+                date = datetime.strptime(invoice['date'], '%Y-%m-%d')
+                month = months[date.month]
+                invoices_by_month[month].append(invoice)
+
+            current_month = datetime.now().month
+            last_5_months = []
+
+            for i in range(1, 6):
+                month = (current_month - i) % 12
+                last_5_months.append(month)
+
+            # Rearrange invoices by month
+            rearranged_invoices = {}
+            for month_num in last_5_months:
+                month_name = months[month_num]
+                rearranged_invoices[month_name] = invoices_by_month[month_name]
+
+
+
+            # total sales of last five month
+            last_five_months_sales = []
+            for month, r_invoices in rearranged_invoices.items():
+                total_amount = sum(r_invoice['amount'] for r_invoice in r_invoices)
+                rounded_total_amount = round(total_amount, 2)
+                last_five_months_sales.append({str(month):str(rounded_total_amount)})
+
+            categories = []
+            category_count = {}
+            for invoicesD in invoicesData:
+                category = invoicesD['category']
+                if category in category_count:
+                    category_count[category] += 1
+                else:
+                    category_count[category] = 1
+
+            for category, count in category_count.items():
+                category_obj = {'category': category, 'occurrences': count}
+                categories.append(category_obj)
+
+            return JsonResponse({
+                    'success': 'Dashboard data retrived successfully.',
+                    'header_data':header_data,
+                    'last_five_months_sales':last_five_months_sales,
+                    'categories':categories,
+                    'invoices':invoicesData
+                }, safe=False)
+
+
+
+    return JsonResponse({'success': 'Invalid request method.'})

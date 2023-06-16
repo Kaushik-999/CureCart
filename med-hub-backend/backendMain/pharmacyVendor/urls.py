@@ -13,4 +13,7 @@ urlpatterns = [
     
     #  Get all Invoice to "certain user" |Pharmacy Vendor | endpoint : pharmacy-vendor/get-all-invoices/
     path('get-all-invoices/', views.getAllInvoices, name="Pharmacy Get All Invoice"),
+
+    #  Get Dashboard Data |Pharmacy Vendor | endpoint : pharmacy-vendor/get-dashboard-data/
+    path('get-dashboard-data/', views.getDashboardData, name="Pharmacy Dashboard Data"),
 ]

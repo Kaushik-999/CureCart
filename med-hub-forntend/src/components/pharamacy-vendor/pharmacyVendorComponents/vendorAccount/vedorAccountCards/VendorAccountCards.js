@@ -1,5 +1,5 @@
 import React from "react";
-import "./VendorAccountCards.css";
+import "./VendorAccountCards.css"; 
 function VendorAccountCards() {
   return (
     <div className="vendor-account-cards-main">
