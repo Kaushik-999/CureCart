@@ -27,6 +27,7 @@ import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponent
 // import BloodBank from "./components/blood-bank/bloodBankComponents/bloodBankMain/BloodBank";
 import BlogPageMain from "./components/blog_page/BlogPageMain";
 import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
+import OrderPlaced from "./components/home_page/components/OrderPlaced";
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
         <Route exact path="/productpage/:productId" element={<Productpage />} />
         <Route exact path="/checkout" element={<Checkout/>} />
         <Route exact path="/user" element={<UserFile/>}/>
+        <Route exact path="/orderplaced" element={<OrderPlaced/>}/>
         
         {/* Blog Page */}
         <Route exact path="/blogs" element={<BlogPageMain/>} />
