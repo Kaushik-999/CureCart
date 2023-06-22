@@ -1,7 +1,7 @@
 from django.urls import path
 from pharmacyVendor import views
  
-urlpatterns = [
+urlpatterns = [ 
     #  Register |Pharmacy Vendor | endpoint : pharmacy-vendor/register/
     path('register/', views.pharmacyVendorRegister, name="Pharmacy Vendor Registration"),
 

@@ -27,5 +27,8 @@ urlpatterns = [
     path('pharmacy-vendor/', include('pharmacyVendor.urls')),
 
     # Utilities Api Path (send to utilitiesAPI)
-    path('utilities/', include('utilitiesApi.urls'))
+    path('utilities/', include('utilitiesApi.urls')),
+
+    # Blood Bank Path (send to bloodBank)
+    path('blood-bank/', include('bloodBank.urls'))
 ]

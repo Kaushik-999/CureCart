@@ -4,7 +4,7 @@ from pharmacyVendor.models import PharmacyVendorRegisterDB, AddMedicineDB, Query
 from utilitiesApi.models import InvoiceDB
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date, datetime
-import uuid
+import uuid 
 import jwt 
 from decimal import Decimal
 from collections import defaultdict
