@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import jwt 
 from django.core.mail import send_mail  
 from bloodBank.models import BloodBankMembersDB, BloodBankDonorDB
+from utilitiesApi.models import BloodDB
 import uuid
 from datetime import datetime
 
@@ -109,18 +110,12 @@ def becomeDonor(request):
         
         # Calculate the age
         age = current_date.year - date_of_birth.year
-
-        # Adjust the age based on the month and day of the current date
-        if (
-            current_date.month < date_of_birth.month
-            or (current_date.month == date_of_birth.month and current_date.day < date_of_birth.day)
-        ):
-            return JsonResponse({'error': 'Invalid Date of Birth'})
         
         try:
             donor = BloodBankDonorDB(
                 id=str(uuid.uuid4()),
-                userIdEmail=userIdEmail,
+                # userIdEmail=userIdEmail,
+                userIdEmail="curecart@gmail.com",
                 name = name,
                 email = email,
                 bloodGroup = bloodGroup,
@@ -141,3 +136,64 @@ def becomeDonor(request):
 
     return JsonResponse({'error': 'Invalid request method.'})
 
+# Blood Bank - Get Blood Deatils
+@csrf_exempt
+def getBloodDetails(request):
+    if request.method == 'GET':
+
+        try:
+            bloodDetails = BloodDB.objects.filter(userIdEmail="curecart@gmail.com")
+            
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving customer count.'})
+        else:
+            bloodlist = []
+            for blood in bloodDetails:
+                bloodlist.append({
+                    'bloodType':blood.bloodType,
+                    'unitsAvailable':blood.unitsAvailable
+                })
+            print(bloodlist)
+            return JsonResponse({
+                'success': 'Blood deatils retrived successfully',
+                'bloodlist': bloodlist
+            })
+        
+    return JsonResponse({'error': 'Invalid request method.'})
+
+# Blood Bank - Get Donor Deatils
+@csrf_exempt
+def getDonorDetails(request):
+    if request.method == 'GET':
+
+        try:
+            donorDetails = BloodBankDonorDB.objects.all()
+            
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving customer count.'})
+        else:
+            print
+            donorlist = []
+            for donor in donorDetails:
+                donorlist.append({
+                    'id':donor.id,
+                    'name':donor.name,
+                    'name':donor.name,
+                    'email':donor.email,
+                    'bloodGroup':donor.bloodGroup,
+                    'dateOfBirth':donor.dateOfBirth,
+                    'age':donor.age,
+                    'phone':donor.phone,
+                    'organization':donor.organization,
+                    'address':donor.address,
+                    'operatingCity':donor.operatingCity
+                })
+            print(donorlist)
+            return JsonResponse({
+                'success': 'Donor deatils retrived successfully',
+                'donorlist': donorlist
+            })
+        
+    return JsonResponse({'error': 'Invalid request method.'})

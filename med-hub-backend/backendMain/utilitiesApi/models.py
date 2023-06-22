@@ -14,5 +14,24 @@ class InvoiceDB(models.Model):
 
     def __str__(self):
         return self.userIdEmail
-    
+
+# Blood Units Model
+class BloodDB(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    userIdEmail = models.EmailField()
+    date = models.DateField()
+    bloodType = models.CharField(max_length=3, choices=(
+        ('A+', 'A+'),
+        ('A-', 'A-'),
+        ('B+', 'B+'),
+        ('B-', 'B-'),
+        ('AB+', 'AB+'),
+        ('AB-', 'AB-'),
+        ('O+', 'O+'),
+        ('O-', 'O-'),
+    ))
+    unitsAvailable = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.bloodType + " --- " + self.unitsAvailable
  
