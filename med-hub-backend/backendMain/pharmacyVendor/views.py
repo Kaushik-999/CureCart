@@ -204,7 +204,7 @@ def pharmacyQuery(request):
 @csrf_exempt
 def getAllInvoices(request):
     if request.method == "GET":
-
+ 
         token = request.headers.get("token")
         if not token:
             return JsonResponse({'error': 'Token not provided'})
@@ -219,7 +219,7 @@ def getAllInvoices(request):
             return JsonResponse({'error': 'Invalid token'})
         
         try:
-             invoices = InvoiceDB.objects.filter(userIdEmail="kaushiksarmah999@gmail.com")
+             invoices = InvoiceDB.objects.filter(userIdEmail="curecart@gmail.com")
         except Exception as e:
             print(e)
             return JsonResponse({'error': 'Error occurred while retriving invoices.'})

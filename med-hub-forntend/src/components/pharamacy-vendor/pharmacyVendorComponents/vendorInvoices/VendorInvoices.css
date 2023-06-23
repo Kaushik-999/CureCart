@@ -11,8 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow-y: scroll; */
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .vendor-invoice-container .vendor-invoice-table-content{
