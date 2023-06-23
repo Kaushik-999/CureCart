@@ -15,12 +15,9 @@ secret_key = "CURE_CART_BACKEND"
 @csrf_exempt
 def pharmacyVendorRegister(request):
     if request.method == 'POST':
-        
         token = request.headers.get("token")
-        
         if not token:
             return JsonResponse({'error': 'Token not provided'})
-        
         try:
             # Verify the token
             decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
@@ -29,8 +26,7 @@ def pharmacyVendorRegister(request):
             return JsonResponse({'error': 'Token has expired'})
         except jwt.InvalidTokenError:
             return JsonResponse({'error': 'Invalid token'})
-        
-         
+    
         data = json.loads(request.body)
         print(data)
         firstName = data.get('firstName')
