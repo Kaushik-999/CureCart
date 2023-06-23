@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'pharmacyVendor.apps.PharmacyvendorConfig', #custom added
     'homepage.apps.HomepageConfig',
     'utilitiesApi.apps.UtilitiesapiConfig', #custom added
+    'bloodBank.apps.BloodbankConfig', #custom added
     'corsheaders', #custom added
     'django.contrib.admin',
     'django.contrib.auth',

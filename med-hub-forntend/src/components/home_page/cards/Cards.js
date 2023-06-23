@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Cards(props) {
   
-  
+  // console.log(props);
   
   return (
     <div className="relative bg-white rounded w-64 p-2 mx-4 snap-start scroll-m-2">

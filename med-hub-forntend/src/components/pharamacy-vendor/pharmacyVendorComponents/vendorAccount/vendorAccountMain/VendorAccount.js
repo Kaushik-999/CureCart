@@ -7,7 +7,7 @@ import VendorAccountOrdersTable from "../vendorAccountOrdersTable/vendorAccountO
 
 function VendorAccount() {
   return (
-    <> 
+    <>  
       <SideBar />
       <div className="vendor-accout-main">
         <h3>Vendor Account</h3>

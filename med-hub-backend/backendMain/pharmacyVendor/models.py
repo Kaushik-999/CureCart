@@ -1,6 +1,6 @@
 from django.db import models
 import uuid
- 
+
 # Pharmacy Register Model
 class PharmacyVendorRegisterDB(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
