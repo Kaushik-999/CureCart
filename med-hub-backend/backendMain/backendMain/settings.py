@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-$^chk*7=1#@05_&@g2^f#n6e4^$x$809m#kq(fn5dr1=hli1_5
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5000']
  
 
 # Application definition
@@ -33,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'userAuthentication.apps.UserauthenticationConfig', #custom added
     'pharmacyVendor.apps.PharmacyvendorConfig', #custom added
+    'homepage.apps.HomepageConfig',
     'utilitiesApi.apps.UtilitiesapiConfig', #custom added
     'corsheaders', #custom added
     'django.contrib.admin',
@@ -58,11 +61,28 @@ MIDDLEWARE = [
 # custom added
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+
+  
+    
 ]
 
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
+
 CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Language',
     'token',  # custom added
     'content-type',  # custom added
+    
+    'Authorization',
 ]
 
 ROOT_URLCONF = 'backendMain.urls'
@@ -105,6 +125,7 @@ DATABASES = {
         },
     }
 }
+
 
 
 # Password validation

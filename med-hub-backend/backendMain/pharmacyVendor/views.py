@@ -112,6 +112,9 @@ def pharmacyVendorAddMedicine(request):
         manufacturer_name = data.get('manufacturer_name')
         manufacturing_date = data.get('manufacturing_date')
         expiry_date = data.get('expiry_date')
+        link = data.get('link')
+        title = data.get('title')
+        price = data.get('price')
         
         if None in [medicine_name, price_per_strip, composition_name, tablet_per_strip, number_of_strips, manufacturer_name, manufacturing_date, expiry_date]:
             return JsonResponse({'error': 'All fields are required.'})
@@ -122,6 +125,7 @@ def pharmacyVendorAddMedicine(request):
             number_of_strips = int(number_of_strips)
             manufacturing_date = date.fromisoformat(manufacturing_date)
             expiry_date = date.fromisoformat(expiry_date)
+            
             
             if price_per_strip <= 0 or tablet_per_strip <= 0 or number_of_strips <= 0:
                 return JsonResponse({'error': 'Invalid value for price, tablet per strip, or number of strips.'})
@@ -144,7 +148,10 @@ def pharmacyVendorAddMedicine(request):
                 number_of_strips=number_of_strips,
                 manufacturer_name=manufacturer_name,
                 manufacturing_date=manufacturing_date,
-                expiry_date=expiry_date
+                expiry_date=expiry_date,
+                link = link,
+                title = title,
+                price = price
             )
             medicine.save()
         except Exception as e:
@@ -237,3 +244,25 @@ def getAllInvoices(request):
     
     return JsonResponse({'error': 'Invalid request method.'})
 
+
+@csrf_exempt
+def getMedicineList(request):
+    if request.method == "GET" : 
+        
+        try:
+             medicines = AddMedicineDB.objects.all()
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while retriving medslist.'})
+        else:
+            data =[]
+            for meds in medicines:
+                data.append({
+                    'id': str(meds.id),
+                    'title': str(meds.title),
+                    'price': meds.price,
+                    
+                    'link': str(meds.link),
+                    
+                })
+            return JsonResponse({'success': 'Meds retrived successfully.','meds':data}, safe=False)
