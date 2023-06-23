@@ -23,4 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # django
-__pycache__
+**/__pycache__/
+# med-hub-backend\backendMain\backendMain\__pycache__
+# med-hub-backend\backendMain\bloodBank\__pycache__
+# med-hub-backend\backendMain\pharmacyVendor\__pycache__
+# med-hub-backend\backendMain\userAuthentication
+# med-hub-backend\backendMain\utilitiesApi\__pycache__
