@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+
+
 function Checkout() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -35,6 +37,19 @@ function Checkout() {
 
   const list = useSelector((state) => state.cartReducer.list);
   console.log(list);
+  
+  
+  
+  
+  const total = (list) =>{
+    let sum = 0;
+    for (var key in list) {
+     if (list.hasOwnProperty(key)) {
+        sum += list[key].price * list[key].quantity;
+     }
+  }
+    return sum;
+   }
 
   return (
     <div className="ml-16 mr-16 mt-2 mb-10">
@@ -233,17 +248,18 @@ function Checkout() {
                     key={index}
                     title={val.title}
                     quantity={val.quantity}
+                    price = {val.price}
                   />
                 ))}
                 <tr>
                   <td className="font-semibold border-2 w-4/5 pl-2">
                     Subtotal
                   </td>
-                  <td className="font-semibold border-2 w-1/5 pl-2">{600}</td>
+                  <td className="font-semibold border-2 w-1/5 pl-2">{total(list)}</td>
                 </tr>
                 <tr>
                   <td className="font-semibold border-2 w-4/5 pl-2">Total</td>
-                  <td className="font-semibold border-2 w-1/5 pl-2">{600}</td>
+                  <td className="font-semibold border-2 w-1/5 pl-2">{total(list)}</td>
                 </tr>
               </tbody>
             </table>
@@ -321,7 +337,7 @@ const Productlist = (item) => {
       <td className="text-gray-500 border-2 w-4/5 pl-2">
         {item.title} <span className="ml-2 font-bold">x {item.quantity}</span>
       </td>
-      <td className="text-gray-500 border-2 w-4/5 pl-2">{600}</td>
+      <td className="text-gray-500 border-2 w-4/5 pl-2">{item.price*item.quantity}</td>
     </tr>
   );
 };

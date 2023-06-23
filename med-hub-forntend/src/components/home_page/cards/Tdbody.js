@@ -11,9 +11,11 @@ function Tdbody(props) {
     id : props.id,
     title : props.title,
     link : props.link,
-    quantity : props.quantity
+    quantity : props.quantity,
+    price : props.price
   }
   const [myState, setmyState] = useState(props.quantity);
+  
 
 
  const dispatch = useDispatch();
@@ -51,7 +53,7 @@ function Tdbody(props) {
           <div className="text-slate-600 text-base">{props.title}</div>
         </td>
         <td className="p-5">
-          <div className="text-xl font-medium text-teal-500">₹600</div>
+          <div className="text-xl font-medium text-teal-500">{props.price}</div>
         </td>
         <td className="p-4">
           <div className="flex border-2 border-slate-100 bg-gray-100">
@@ -73,7 +75,7 @@ function Tdbody(props) {
           </div>
         </td>
         <td className="p-5">
-          <div className="text-xl font-medium text-teal-500">₹600</div>
+          <div className="text-xl font-medium text-teal-500">{props.quantity*props.price}</div>
         </td>
       </tr>
     </>

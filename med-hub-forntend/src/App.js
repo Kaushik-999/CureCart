@@ -33,6 +33,7 @@ import OrderPlaced from "./components/home_page/components/OrderPlaced";
 function App() {
   return (
     <div className="App">
+      <div className="min-h-screen flex flex-col">
       <ScrollToTop/>
       <NavBar />
 
@@ -87,10 +88,14 @@ function App() {
         
         
       </Routes>
+      </div>
+      
       {/* Client */}
       
-      
+        <div className="pt-4">
         <Footer/>
+        </div>
+        
      
     </div>
   );

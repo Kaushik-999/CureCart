@@ -110,7 +110,7 @@ function Productpage() {
               
             />
           ))}
-      {component === 'product' && <Productdetails id={productId} title = {item.title} link = {item.link} />}
+      {component === 'product' && <Productdetails id={productId} title = {item.title} link = {item.link} price={item.price} />}
   
           </div>
         </div>
