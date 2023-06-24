@@ -1,6 +1,5 @@
 import NavBar from "./components/Navbar";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-// import ProtectedRoute from './ProtectedRoute';
 // import AdminDashboard from "./components/admin_panel/screenComponents/AdminDashboard/AdminDashboard";
 // import MedicalSales from "./components/admin_panel/screenComponents/MedicineSales/MedicalSales";
 // import MedicineStock from "./components/admin_panel/screenComponents/MedicineStock/MedicineStock";
