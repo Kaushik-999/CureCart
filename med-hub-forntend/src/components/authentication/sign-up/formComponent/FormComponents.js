@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./FormComponents.css";
 import axios from "axios";
 function FormComponents() {
+  const navigate = useNavigate();
   const [signupData, setSignupData] = useState({
     username: "",
     email: "",
@@ -47,6 +49,7 @@ function FormComponents() {
       console.error(error);
     }
     setProcessing(false); // Reset processing state to false after request completion
+    navigate('/');
   };
 
   return (
