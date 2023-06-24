@@ -40,7 +40,7 @@ function App() {
       <ScrollToTop />
 
       {!shouldHideNavbarFooter && <NavBar />}
-
+      {/* <NavBar /> */}
       <Routes>
         {/* Authentication */}
         <Route exact path="/sign-in" element={<SignIn />} />
@@ -144,17 +144,19 @@ function App() {
         />
 
         {/* Blog Page */}
-        <Route
+        <Route exact path="/blogs" element={<BlogPageMain />} />
+        {/* <Route
           exact
           path="/blogs"
           element={
             isAuthenticated ? <BlogPageMain /> : <Navigate to="/sign-in" />
           }
-        />
+        /> */}
       </Routes>
       {/* Client */}
 
       {!shouldHideNavbarFooter && <Footer />}
+      {/* <Footer/> */}
     </div>
   );
 }

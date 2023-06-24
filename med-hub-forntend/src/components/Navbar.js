@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -9,6 +11,13 @@ const Navbar = () => {
     // remove jwt token
     localStorage.removeItem("token")
     navigate("/sign-in")
+
+    // Display success toast notification
+    toast.success('Logout successful!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, // Duration in milliseconds
+    });
+
   }
 
   return (
