@@ -13,29 +13,29 @@ function CardImage() {
 
   useEffect(() => {
     const interval1 = setInterval(() => {
-      if (count1 < 80) {
+      if (count1 < 1234) {
         setCount1((prevCount) => prevCount + 1);
       }
     }, 1);
-    
+
     const interval2 = setInterval(() => {
-      if (count2 < 150) {
+      if (count2 < 1234) {
         setCount2((prevCount) => prevCount + 1);
       }
     }, 1);
-    
+
     const interval3 = setInterval(() => {
-      if (count3 < 250) {
+      if (count3 < 1234) {
         setCount3((prevCount) => prevCount + 1);
       }
     }, 1);
-    
+
     const interval4 = setInterval(() => {
-      if (count4 < 350) {
+      if (count4 < 1234) {
         setCount4((prevCount) => prevCount + 1);
       }
     }, 1);
-    
+
     return () => {
       clearInterval(interval1);
       clearInterval(interval2);
