@@ -2,20 +2,21 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 
 function Checkout() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    country: "",
-    phoneNumber: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: '',
+    phoneNumber: '',
   });
 
   const handleChange = (event) => {
@@ -29,14 +30,9 @@ function Checkout() {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Process the form data, e.g. submit to server
-    console.log(formData);
-  };
-
   const list = useSelector((state) => state.cartReducer.list);
-  console.log(list);
+  
+  // console.log(list);
   
   
   
@@ -50,6 +46,50 @@ function Checkout() {
   }
     return sum;
    }
+
+  const [processing, setProcessing] = useState(false);
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (processing) return; // Prevent multiple form submissions
+    setProcessing(true); // Set processing state to true
+
+    const data = {list : list , address : formData}
+    
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/homepage/orderlist/",
+        
+          {formData,list},
+      {
+         
+            headers: {
+              "Content-Type": "application/json",
+              token: token,
+            },
+          }
+        
+      );
+      console.log(response.data);
+      if (response.status === 200) {
+        // Redirect to another page
+        window.location.href = '/orderplaced';
+      } else {
+        console.error('Unexpected response status:', response.status);
+      }
+
+      
+    } catch (error) {
+      console.error("error occured");
+      console.error(error);
+    }
+    setProcessing(false);
+    console.log(formData);
+  };
+
+  
 
   return (
     <div className="ml-16 mr-16 mt-2 mb-10">
@@ -318,9 +358,9 @@ function Checkout() {
             </label>
           </div>
           <div className="flex justify-end">
-            <Link to="/orderplaced">
+           
           <button className="mx-3 mb-3 px-5 py-2 bg-teal-500 rounded-sm text-white font-semibold" type="submit">Place Order</button>
-          </Link>
+          
           </div>
           
         </div>
