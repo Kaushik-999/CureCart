@@ -4,11 +4,11 @@ import BloodBankCarousel from '../bloodBankCarousel/BloodBankCarousel'
 import BloodBankRequestAppointment from '../bloodBankRequestAppointment/BloodBankRequestAppointment'
 import BloodDonationJumbotron from "../BloodDonationJumbotron/BloodDonationJumbotron";
 import BloodDonationCardImage from '../BloodDonationCardImage';
-import CardGrid from '../CardGrid';
+import CardGrid from '../cardGrid/CardGrid';
 import OpinionCarousel from '../OpinionCarousel/OpinionCarousel';
-import ImageWithButton from '../ImageWithButton/ImageWithButton';
-import CampaignJumbotron from '../CampaignJumbotron/CampaignJumbotron';
-import Campaign from '../Campaign/Campaign';
+import ImageWithButton from '../imageWithButtons/ImageWithButton';
+import CampaignJumbotron from '../campaignJumbotron/CampaignJumbotron';
+import Campaign from '../campaign/Campaign';
 import PhotoGalleryJumbotron from '../PhotoGalleryJumbotron/PhotoGalleryJumbotron';
 import SponsorsSection from '../SponsorsSection/SponsorsSection';
 import JoinUs from '../JoinUs/JoinUs';
@@ -21,8 +21,8 @@ function BloodBank() {
   const formRef = useRef(null);
 
   const scrollToForm = () => {
-    formRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
+    formRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className='blood-bank-main'>
         {/* <h3>Blood Bank</h3> */}

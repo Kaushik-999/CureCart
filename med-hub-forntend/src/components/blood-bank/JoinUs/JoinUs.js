@@ -1,17 +1,67 @@
-import React, { useState } from 'react';
-import './JoinUs.css';
+import React, { useState } from "react";
+import "./JoinUs.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const JoinUs = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [organization, setOrganization] = useState('');
-  const [city, setCity] = useState('');
-  const [address, setAddress] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
 
-  const handleSubmit = (e) => {
+  const [processing, setProcessing] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
+
+    if (processing) return; //prevent multiple submission
+    const token = localStorage.getItem("token");
+
+    console.log(name);
+    console.log(email);
+    console.log(phone);
+    console.log(organization);
+    console.log(city);
+    console.log(address);
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/pharmacy-vendor/add-medicine/",
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          organization: organization,
+          address: address,
+          operatingCity: city,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            token: token,
+          },
+        }
+      );
+
+      console.log(response.data);
+      // Display success toast notification
+      toast.success("Data Sent", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send data", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    }
+
+    setProcessing(false);
   };
 
   return (
@@ -59,7 +109,7 @@ const JoinUs = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
         </div>
-    
+
         <div className="join-us-form-group">
           <label htmlFor="organization">Organization</label>
           <input
@@ -71,7 +121,9 @@ const JoinUs = () => {
           />
         </div>
         <div className="join-us-form-group">
-          <label htmlFor="city">City in which you wish to become a member</label>
+          <label htmlFor="city">
+            City in which you wish to become a member
+          </label>
           <select
             id="city"
             value={city}
@@ -86,8 +138,9 @@ const JoinUs = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-        <button type="submit" className="custom-submit-button">Submit</button>
-
+        <button type="submit" className="custom-submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

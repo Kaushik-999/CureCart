@@ -3,7 +3,7 @@ import SideBar from "../../pharamacyVendorSideBar/SideBar";
 import "./VendorAddMedicine.css";
 import axios from "axios";
 
-
+ 
 function VendorAddMedicine() {
   const [medicineData, setMedicineData] = useState({
     medicine_name: "",
