@@ -7,7 +7,7 @@ function Cards(props) {
   
   return (
     <div className="relative bg-white rounded w-64 p-2 mx-4 snap-start scroll-m-2">
-      
+      <Link to={{pathname : `/productpage/${props.id}`,search : "?v=product"}}>
         <img
           className="w-48 mx-auto "
           src={
@@ -16,14 +16,14 @@ function Cards(props) {
           alt=""
         />
       
-
+      
       <div className="px-4 py-2 bottom-0 left-0 right-0 bg-white ">
         <div className="font-medium text-base mb-2 text-gray-800 ">
-        <Link to={{pathname : `/productpage/${props.id}`,search : "?v=product"}}>
+        
           
           {props.title}
           
-          </Link>
+          
         
         </div>
         <div className="flex">
@@ -33,6 +33,7 @@ function Cards(props) {
         </div>
         <div className="text-green-500 text-base">GET {props.x}% OFF</div>
       </div>
+      </Link>
     </div>
   );
 }

@@ -4,10 +4,24 @@ import { useEffect } from "react";
 import Tdbody from "../cards/Tdbody";
 import { Link } from "react-router-dom";
 
+
 function Cart() {
   
   const list = useSelector((state) => state.cartReducer.list);
   const len = list.length;
+
+  const total = (list) =>{
+   let sum = 0;
+   for (var key in list) {
+    if (list.hasOwnProperty(key)) {
+       sum += list[key].price * list[key].quantity;
+    }
+ }
+   return sum;
+  }
+  console.log(total(list));
+  
+  
   console.log(list);
 
   return (
@@ -47,6 +61,7 @@ function Cart() {
                   <Tdbody
                     link={val.link}
                     title={val.title}
+                    price={val.price}
                     quantity={val.quantity}
                     key={index}
                   />
@@ -60,11 +75,11 @@ function Cart() {
                 <div className="ml-3 mt-5 text-xl font-medium">CART TOTALS</div>
                 <div className="flex justify-between mt-5">
                   <div className="text-black text-base ml-3">Subtotal</div>
-                  <div className="text-black font-semibold">₹700</div>
+                  <div className="text-black font-semibold">₹{total(list)}</div>
                 </div>
                 <div className="flex justify-between mt-5">
                   <div className="text-black text-base ml-3">Total</div>
-                  <div className="text-black font-semibold">₹700</div>
+                  <div className="text-black font-semibold">₹{total(list)}</div>
                 </div>
                 <Link to="/checkout">
                   <button
@@ -82,5 +97,7 @@ function Cart() {
     </>
   );
 }
+
+
 
 export default Cart;

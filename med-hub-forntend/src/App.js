@@ -37,7 +37,9 @@ function App() {
 
   return (
     <div className="App">
-      <ScrollToTop />
+      <div className="min-h-screen flex flex-col">
+      <ScrollToTop/>
+      <NavBar />
 
       {!shouldHideNavbarFooter && <NavBar />}
       {/* <NavBar /> */}
@@ -153,10 +155,15 @@ function App() {
           }
         /> */}
       </Routes>
+      </div>
+      
       {/* Client */}
-
-      {!shouldHideNavbarFooter && <Footer />}
-      {/* <Footer/> */}
+      
+        <div className="pt-4">
+        <Footer/>
+        </div>
+        
+     
     </div>
   );
 }

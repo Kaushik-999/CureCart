@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "./components/Carousel";
 import { bestselldata, tdata } from "./cards/trendingdata";
+import { useState, useEffect } from "react";
 
 import Cards from "./cards/Cards";
 import Banner from "./cards/Banner";
@@ -20,6 +21,31 @@ for (let i = 0; i < 8; i++) {
 }
 
 function Homepage() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/pharmacy-vendor/get-medicine/"
+      );
+      if (response.ok) {
+        const jsonData = await response.json();
+        setData(jsonData);
+      } else {
+        console.error("Request failed with status:", response.status);
+      }
+    } catch (error) {
+      console.error("Request failed:", error);
+    }
+  };
+  // const newdata = data['meds'].filter((med) => med.link !== 'None');
+ console.log(data)
+ 
+
   //for timer
 
   //for card carousel buttons
@@ -35,7 +61,12 @@ function Homepage() {
       {/* Banner */}
       <div className="flex justify-items-center mt-14 mb-4">
         {tdata.map((val, key) => (
-          <Banner link={val.link} key={key} title={val.title} />
+          <Banner
+            link={val.link}
+            key={key}
+            title={val.title}
+            price={val.price}
+          />
         ))}
       </div>
 
@@ -61,8 +92,8 @@ function Homepage() {
             link={val.link}
             key={index}
             title={val.title}
-            id = {val.id}
-            price ={val.price}
+            id={val.id}
+            price={val.price}
             x="30"
           />
         ))}
@@ -74,16 +105,9 @@ function Homepage() {
         title={"Featured Brands"}
         r={"16"}
         func={bestselldata.map((val, index) => (
-          <Brandcard
-            link={val.link}
-            key={index}
-            title={val.title}
-
-            x="30"
-          />
+          <Brandcard link={val.link} key={index} title={val.title} x="30" />
         ))}
       />
-      
     </>
   );
 }

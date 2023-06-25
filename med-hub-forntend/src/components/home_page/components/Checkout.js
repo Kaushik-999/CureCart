@@ -2,18 +2,21 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+
 
 function Checkout() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    country: "",
-    phoneNumber: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: '',
+    phoneNumber: '',
   });
 
   const handleChange = (event) => {
@@ -27,14 +30,66 @@ function Checkout() {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const list = useSelector((state) => state.cartReducer.list);
+  
+  // console.log(list);
+  
+  
+  
+  
+  const total = (list) =>{
+    let sum = 0;
+    for (var key in list) {
+     if (list.hasOwnProperty(key)) {
+        sum += list[key].price * list[key].quantity;
+     }
+  }
+    return sum;
+   }
+
+  const [processing, setProcessing] = useState(false);
+
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Process the form data, e.g. submit to server
+    if (processing) return; // Prevent multiple form submissions
+    setProcessing(true); // Set processing state to true
+
+    const data = {list : list , address : formData}
+    
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/homepage/orderlist/",
+        
+          {formData,list},
+      {
+         
+            headers: {
+              "Content-Type": "application/json",
+              token: token,
+            },
+          }
+        
+      );
+      console.log(response.data);
+      if (response.status === 200) {
+        // Redirect to another page
+        window.location.href = '/orderplaced';
+      } else {
+        console.error('Unexpected response status:', response.status);
+      }
+
+      
+    } catch (error) {
+      console.error("error occured");
+      console.error(error);
+    }
+    setProcessing(false);
     console.log(formData);
   };
 
-  const list = useSelector((state) => state.cartReducer.list);
-  console.log(list);
+  
 
   return (
     <div className="ml-16 mr-16 mt-2 mb-10">
@@ -233,17 +288,18 @@ function Checkout() {
                     key={index}
                     title={val.title}
                     quantity={val.quantity}
+                    price = {val.price}
                   />
                 ))}
                 <tr>
                   <td className="font-semibold border-2 w-4/5 pl-2">
                     Subtotal
                   </td>
-                  <td className="font-semibold border-2 w-1/5 pl-2">{600}</td>
+                  <td className="font-semibold border-2 w-1/5 pl-2">{total(list)}</td>
                 </tr>
                 <tr>
                   <td className="font-semibold border-2 w-4/5 pl-2">Total</td>
-                  <td className="font-semibold border-2 w-1/5 pl-2">{600}</td>
+                  <td className="font-semibold border-2 w-1/5 pl-2">{total(list)}</td>
                 </tr>
               </tbody>
             </table>
@@ -302,9 +358,9 @@ function Checkout() {
             </label>
           </div>
           <div className="flex justify-end">
-            <Link to="/orderplaced">
+           
           <button className="mx-3 mb-3 px-5 py-2 bg-teal-500 rounded-sm text-white font-semibold" type="submit">Place Order</button>
-          </Link>
+          
           </div>
           
         </div>
@@ -321,7 +377,7 @@ const Productlist = (item) => {
       <td className="text-gray-500 border-2 w-4/5 pl-2">
         {item.title} <span className="ml-2 font-bold">x {item.quantity}</span>
       </td>
-      <td className="text-gray-500 border-2 w-4/5 pl-2">{600}</td>
+      <td className="text-gray-500 border-2 w-4/5 pl-2">{item.price*item.quantity}</td>
     </tr>
   );
 };

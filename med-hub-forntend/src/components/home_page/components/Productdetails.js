@@ -43,6 +43,7 @@ function Productdetails(props) {
     id : props.id,
     title : props.title,
     link : props.link,
+    price : parseInt(props.price),
     quantity : myState
   }
   const handleClick = () => {
@@ -82,9 +83,9 @@ function Productdetails(props) {
           </div>
 
           <div className="flex mt-3">
-            <div className="text-2xl font-medium text-teal-500">₹600</div>
+            <div className="text-2xl font-medium text-teal-500">₹{props.price}</div>
             <del className="pl-3 pt-1 text-slate-400   text-lg font-normal">
-              ₹700
+              ₹{(parseInt(props.price)+100)}
             </del>
           </div>
 

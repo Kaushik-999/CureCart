@@ -7,6 +7,7 @@ urlpatterns = [
 
     #  Add Medicine |Pharmacy Vendor | endpoint : pharmacy-vendor/add-medicine/
     path('add-medicine/', views.pharmacyVendorAddMedicine, name="Pharmacy Vendor Add Medicine"),
+    path('get-medicine/',views.getMedicineList,name ="Medicine List"),
 
     #  Query Form |Pharmacy Vendor | endpoint : pharmacy-vendor/query/
     path('query/', views.pharmacyQuery, name="Pharmacy Query"),
