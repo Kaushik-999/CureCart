@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useRef} from 'react'
 import BloodBankCarousel from '../bloodBankCarousel/BloodBankCarousel'
 
@@ -17,9 +16,6 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 import BloodBankGallery from '../BloodBankGallery/BloodBankGallery';
 import Accordion from '../accordion/Accordion';
 import BloodAvailable from '../BloodAvailableMain/BloodAvailable';
-=======
-import React from 'react'
->>>>>>> 37c4bb41f66bcb979aa63242347ad47b9b2a43f9
 import "./BloodBank.css"
 function BloodBank() {
   const formRef = useRef(null);
@@ -29,7 +25,6 @@ function BloodBank() {
   };
   return (
     <div className='blood-bank-main'>
-<<<<<<< HEAD
         {/* <h3>Blood Bank</h3> */}
         <BloodBankCarousel/>
         <BloodDonationJumbotron scrollfunc={scrollToForm}/>
@@ -47,9 +42,6 @@ function BloodBank() {
         <RegisterForm/>
         <Accordion/>
         <BloodAvailable/>
-=======
-        
->>>>>>> 37c4bb41f66bcb979aa63242347ad47b9b2a43f9
         
 
     </div>

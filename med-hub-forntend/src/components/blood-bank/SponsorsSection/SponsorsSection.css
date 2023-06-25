@@ -1,25 +1,14 @@
 .sponsors-section {
     text-align: center;
     padding: 20px;
-    margin-top: 400px;
   }
   
-  .sponsors-section .sponsors-heading {
+  .sponsors-section h2 {
     margin-bottom: 20px;
-
   }
-  .sponsors-heading{
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-  }
-  .sponsors-section .sponsors-paragraph {
+  .sponsors-section p {
     margin-bottom: 40px;
     font-size: 20px;
-    font-weight: 400;
-  }
-  .sponsors-paragraph {
-    font-size: 30px;
     font-weight: 400;
   }
   

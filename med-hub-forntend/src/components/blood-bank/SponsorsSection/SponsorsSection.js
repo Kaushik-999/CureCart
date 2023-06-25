@@ -46,13 +46,13 @@ const SponsorsSection = () => {
 
   return (
     <div className="sponsors-section">
-      <h2 className="sponsors-heading">OUR SPONSORS</h2>
+      <h2>OUR SPONSORS</h2>
       <div className="sponsors-icons-container">
         <FaRegWindowMinimize className="sponsors-icon" />
         <MdBloodtype className="sponsors-icon" />
         <FaRegWindowMinimize className="sponsors-icon" />
       </div>
-      <p className="sponsors-paragraph">The sponsors who give their valuable amounts to fulfil our mission</p>
+      <p>The sponsors who give their valuable amounts to fulfil our mission</p>
       
       <Slider {...settings}>
         <div className="sponsor-item">
