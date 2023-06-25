@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
-import { MonthlySalesTempData } from "./MonthlySalesTempData";
+// import { MonthlySalesTempData } from "./MonthlySalesTempData";
 
-function VedorAccountMonthlySalesChart() {
-  const labels = MonthlySalesTempData.map((data) => data.month);
-  const data = MonthlySalesTempData.map((data) => data.amount);
-
+function VedorAccountMonthlySalesChart(props) {
+  // console.log(props.last_five_months_sales[0]);
+  const labels = props.last_five_months_sales.map(month => Object.keys(month)[0]).reverse();
+  const data = props.last_five_months_sales.map(amount => Object.values(amount)[0]).reverse();
+  
   // eslint-disable-next-line
   const [salesData, setSalesData] = useState({
     labels: labels,
