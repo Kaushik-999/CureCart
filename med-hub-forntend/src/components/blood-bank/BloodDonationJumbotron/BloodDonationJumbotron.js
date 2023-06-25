@@ -3,14 +3,17 @@ import "./BloodDonationJumbotron.css"; // import your CSS file
 import {FaRegWindowMinimize} from "react-icons/fa";
 import { MdBloodtype } from "react-icons/md";
 
-function BloodDonationJumbotron() {
+function BloodDonationJumbotron(props) {
+
   return (
     <div className="jumbotron-heading-and-paragraph ">
   <h1 className="text-3xl font-semibold">WE ARE HELPING PEOPLE FROM ANY PART OF THE COUNTRY</h1>
   <p>You can give blood at any of our blood donation venues all over India. We have a donor centres in every state and visit on various occasions.</p>
     <div className="blood-donation-jumbotron">
       <div className="jumbotron-request-button-appointment">
-        <button>REQUEST FOR APPOINTMENT</button>
+      <button onClick={props.scrollfunc}>
+          REQUEST FOR APPOINTMENT
+        </button>
       </div>
     </div>
     <div className="jumbotron-blood-donation-process">

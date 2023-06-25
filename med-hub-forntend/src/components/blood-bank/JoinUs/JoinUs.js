@@ -5,9 +5,9 @@ const JoinUs = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [education, setEducation] = useState('');
   const [organization, setOrganization] = useState('');
   const [city, setCity] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,19 +49,17 @@ const JoinUs = () => {
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
-        <div className="join-us-form-group">
-          <label htmlFor="education">Education</label>
-          <select
-            id="education"
-            value={education}
-            onChange={(e) => setEducation(e.target.value)}
-          >
-            <option value="">Select an option</option>
-            <option value="student">Student</option>
-            <option value="working professional">Working Professional</option>
-            <option value="other">Other</option>
-          </select>
+        <div className="register-form-group">
+          <label htmlFor="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            placeholder="Your Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
         </div>
+    
         <div className="join-us-form-group">
           <label htmlFor="organization">Organization</label>
           <input
@@ -73,7 +71,7 @@ const JoinUs = () => {
           />
         </div>
         <div className="join-us-form-group">
-          <label htmlFor="city">City in which you wish to volunteer</label>
+          <label htmlFor="city">City in which you wish to become a member</label>
           <select
             id="city"
             value={city}

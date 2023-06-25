@@ -19,13 +19,13 @@ function CardImage() {
     }, 1);
 
     const interval2 = setInterval(() => {
-      if (count2 < 1234) {
+      if (count2 < 1034) {
         setCount2((prevCount) => prevCount + 1);
       }
     }, 1);
 
     const interval3 = setInterval(() => {
-      if (count3 < 1234) {
+      if (count3 < 1434) {
         setCount3((prevCount) => prevCount + 1);
       }
     }, 1);

@@ -9,6 +9,7 @@ const RegisterForm = () => {
   const [dob, setDob] = useState('');
   const [bloodGroup, setBloodGroup] = useState('');
   const [city, setCity] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,8 +81,18 @@ const RegisterForm = () => {
           
           
         </div>
+        <div className="register-form-group">
+          <label htmlFor="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            placeholder="Your Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
         <div className="join-us-form-group">
-          <label htmlFor="city">City in which you wish to volunteer</label>
+          <label htmlFor="city">City in which you wish to donate</label>
           <select
             id="city"
             value={city}

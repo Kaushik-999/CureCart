@@ -1,12 +1,12 @@
 .register-form-container {
-  width: 400px;
+  width: 450px;
   margin: 0 auto;
   padding: 20px;
   border: 2px solid #e74c3c;
   border-radius: 10px;
   background-color: #f8f9fa;
-  margin-right: 50px;
-  margin-top: -725px;
+  margin-top: -710px;
+  margin-right: 100px;
 }
 
 .register-form-container h2 {

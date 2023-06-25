@@ -1,11 +1,13 @@
 .join-us-form-container {
-    width: 400px;
+  width: 450px;
     margin: 0 auto;
     padding: 20px;
     border: 2px solid #e74c3c;
     border-radius: 10px;
     background-color: #f8f9fa;
-    margin-left: 50px;
+  margin-top: 150px;
+  margin-left: 100px;
+  height: auto;
   }
   
   .join-us-form-container h2 {
