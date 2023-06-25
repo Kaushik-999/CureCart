@@ -1,0 +1,34 @@
+ .blood-available-table-container{
+    padding: 16px 24px;
+ }
+
+ .bloods-available-table {
+    width: 100%;
+    border-collapse: collapse;
+ }
+
+ .bloods-available-table tr:nth-child(2n){
+    background-color: #f2f2f2;
+ }
+
+ .bloods-available-table .bb-hover-row:hover{
+    background-color: #ddd;
+ }
+
+ .bloods-available-table td{
+    padding: 5px;
+ }
+
+ .bloods-available-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    text-align: left;
+ }
+
+ .bloods-available-table .hover{
+   width: 100%;
+   padding-left: 25px;
+   cursor: pointer;
+ }
+

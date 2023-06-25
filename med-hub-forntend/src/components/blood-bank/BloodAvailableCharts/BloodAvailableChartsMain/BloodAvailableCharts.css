@@ -1,0 +1,30 @@
+.blood-available-charts-main{
+    padding: 16px 24px;
+}
+
+.blood-available-charts-main .blood-available-chart-container {
+    display: flex;
+    justify-content: space-between;
+} 
+.blood-available-chart-container .bb-chart-card{
+    width: 49%;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #869b9c;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px #d2d2d2;
+}
+
+.blood-available-chart-container .bb-chart-card-head{
+    border-bottom: 1px solid #869b9c;
+    padding: 7px 15px;
+    background-color: #e5f6dc;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #00897b;
+}
+
+.blood-available-chart-container .chart-card-body{
+    padding: 7px 15px;
+    /* height: 100%; */
+}

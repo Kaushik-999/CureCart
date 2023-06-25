@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-div {
+  margin-top: 10px;
+  width: 100%;
+  padding: 60px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 1px 0px rgba(17, 17, 26, 0.05),
+    0px 8px 8px rgba(17, 17, 26, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-family: "Bitter", serif;
+  text-transform: capitalize;
+  font-size: 32px;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+  margin-bottom: 50px;
+  color: #2c3148;
+}
+
+.main-heading {
+  display: flex;
+  margin-top: 30px;
+  padding: 20px;
+  background: #f1f4ff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+
+.main-heading h3 {
+  margin-left: 20px;
+  font-family: "Mate SC", serif;
+  color: #303243;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.main-heading p {
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 4px 16px rgba(17, 17, 26, 0.1),
+    0px 8px 24px rgba(17, 17, 26, 0.1),
+    0px 16px 56px rgba(17, 17, 26, 0.1);
+  background: #fff;
+  padding: 7px;
+}
+
+.answers {
+  padding: 30px 20px 40px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 95px;
+  word-spacing: 2px;
+  line-height: 1.7;
+  background: #fcf5f5;
+  color: #282535;
+  font-weight: bold;
+}
