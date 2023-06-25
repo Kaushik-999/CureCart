@@ -1,16 +1,19 @@
-#slider {
+.opinion-slider {
     margin: 0 auto;
     width: 100%;
     text-align: center; 
  }
- #slider input[type=radio] {
+ 
+ .opinion-slider input[type=radio] {
     display: none;
  }
- #slider label {
+ 
+ .opinion-slider label {
     cursor:pointer;
     text-decoration: none;
  }
- #slides {
+ 
+ #opinion-slides {
     margin-top: 150px;
     padding: 50px;
     border: 3px solid #ccc;
@@ -19,126 +22,168 @@
     z-index: 1;
     display: flex;
     width: 100%;
-    
-    
+   overflow: hidden;
  }
- #overflow {
+ 
+ .opinion-overflow {
     width: 100%;
-    overflow:hidden;
+   overflow: hidden;
  }
- #slide1:checked ~ #slides .inner {
+ 
+ #opinion-slide1:checked ~ #opinion-slides .opinion-inner {
     margin-left: 0;
  }
- #slide2:checked ~ #slides .inner {
+ 
+ #opinion-slide2:checked ~ #opinion-slides .opinion-inner {
     margin-left: -100%;
  }
- #slide3:checked ~ #slides .inner {
+ 
+ #opinion-slide3:checked ~ #opinion-slides .opinion-inner {
     margin-left: -200%;
  }
- #slides .inner {
+ 
+ #opinion-slides .opinion-inner {
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
     width: 400%;
     line-height: 0;
     height: 400px;
  }
- #slides .slide {
+ 
+ #opinion-slides .opinion-slide {
     width: 25%;
-    float:left;
+   float: left;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     color: #fff;
  }
- #slides .slide_1 {
+ 
+ #opinion-slides .opinion-slide_1 {
     background: #d9e9ee;
  }
- #slides .slide_2 {
+ 
+ #opinion-slides .opinion-slide_2 {
     background: #d9e9ee;
  }
- #slides .slide_3 {
+ 
+ #opinion-slides .opinion-slide_3 {
     background: #d9e9ee;
  }
- #controls {
+ 
+ #opinion-controls {
     margin: -180px 0 0 0;
     width: 100%;
     height: 50px;
     z-index: 3;
     position: relative;
  }
- #controls label {
+ 
+ #opinion-controls label {
     transition: opacity 0.2s ease-out;
     display: none;
     width: 50px;
     height: 50px;
     opacity: .4;
  }
- #controls label:hover {
+ 
+ #opinion-controls label:hover {
     opacity: 1;
  }
- #slide1:checked ~ #controls label:nth-child(2),
- #slide2:checked ~ #controls label:nth-child(3),
- #slide3:checked ~ #controls label:nth-child(1){
-    background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
-    float:right;
+ 
+ #opinion-slide1:checked ~ #opinion-controls label:nth-child(2),
+ #opinion-slide2:checked ~ #opinion-controls label:nth-child(3),
+ #opinion-slide3:checked ~ #opinion-controls label:nth-child(1) {
+   /* Replace the URL with the correct local image path */
+   background: url(https://image.flaticon.com/icons/svg/130/130882.svg ) no-repeat;
+   float: right;
     margin: 0 -50px 0 0;
     display: block;
  }
- #slide1:checked ~ #controls label:nth-last-child(2),
- #slide2:checked ~ #controls label:nth-last-child(3),
- #slide3:checked ~ #controls label:nth-last-child(1){
+ 
+ #opinion-slide1:checked ~ #opinion-controls label:nth-last-child(2),
+ #opinion-slide2:checked ~ #opinion-controls label:nth-last-child(3),
+ #opinion-slide3:checked ~ #opinion-controls label:nth-last-child(1) {
+   /* Replace the URL with the correct local image path */
     background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
-    float:left;
+   float: left;
     margin: 0 0 0 -50px;
     display: block;
  }
- #bullets {
+ 
+ #opinion-bullets {
     margin: 150px 0 0;
     text-align: center;
     background-color: #ddd0d0;
  }
- #bullets label {
+ 
+ #opinion-bullets label {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border-radius:100%;
+   border-radius: 100%;
     background: #c23434;
     margin: 0 10px;
  }
- #slide1:checked ~ #bullets label:nth-child(1),
- #slide2:checked ~ #bullets label:nth-child(2),
- #slide3:checked ~ #bullets label:nth-child(3){
+ 
+ #opinion-slide1:checked ~ #opinion-bullets label:nth-child(1),
+ #opinion-slide2:checked ~ #opinion-bullets label:nth-child(2),
+ #opinion-slide3:checked ~ #opinion-bullets label:nth-child(3) {
     background: #444;
  }
+ 
  @media screen and (max-width: 900px) {
-    #slide1:checked ~ #controls label:nth-child(2),
-    #slide2:checked ~ #controls label:nth-child(3),
-    #slide3:checked ~ #controls label:nth-child(1),
-    #slide1:checked ~ #controls label:nth-last-child(2),
-    #slide2:checked ~ #controls label:nth-last-child(3),
-    #slide3:checked ~ #controls label:nth-last-child(1){
+   #opinion-slide1:checked ~ #opinion-controls label:nth-child(2),
+   #opinion-slide2:checked ~ #opinion-controls label:nth-child(3),
+   #opinion-slide3:checked ~ #opinion-controls label:nth-child(1),
+   #opinion-slide1:checked ~ #opinion-controls label:nth-last-child(2),
+   #opinion-slide2:checked ~ #opinion-controls label:nth-last-child(3),
+   #opinion-slide3:checked ~ #opinion-controls label:nth-last-child(1) {
        margin: 0;
     }
-    #slides {
+   #opinion-slides {
        max-width: calc(100% - 140px);
        margin: 0 auto;
     }
  }
- .slide-content h2{
+ 
+ .opinion-slide-content .donor-opinion-heading {
     margin-bottom: 50px;
     color: red;
-    font-family:'Courier New', Courier, monospace;
+   font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
     text-shadow: black;
  }
- .slide-content p{
+ 
+ .opinion-slide-content .donor-opinion-paragraph {
   line-height: 30px;
    margin-bottom: 40px;
     color: rgba(0, 0, 0, 0.826);
  }
- .slide-content h6{
+ 
+ .opinion-slide-content .donor-opinion-name {
     color: black;
  }
- .slide-content span{
+ 
+ .opinion-slide-content .donor-opinion-span {
+   color: #302f2f;
+ }
+ .opinion-slide-content span {
+   color: #444; /* Add this line */
+ }
+ .opinion-slide-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+ }
+ 
+ .donor-opinion-name {
+   color: black;
+   margin-bottom: 18px;
+ }
+ 
+ .donor-opinion-span {
     color: #444;
+   margin-top: 5px;
  }

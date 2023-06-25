@@ -1,4 +1,19 @@
 .sign-in-main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sign-in-header{
+    font-size: 4rem;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: bolder;
+    color: #0d6963;
+}
+
+.sign-in-container{
     width: 88%;
     margin: 0 auto;
     display: flex;
@@ -7,4 +22,12 @@
 
 .sign-in-main-image, .sign-in-main-form{
     width: 40%;
+} 
+.sign-in-main-image{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-in-main-image>img{
+    height: 74%;
 }

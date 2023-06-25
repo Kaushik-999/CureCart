@@ -1,0 +1,56 @@
+.blood-bank-gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .blood-bank-gallery {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .blood-bank-gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .blood-bank-gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .blood-bank-gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .blood-bank-gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .blood-bank-gallery-item:hover::before {
+    opacity: 1;
+  }
+  
+  .blood-bank-gallery-item img:hover + ::before {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .blood-bank-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

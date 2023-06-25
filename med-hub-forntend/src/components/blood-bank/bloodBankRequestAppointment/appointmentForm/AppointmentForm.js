@@ -1,9 +1,10 @@
 import React from "react";
+
 import "./AppointmentForm.css";
 
-function AppointmentForm() {
+function AppointmentForm(props) {
   return (
-    <div className="request-appointment-form-main">
+    <div className="request-appointment-form-main" ref={props.formfunc}>
       <div className="request-appointment-form-header">
         <h3>Request Appointment</h3>
       </div>

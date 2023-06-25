@@ -3,7 +3,7 @@ import VedorAccountMonthlySalesChart from "../vedorAccountMonthlySalesChart/Vedo
 import VendorAccountRevenueChart from "../vendorAccountRevenueChart/VendorAccountRevenueChart";
 import "./VendorAccountCharts.css";
 
-function VendorAccountCharts() { 
+function VendorAccountCharts(props) {
   return (
     <div className="vendor-account-charts-main">
       <div className="vendor-account-chart-container">
@@ -11,7 +11,9 @@ function VendorAccountCharts() {
         <div className="chart-card">
           <div className="chart-card-head">Last Five Months Sales</div>
           <div className="chart-card-body">
-            <VedorAccountMonthlySalesChart />
+            <VedorAccountMonthlySalesChart
+              last_five_months_sales={props.last_five_months_sales}
+            />
           </div>
         </div>
         {/* five month card ends*/}
@@ -20,7 +22,7 @@ function VendorAccountCharts() {
         <div className="chart-card">
           <div className="chart-card-head">Revenue Breakdown</div>
           <div className="chart-card-body">
-            <VendorAccountRevenueChart/>
+            <VendorAccountRevenueChart categories={props.categories} />
           </div>
         </div>
         {/* revenue card ends*/}

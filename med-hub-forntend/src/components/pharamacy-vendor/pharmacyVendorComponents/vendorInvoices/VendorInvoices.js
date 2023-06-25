@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SideBar from "../../pharamacyVendorSideBar/SideBar";
 import "./VendorInvoices.css";
 import axios from "axios";
-
+ 
 function VendorInvoices() {
   const [invoices, setInvoices] = useState(null);
   const [loading, setLoading] = useState(false);

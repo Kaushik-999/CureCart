@@ -1,4 +1,20 @@
 .sign-up-main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-up-header{
+    font-size: 4rem;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-weight: bolder;
+    color: #0d6963;
+}
+
+.sign-up-container{
     width: 88%;
     margin: 0 auto;
     display: flex;
@@ -7,4 +23,9 @@
 
 .sign-up-main-image, .sign-up-main-form{
     width: 40%;
+} 
+
+.sign-up-main-image{
+    display: flex;
+    justify-content: flex-end;
 }

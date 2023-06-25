@@ -1,7 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const handleLogout = (e) =>{
+    e.preventDefault();
+
+    // remove jwt token
+    localStorage.removeItem("token")
+    navigate("/sign-in")
+
+    // Display success toast notification
+    toast.success('Logout successful!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, // Duration in milliseconds
+    });
+
+  }
+
   return (
     <>
       <nav className="bg-teal-700 sticky top-0 z-20">
@@ -86,9 +104,10 @@ const Navbar = () => {
                   <li className="">
                     <a
                       className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                      href="/"
+                      href="/sign-in"
+                      onClick={handleLogout}
                     >
-                      Sign in as Admin
+                      Log Out
                     </a>
                   </li>
                   <li>
