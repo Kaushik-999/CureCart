@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 import datetime
 import json
-from picklefield.fields import PickledObjectField
+
 
 # Create your models here.
 class OrderList(models.Model):
