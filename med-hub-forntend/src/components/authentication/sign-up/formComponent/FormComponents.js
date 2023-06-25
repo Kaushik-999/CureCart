@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FormComponents.css";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function FormComponents() {
+  const navigate = useNavigate();
   const [signupData, setSignupData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
- 
+
   const [processing, setProcessing] = useState(false); // State for tracking request processing
 
   const handleChange = (e) => {
@@ -42,9 +47,22 @@ function FormComponents() {
       // Save token to local storage
       const token = response.data.token;
       localStorage.setItem("token", token);
+      navigate("/")
+
+      // Display success toast notification
+      toast.success("Account Created successful!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
     } catch (error) {
       console.error("error occured");
       console.error(error);
+      
+      // Display error toast notification
+      toast.error("Account Creation Failed!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000, // Duration in milliseconds
+      });
     }
     setProcessing(false); // Reset processing state to false after request completion
   };
