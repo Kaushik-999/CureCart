@@ -1,0 +1,43 @@
+.jumbotron-heading-and-paragraph {
+  text-align: center;
+}
+
+.blood-donation-jumbotron {
+  margin: 20px auto;
+  max-width: 500px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.jumbotron-request-button-appointment button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.jumbotron-request-button-appointment button:hover {
+  background-color: #8B0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.jumbotron-blood-donation-process {
+  text-align: center;
+}
+
+.jumbotron-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  color: red;
+}
+
+.jumbotron-icon {
+  font-size: 34px;
+  margin: 0 10px;
+}
