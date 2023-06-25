@@ -1,6 +1,14 @@
+.vendor-account-loading-message{
+    margin-left: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:70vh;
+    font-size: 3rem;
+}
+
 .vendor-accout-main{
-    margin-left: var(--offcanvas-width);
-    margin-top: var(--topNavbar-height);
+    margin-left: 270px !important;
     
 } 
 
@@ -9,3 +17,4 @@
     font-weight: bold;
     color: #000;
 }
+

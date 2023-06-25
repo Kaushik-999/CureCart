@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
+urlpatterns = [ 
     path('admin/', admin.site.urls),
 
     # Authincation path (send to userAuthentication)
@@ -27,5 +27,8 @@ urlpatterns = [
     path('pharmacy-vendor/', include('pharmacyVendor.urls')),
 
     # Utilities Api Path (send to utilitiesAPI)
-    path('utilities/', include('utilitiesApi.urls'))
+    path('utilities/', include('utilitiesApi.urls')),
+
+    # Blood Bank Path (send to bloodBank)
+    path('blood-bank/', include('bloodBank.urls'))
 ]

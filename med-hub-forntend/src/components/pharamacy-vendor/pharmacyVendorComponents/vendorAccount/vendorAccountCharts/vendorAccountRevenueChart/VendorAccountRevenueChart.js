@@ -3,18 +3,22 @@ import { Doughnut } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 
-function VendorAccountRevenueChart() {
+function VendorAccountRevenueChart(props) {
+  const labels = props.categories.map(label => label.category);
+  const amount = props.categories.map(amount => amount.occurrences);
   // eslint-disable-next-line
   const [revenueBreakdownData, setRevenueBreakdownData] = useState({
-    labels: ["Cost Price", "Profit", "Tax"],
+    labels: labels,
     datasets: [
       {
         label: "Amount(in ₹)",
-        data: [300000, 50000, 10000],
+        data: amount,
         backgroundColor: [
           "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
+          "rgb(255, 159, 64)",
           "rgb(255, 205, 86)",
+          "rgb(75, 192, 192)",
+          "rgb(54, 162, 235)",
         ],
         hoverOffset: 5,
         hoverBorderRadius: 3,

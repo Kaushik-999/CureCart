@@ -1,6 +1,5 @@
 .vendor-feedback-main{
-    margin-left: var(--offcanvas-width);
-    /* margin-top: var(--topNavbar-height); */
+    margin-left: 270px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -6,11 +6,14 @@ import FormComponents from "./formComponent/FormComponents";
 function SignUp() {
   return (
     <div className="sign-up-main">
-      <div className="sign-up-main-image">
-        <img src={authenticationImage} alt="" />
-      </div>
-      <div className="sign-up-main-form">
-        <FormComponents />
+      <h1 className="sign-up-header">CURE CART</h1>
+      <div className="sign-up-container">
+        <div className="sign-up-main-image">
+          <img src={authenticationImage} alt="" />
+        </div>
+        <div className="sign-up-main-form">
+          <FormComponents />
+        </div>
       </div>
     </div>
   );

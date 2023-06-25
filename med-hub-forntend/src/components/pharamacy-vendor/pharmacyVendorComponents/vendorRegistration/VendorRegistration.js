@@ -37,7 +37,7 @@ function VendorRegistration() {
     setProcessing(true);
 
     const token = localStorage.getItem("token");
-    try {
+    try { 
       const response = await axios.post(
         "http://127.0.0.1:8000/pharmacy-vendor/register/",
         vendorRegistrationData,
