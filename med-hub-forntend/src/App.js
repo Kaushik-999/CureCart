@@ -39,7 +39,6 @@ function App() {
     <div className="App">
       <div className="min-h-screen flex flex-col">
       <ScrollToTop/>
-      <NavBar />
 
       {!shouldHideNavbarFooter && <NavBar />}
       {/* <NavBar /> */}
@@ -146,14 +145,14 @@ function App() {
         />
 
         {/* Blog Page */}
-        <Route exact path="/blogs" element={<BlogPageMain />} />
-        {/* <Route
+       
+        <Route
           exact
           path="/blogs"
           element={
             isAuthenticated ? <BlogPageMain /> : <Navigate to="/sign-in" />
           }
-        /> */}
+        />
       </Routes>
       </div>
       
