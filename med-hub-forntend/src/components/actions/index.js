@@ -36,5 +36,12 @@ export const deleteItem = (data) =>
     )
 }
 
+export const resetStore = () => {
+    return( {
+    type: 'STORE_NAME_RESET'
+    }
+    )
+  };
+
 
 
