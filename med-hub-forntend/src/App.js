@@ -9,7 +9,7 @@ import SignUp from "./components/authentication/sign-up/SignUp";
 import SignIn from "./components/authentication/sign-in/SignIn";
 import Homepage from "./components/home_page/Homepage";
 import Productpage from "./components/home_page/Productpage";
-import Footer from "./components/home_page/components/Footer";
+// import Footer from "./components/home_page/components/Footer";
 import Cart from "./components/home_page/components/Cart";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -24,7 +24,7 @@ import VendorFeeback from "./components/pharamacy-vendor/pharmacyVendorComponent
 import BlogPageMain from "./components/blog_page/BlogPageMain";
 import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
 import OrderPlaced from "./components/home_page/components/OrderPlaced";
-
+import Footer from "./Footer/Footer";
 function App() {
   const location = useLocation();
   const hideNavbarFooterRoutes = ["/sign-in", "/sign-up"];
@@ -159,7 +159,7 @@ function App() {
       {/* Client */}
       
         <div className="pt-4">
-        <Footer/>
+        {!shouldHideNavbarFooter && <Footer />}
         </div>
         
      
