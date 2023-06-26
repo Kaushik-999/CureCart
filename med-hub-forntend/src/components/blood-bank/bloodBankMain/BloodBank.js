@@ -4,7 +4,7 @@ import BloodBankCarousel from '../bloodBankCarousel/BloodBankCarousel'
 import BloodBankRequestAppointment from '../bloodBankRequestAppointment/BloodBankRequestAppointment'
 import BloodDonationJumbotron from "../BloodDonationJumbotron/BloodDonationJumbotron";
 import BloodDonationCardImage from '../BloodDonationCardImage';
-import CardGrid from '../cardGrid/CardGrid';
+// import CardGrid from '../cardGrid/CardGrid';
 import OpinionCarousel from '../OpinionCarousel/OpinionCarousel';
 import ImageWithButton from '../imageWithButtons/ImageWithButton';
 import CampaignJumbotron from '../campaignJumbotron/CampaignJumbotron';
@@ -28,7 +28,7 @@ function BloodBank() {
         {/* <h3>Blood Bank</h3> */}
         <BloodBankCarousel/>
         <BloodDonationJumbotron scrollfunc={scrollToForm}/>
-        <CardGrid/>
+        {/* <CardGrid/> */}
         <BloodBankRequestAppointment formfunc={formRef}/>
         <BloodDonationCardImage/>
         <OpinionCarousel />

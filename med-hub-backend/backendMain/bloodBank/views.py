@@ -31,7 +31,7 @@ def becomeMember(request):
 
         # Process the request body
         data = json.loads(request.body)
-        print(data)
+        # print(data)
         name = data.get("name")
         email = data.get("email")
         phone = data.get("phone")

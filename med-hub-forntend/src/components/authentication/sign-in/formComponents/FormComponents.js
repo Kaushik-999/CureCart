@@ -57,11 +57,14 @@ function FormComponents() {
 
     setProcessing(false); // Reset processing state to false after request completion
   };
+  const handleDontHaveAccount = () => {
+    navigate("/sign-up")
+  };
 
   return (
     <div className="signin-form-component">
       <div className="signin-form-component-header">
-        <h1>SIGN IN FORM</h1>
+        <h2>SIGN IN FORM</h2>
       </div>
       <form className="signin-form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -91,6 +94,9 @@ function FormComponents() {
         </div>
 
         <button type="submit">{processing ? "Processing..." : "Log In"}</button>
+        <p className="dontHaveAccount" onClick={handleDontHaveAccount}>
+          Dont Have Account?
+        </p>
       </form>
     </div>
   );

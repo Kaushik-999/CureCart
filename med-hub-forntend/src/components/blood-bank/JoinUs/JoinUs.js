@@ -17,20 +17,13 @@ const JoinUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
-
+    setProcessing(true);
     if (processing) return; //prevent multiple submission
     const token = localStorage.getItem("token");
 
-    console.log(name);
-    console.log(email);
-    console.log(phone);
-    console.log(organization);
-    console.log(city);
-    console.log(address);
-
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/pharmacy-vendor/add-medicine/",
+        "http://127.0.0.1:8000/blood-bank/become-member/",
         {
           name: name,
           email: email,

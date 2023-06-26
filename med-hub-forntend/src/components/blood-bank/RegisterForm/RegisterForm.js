@@ -1,23 +1,80 @@
-import React, { useState } from 'react';
-import './RegisterForm.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-const RegisterForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [dob, setDob] = useState('');
-  const [bloodGroup, setBloodGroup] = useState('');
-  const [city, setCity] = useState('');
-  const [address, setAddress] = useState('');
+import React, { useState } from "react";
+import "./RegisterForm.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
-  const handleSubmit = (e) => {
+const RegisterForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dob, setDob] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
+
+  function formatDate(dateString) {
+    const originalDate = new Date(dateString);
+
+    const year = originalDate.getFullYear();
+    const month = String(originalDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so adding 1
+    const day = String(originalDate.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
+  const [processing, setProcessing] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
+    // Handle form submission logic here
+    setProcessing(true);
+    if (processing) return; //prevent multiple submission
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/blood-bank/become-donor/",
+        {
+          name: name,
+          email: email,
+          bloodGroup: "O-",
+          dateOfBirth: formatDate(dob),
+          phone: phone,
+          organization: "abcd",
+          address: address,
+          operatingCity: city,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            token: token,
+          },
+        }
+      );
+
+      console.log(response.data);
+      // Display success toast notification
+      toast.success("Data Sent", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send data", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    }
+
+    setProcessing(false);
   };
 
   return (
-    <div className="register-form-container mt-2" >
+    <div className="register-form-container mt-2">
       <h2>Register as a Donor</h2>
       <hr />
       <form onSubmit={handleSubmit}>
@@ -52,13 +109,13 @@ const RegisterForm = () => {
           />
         </div>
         <div className="register-form-group">
-        <label htmlFor="dob">Date of Birth</label>
+          <label htmlFor="dob">Date of Birth</label>
           <DatePicker
             id="dob"
             selected={dob}
             onChange={(date) => setDob(date)}
             placeholderText="dd-mm-yyyy"
-            dateFormat="dd-MM-yyyy"
+            dateFormat="yyyy-MM-dd"
             showYearDropdown
             scrollableYearDropdown
             yearDropdownItemNumber={100}
@@ -66,20 +123,24 @@ const RegisterForm = () => {
           />
         </div>
         <div className="register-form-group">
-        <label htmlFor="bloodGroup">Blood Group:</label>
-              <select id="bloodGroup" name="bloodGroup" required>
-                <option value="">Select</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-              </select>
-          
-          
+          <label htmlFor="bloodGroup">Blood Group:</label>
+          <select
+            id="bloodGroup"
+            name="bloodGroup"
+            required
+            value={bloodGroup}
+            onChange={(event) => setBloodGroup(event.target.value)}
+          >
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
         </div>
         <div className="register-form-group">
           <label htmlFor="address">Address</label>
@@ -107,8 +168,9 @@ const RegisterForm = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-        <button type="submit" className="custom-submit-button">Submit</button>
-
+        <button type="submit" className="custom-submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

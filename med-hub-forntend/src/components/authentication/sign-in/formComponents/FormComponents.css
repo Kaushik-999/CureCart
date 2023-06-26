@@ -5,7 +5,7 @@
     margin: auto;
   } 
  
-  .signin-form-component-header h1{
+  .signin-form-component-header h2{
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -54,5 +54,15 @@
   .signin-form input,
   .signin-form button {
     border-radius: 4px;
+  }
+
+  .dontHaveAccount{
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .dontHaveAccount:hover{
+    color: #0d6963;
+    cursor: pointer;
   }
   

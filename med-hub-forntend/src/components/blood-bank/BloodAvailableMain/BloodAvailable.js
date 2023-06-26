@@ -5,8 +5,7 @@ import BloodAvailableUnitsTable from "../BloodAvailableTable/BloodAvailableUnits
 
 function BloodAvailable() {
   return (
-    <> 
-  
+    <>
       <div className="blood-available-main">
         <h3>Blood Available Dashboard</h3>
         <BloodAvailableCharts/>

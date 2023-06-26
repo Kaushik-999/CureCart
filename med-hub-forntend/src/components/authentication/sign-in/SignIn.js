@@ -5,7 +5,7 @@ import FormComponents from "./formComponents/FormComponents";
 function SignIn() {
   return (
     <div className="sign-in-main">
-      <h1 className="sign-in-header">CURE CART</h1>
+      <h2 className="sign-in-header">CURE CART</h2>
       <div className="sign-in-container">
         <div className="sign-in-main-image">
           <img src={authenticationImage} alt="" />

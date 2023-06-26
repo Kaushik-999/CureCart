@@ -12,7 +12,7 @@ function VendorAccount() {
 
   useEffect(() => {
     const getAllVednorData = async () => {
-      try {
+      try { 
         setLoading(true);
         const token = localStorage.getItem("token");
         const header = {

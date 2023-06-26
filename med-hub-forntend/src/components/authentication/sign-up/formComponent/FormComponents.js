@@ -47,7 +47,7 @@ function FormComponents() {
       // Save token to local storage
       const token = response.data.token;
       localStorage.setItem("token", token);
-      navigate("/")
+      navigate("/");
 
       // Display success toast notification
       toast.success("Account Created successful!", {
@@ -57,7 +57,7 @@ function FormComponents() {
     } catch (error) {
       console.error("error occured");
       console.error(error);
-      
+
       // Display error toast notification
       toast.error("Account Creation Failed!", {
         position: toast.POSITION.TOP_RIGHT,
@@ -66,11 +66,14 @@ function FormComponents() {
     }
     setProcessing(false); // Reset processing state to false after request completion
   };
+  const handleHaveAccount = () => {
+    navigate("/sign-in")
+  };
 
   return (
     <div className="signup-form-component">
       <div className="signup-form-component-header">
-        <h1>SIGN UP FORM</h1>
+        <h2>SIGN UP FORM</h2>
       </div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -126,6 +129,9 @@ function FormComponents() {
         <button type="submit">
           {processing ? "Processing..." : "Sign Up"}
         </button>
+        <p className="haveAccount" onClick={handleHaveAccount}>
+          Already Have an Account?
+        </p>
       </form>
     </div>
   );

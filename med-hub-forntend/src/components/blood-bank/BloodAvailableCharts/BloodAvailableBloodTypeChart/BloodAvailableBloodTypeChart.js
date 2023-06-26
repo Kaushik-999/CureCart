@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
-
+import axios from "axios"
 function BloodAvailableBloodTypeChart() {
+  const [bloodData, setBloodData] = useState(null);
   // eslint-disable-next-line
-  const [bloodTypeData, setBloodTypeData] = useState({
-    labels: ["A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-"],
+  const [UnitsData, setUnitsData] = useState({
+    labels: [],
     datasets: [
       {
         label: "Blood Type Distribution",
-        data: [25, 15, 35, 10, 20, 10, 30, 5],
+        data: [],
         backgroundColor: [
           "rgba(255, 99, 132, 0.8)",
           "rgba(54, 162, 235, 0.8)",
@@ -27,10 +28,42 @@ function BloodAvailableBloodTypeChart() {
       },
     ],
   });
+  useEffect(() => {
+    const getBloodData = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/blood-bank/get-blood-details/"
+        );
+        setBloodData(response.data.bloodlist);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBloodData();
+  }, []);
+
+  useEffect(() => {
+    const bloodTypeLabel = bloodData && bloodData.map((data) => data.bloodType);
+    const bloodUnitsAvailable =
+      bloodData && bloodData.map((data) => data.unitsAvailable);
+
+    setUnitsData((prevState) => ({
+      ...prevState,
+      labels: bloodTypeLabel || [],
+      datasets: [
+        {
+          ...prevState.datasets[0],
+          data: bloodUnitsAvailable || [],
+        },
+      ],
+    }));
+  }, [bloodData]);
+
+
   return (
     <div style={{ width: "100%", height: "330px" }}>
     <Doughnut
-      data={bloodTypeData}
+      data={UnitsData}
       options={{
         maintainAspectRatio: false,
         responsive: true,

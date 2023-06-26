@@ -5,7 +5,7 @@
     margin: auto;
   }
  
-  .signup-form-component-header h1{
+  .signup-form-component-header h2{
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -54,5 +54,14 @@
   .signup-form input,
   .signup-form button {
     border-radius: 4px;
+  }
+  .haveAccount{
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .haveAccount:hover{
+    color: #0d6963;
+    cursor: pointer;
   }
   
