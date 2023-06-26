@@ -1,8 +1,7 @@
 import React from "react";
 import RatingStars from "react-rating-stars-component";
 import { useState } from "react";
-import { useDispatch,useSelector } from "react-redux";
-import { increment,decrement } from "../../actions";
+import { useDispatch} from "react-redux";
 import { addToCart } from "../../actions";
 
 
@@ -115,9 +114,9 @@ function Productdetails(props) {
             onClick={handleClick}>
               {buttonText}
             </button>
-            <button className="bg-teal-700 ml-5 px-10 py-3 text-white">
+            {/* <button className="bg-teal-700 ml-5 px-10 py-3 text-white">
               BUY NOW
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

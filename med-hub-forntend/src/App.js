@@ -25,6 +25,9 @@ import BlogPageMain from "./components/blog_page/BlogPageMain";
 import BloodBank from "./components/blood-bank/bloodBankMain/BloodBank";
 import OrderPlaced from "./components/home_page/components/OrderPlaced";
 import Footer from "./Footer/Footer";
+import InvoicePage from "./components/home_page/components/InvoicePage";
+
+
 function App() {
   const location = useLocation();
   const hideNavbarFooterRoutes = ["/sign-in", "/sign-up"];
@@ -38,23 +41,27 @@ function App() {
   return (
     <div className="App">
       <div className="min-h-screen flex flex-col">
-      <ScrollToTop/>
+        <ScrollToTop />
 
-      {!shouldHideNavbarFooter && <NavBar />}
-      {/* <NavBar /> */}
-      <Routes>
-        {/* Authentication */}
-        <Route exact path="/sign-in" element={<SignIn />} />
-        <Route exact path="/sign-up" element={<SignUp />} />
+        {!shouldHideNavbarFooter && <NavBar />}
+        {/* <NavBar /> */}
+        
+        <Routes>
+          
+            {/* Authentication */}
+            <Route exact path="/sign-in" element={<SignIn />} />
+            <Route exact path="/sign-up" element={<SignUp />} />
 
-        {/* Homepage */}
-        <Route
-          exact
-          path="/"
-          element={isAuthenticated ? <Homepage /> : <Navigate to="/sign-in" />}
-        />
+            {/* Homepage */}
+            <Route
+              exact
+              path="/"
+              element={
+                isAuthenticated ? <Homepage /> : <Navigate to="/sign-in" />
+              }
+            />
 
-        {/* Admin Dashboard
+            {/* Admin Dashboard
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/admin/medical-sales" element={<MedicalSales />} />
         <Route exact path="/admin/medicine-stock" element={<MedicineStock />} />
@@ -65,97 +72,114 @@ function App() {
           element={<ActiveDonorRequest />}
         /> */}
 
-        {/* Pharmacy Vendor */}
-        <Route
-          exact
-          path="/pharmacy-vendor"
-          element={
-            isAuthenticated ? (
-              <VendorRegistration />
-            ) : (
-              <Navigate to="/sign-in" />
-            )
-          }
-        />
-        <Route
-          exact
-          path="/pharmacy-vendor/vedor-account"
-          element={
-            isAuthenticated ? <VendorAccount /> : <Navigate to="/sign-in" />
-          }
-        />
-        <Route
-          exact
-          path="/pharmacy-vendor/add-medicine"
-          element={
-            isAuthenticated ? <VendorAddMedicine /> : <Navigate to="/sign-in" />
-          }
-        />
-        <Route
-          exact
-          path="/pharmacy-vendor/vednor-invoices"
-          element={
-            isAuthenticated ? <VendorInvoices /> : <Navigate to="/sign-in" />
-          }
-        />
-        <Route
-          exact
-          path="/pharmacy-vendor/feeback"
-          element={
-            isAuthenticated ? <VendorFeeback /> : <Navigate to="/sign-in" />
-          }
-        />
+            {/* Pharmacy Vendor */}
+            <Route
+              exact
+              path="/pharmacy-vendor"
+              element={
+                isAuthenticated ? (
+                  <VendorRegistration />
+                ) : (
+                  <Navigate to="/sign-in" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/pharmacy-vendor/vedor-account"
+              element={
+                isAuthenticated ? <VendorAccount /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route
+              exact
+              path="/pharmacy-vendor/add-medicine"
+              element={
+                isAuthenticated ? (
+                  <VendorAddMedicine />
+                ) : (
+                  <Navigate to="/sign-in" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/pharmacy-vendor/vednor-invoices"
+              element={
+                isAuthenticated ? (
+                  <VendorInvoices />
+                ) : (
+                  <Navigate to="/sign-in" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/pharmacy-vendor/feeback"
+              element={
+                isAuthenticated ? <VendorFeeback /> : <Navigate to="/sign-in" />
+              }
+            />
 
-        {/* Blood Bank */}
-        <Route
-          exact
-          path="/blood-bank"
-          element={isAuthenticated ? <BloodBank /> : <Navigate to="/sign-in" />}
-        />
+            {/* Blood Bank */}
+            <Route
+              exact
+              path="/blood-bank"
+              element={
+                isAuthenticated ? <BloodBank /> : <Navigate to="/sign-in" />
+              }
+            />
 
-        {/* product */}
-        <Route
-          exact
-          path="/cart"
-          element={isAuthenticated ? <Cart /> : <Navigate to="/sign-in" />}
-        />
-        <Route
-          exact
-          path="/productpage/:productId"
-          element={
-            isAuthenticated ? <Productpage /> : <Navigate to="/sign-in" />
-          }
-        />
-        <Route
-          exact
-          path="/checkout"
-          element={isAuthenticated ? <Checkout /> : <Navigate to="/sign-in" />}
-        />
-        <Route
-          exact
-          path="/user"
-          element={isAuthenticated ? <UserFile /> : <Navigate to="/sign-in" />}
-        />
-        <Route
-          exact
-          path="/orderplaced"
-          element={
-            isAuthenticated ? <OrderPlaced /> : <Navigate to="/sign-in" />
-          }
-        />
+            {/* product */}
+            <Route
+              exact
+              path="/cart"
+              element={isAuthenticated ? <Cart /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+              exact
+              path="/productpage/:productId"
+              element={
+                isAuthenticated ? <Productpage /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route
+              exact
+              path="/checkout"
+              element={
+                isAuthenticated ? <Checkout /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route
+              exact
+              path="/user"
+              element={
+                isAuthenticated ? <UserFile /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route
+              exact
+              path="/orderplaced"
+              element={
+                isAuthenticated ? <OrderPlaced /> : <Navigate to="/sign-in" />
+              }
+            />
 
-        {/* Blog Page */}
-       
-        <Route
-          exact
-          path="/blogs"
-          element={
-            isAuthenticated ? <BlogPageMain /> : <Navigate to="/sign-in" />
-          }
-        />
-      </Routes>
+            {/* Blog Page */}
+
+            <Route
+              exact
+              path="/blogs"
+              element={
+                isAuthenticated ? <BlogPageMain /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route exact path="/invoice" element={<InvoicePage />} />
+          
+        </Routes>
+        
       </div>
-      
+
       {/* Client */}
       
         <div className="pt-4">

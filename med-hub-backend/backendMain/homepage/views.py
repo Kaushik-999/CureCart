@@ -23,7 +23,7 @@ def orders(request):
         token = request.headers.get("token")
         
         if not token:
-            return JsonResponse({'error': 'Token not provided',})
+            return JsonResponse({'error': 'Token not provided',},status=500)
         
         try:
             # Verify the token
@@ -31,9 +31,9 @@ def orders(request):
             userIdEmail = decoded_token['email']
             print(userIdEmail)
         except jwt.ExpiredSignatureError:
-            return JsonResponse({'error': 'Token has expired'})
+            return JsonResponse({'error': 'Token has expired'},status=500)
         except jwt.InvalidTokenError:
-            return JsonResponse({'error': 'Invalid token'})
+            return JsonResponse({'error': 'Invalid token'},status=500)
         
       
         body = json.loads(request.body)
@@ -45,6 +45,10 @@ def orders(request):
         # price = request.POST.get('price')
         # total_price = request.POST.get('total_price')
         date = datetime.date.today()
+
+        for it in list : 
+            it['date']  = str(date)
+            print(it)
         try:
             order = OrderList(
                 id=str(uuid.uuid4()),
@@ -60,10 +64,10 @@ def orders(request):
             order.save()
         except Exception as e:
             print(e)
-            return JsonResponse({'error': 'Error occurred while saving the data.'})
+            return JsonResponse({'error': 'Error occurred while saving the data.'},status=500)
         else:
-            return JsonResponse({'success': 'OrderList Stored Successfully'})
-    return JsonResponse({'error': 'Invalid request method.'})
+            return JsonResponse({'success': 'OrderList Stored Successfully'},status=200)
+    return JsonResponse({'error': 'Invalid request method.'},status=500)
         
 
 @csrf_exempt
@@ -72,7 +76,7 @@ def getOrders(request):
         token = request.headers.get("token")
         
         if not token:
-            return JsonResponse({'error': 'Token not provided',})
+            return JsonResponse({'error': 'Token not provided',},status=500)
         
         try:
             # Verify the token
@@ -80,16 +84,16 @@ def getOrders(request):
             userIdEmail = decoded_token['email']
             print(userIdEmail)
         except jwt.ExpiredSignatureError:
-            return JsonResponse({'error': 'Token has expired'})
+            return JsonResponse({'error': 'Token has expired'},status=500)
         except jwt.InvalidTokenError:
-            return JsonResponse({'error': 'Invalid token'})
+            return JsonResponse({'error': 'Invalid token'},status=500)
         
         try:
              en_lists = OrderList.objects.all()
              print(en_lists)
         except Exception as e:
             print(e)
-            return JsonResponse({'error': 'Error occurred while retriving medslist.'})
+            return JsonResponse({'error': 'Error occurred while retriving medslist.'},status = 500)
         else:
             data =[]
             
@@ -97,10 +101,12 @@ def getOrders(request):
                 data.append(
                     {
                         'list' : json.loads(l.list) ,
-                        'formData' : json.loads(l.address)
+                        'date'  : l.date,
+                        'address' : json.loads(l.address)
+                        
                     }
                 )
             print(data)
-            return JsonResponse({'success': 'Meds retrived successfully.','orders':data}, safe=False)
+            return JsonResponse({'success': 'Meds retrived successfully.','orders':data},status = 200, safe=False)
 
 

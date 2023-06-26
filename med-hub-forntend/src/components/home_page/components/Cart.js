@@ -19,10 +19,10 @@ function Cart() {
  }
    return sum;
   }
-  console.log(total(list));
+  // console.log(total(list));
   
   
-  console.log(list);
+  // console.log(list);
 
   return (
     <>

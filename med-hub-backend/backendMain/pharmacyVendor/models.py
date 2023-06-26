@@ -31,7 +31,7 @@ class AddMedicineDB(models.Model):
     manufacturer_name = models.CharField(max_length=100)
     manufacturing_date = models.DateField()
     expiry_date = models.DateField()
-    link = models.CharField(max_length=100)
+    link = models.CharField(max_length=900)
     title = models.CharField(max_length=100)
     price = models.PositiveIntegerField()
     

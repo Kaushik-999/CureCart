@@ -3,6 +3,7 @@ import uuid
 import datetime
 import json
 
+
 # Create your models here.
 class OrderList(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

@@ -18,6 +18,7 @@ function NewArrival(props) {
     ref.current.scrollLeft = ref.current.scrollLeft + width / 4;
     console.log(width);
   };
+ 
 
 
   return (

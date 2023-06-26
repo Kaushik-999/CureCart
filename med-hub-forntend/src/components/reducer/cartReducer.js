@@ -57,6 +57,11 @@ const cartReducer = (state = initialState,action) => {
   
               }
             )
+           
+        case "STORE_NAME_RESET":
+            
+            return initialState;
+             
 
 
 
