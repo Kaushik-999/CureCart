@@ -7,7 +7,7 @@ from bloodBank.models import BloodBankMembersDB, BloodBankDonorDB, AppointmentDB
 from utilitiesApi.models import BloodDB
 import uuid
 from datetime import datetime
-
+ 
 secret_key = "CURE_CART_BACKEND"
 
 # Blood Bank Become Member.

@@ -32,7 +32,7 @@ class BloodBankDonorDB(models.Model):
 
     def __str__(self):
         return self.name + " ---  " +  self.bloodGroup
-
+ 
 
 # BloodBank - Request Appoimentment Model
 class AppointmentDB(models.Model):

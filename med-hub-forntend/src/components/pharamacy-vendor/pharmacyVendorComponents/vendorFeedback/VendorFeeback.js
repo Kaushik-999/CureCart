@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SideBar from "../../pharamacyVendorSideBar/SideBar";
 import "./VendorFeeback.css";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function VendorFeeback() {
   const [query, setQuery] = useState({
@@ -37,8 +39,28 @@ function VendorFeeback() {
       );
 
       console.log(response.data);
+      if (response.data.success) {
+        // Display success toast notification
+        toast.success("Request Sent!", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+        });
+        setQuery({
+          feedbackType: "",
+          describeYourFeedback: "",
+        });
+      } else {
+        toast.error(response.data.error, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000, // Duration in milliseconds
+        });
+      }
     } catch (error) {
       console.error(error);
+      toast.error("Error Occured", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000, // Duration in milliseconds
+      });
     }
 
     setProcessing(false);

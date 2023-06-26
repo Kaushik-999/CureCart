@@ -75,6 +75,10 @@ function VendorAddMedicine() {
       }
     } catch (error) {
       console.error(error);
+      toast.error("Error Occured", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000, // Duration in milliseconds
+      });
     }
 
     setProcessing(false);

@@ -323,9 +323,9 @@ def getDashboardData(request):
                 month = months[date.month]
                 invoices_by_month[month].append(invoice)
 
+            #last five months
             current_month = datetime.now().month
             last_5_months = []
-
             for i in range(1, 6):
                 month = (current_month - i) % 12
                 last_5_months.append(month)
@@ -345,6 +345,7 @@ def getDashboardData(request):
                 rounded_total_amount = round(total_amount, 2)
                 last_five_months_sales.append({str(month):str(rounded_total_amount)})
 
+            # category
             categories = []
             category_count = {}
             for invoicesD in invoicesData:
@@ -376,7 +377,6 @@ def getMedicineList(request):
         
         try:
              medicines = AddMedicineDB.objects.all()
-            #  medi = AddMedicineDB.objects.filter(title ="Vitamin C With Zinc – 30 Tablets").update(link="https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/Vitamin-C-with-Zinc-30-Tablets.jpg")
              
         except Exception as e:
             print(e)
