@@ -34,3 +34,26 @@ class BloodBankDonorDB(models.Model):
         return self.name + " ---  " +  self.bloodGroup
 
 
+# BloodBank - Request Appoimentment Model
+class AppointmentDB(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    userIdEmail = models.EmailField() # foreign key
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone = models.CharField(max_length=12)
+    bloodType = models.CharField(max_length=3, choices=(
+        ('A+', 'A+'),
+        ('A-', 'A-'),
+        ('B+', 'B+'),
+        ('B-', 'B-'),
+        ('AB+', 'AB+'),
+        ('AB-', 'AB-'),
+        ('O+', 'O+'),
+        ('O-', 'O-'),
+    ))
+    date = models.DateField()
+    time = models.CharField(max_length=30)
+    message = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name + " --- "+ self.email

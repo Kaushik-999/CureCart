@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import jwt 
 from django.core.mail import send_mail  
-from bloodBank.models import BloodBankMembersDB, BloodBankDonorDB
+from bloodBank.models import BloodBankMembersDB, BloodBankDonorDB, AppointmentDB
 from utilitiesApi.models import BloodDB
 import uuid
 from datetime import datetime
@@ -174,7 +174,6 @@ def getDonorDetails(request):
             print(e)
             return JsonResponse({'error': 'Error occurred while retriving customer count.'})
         else:
-            print
             donorlist = []
             for donor in donorDetails:
                 donorlist.append({
@@ -197,3 +196,59 @@ def getDonorDetails(request):
             })
         
     return JsonResponse({'error': 'Invalid request method.'})
+
+# Blood Bank - Request Appointment
+@csrf_exempt
+def requestAppointment(request):
+    if request.method == 'POST':
+        # JWT token verification
+        token = request.headers.get("token")
+        if not token:
+            return JsonResponse({'error': 'Token not provided'})
+
+        try:
+            # Verify the token
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            userIdEmail = decoded_token['email']
+            print(userIdEmail)
+        except jwt.ExpiredSignatureError:
+            return JsonResponse({'error': 'Token has expired'})
+        except jwt.InvalidTokenError:
+            return JsonResponse({'error': 'Invalid token'})
+        
+        
+        # Process the request body
+        data = json.loads(request.body)
+        print(data)
+        name = data.get("name")
+        email = data.get("email")
+        phone = data.get("phone")
+        bloodType = data.get("bloodType")
+        date = data.get("date")
+        time = data.get("time")
+        message = data.get("message")
+        
+        if None in [name, email, phone, bloodType, date, time,message]:
+            return JsonResponse({'error': 'All fields are required.'})
+        
+        try:
+            appointment = AppointmentDB(
+                id=str(uuid.uuid4()),
+                userIdEmail=userIdEmail,
+                name = name,
+                email = email,
+                phone = phone,
+                bloodType = bloodType,
+                date = date,
+                time = time,
+                message = message,
+                
+            )
+            appointment.save()
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': 'Error occurred while saving the data.'})
+        else:
+            return JsonResponse({'success': 'Blood Bank Donor added successfully.'})
+    else:
+        return JsonResponse({'error': 'Invalid request method.'}) 

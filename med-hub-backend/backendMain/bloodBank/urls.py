@@ -13,4 +13,7 @@ urlpatterns = [
 
     #  Get Donor Details | BloodBank |endpoint : blood-bank/get-donor-details/
     path('get-donor-details/', views.getDonorDetails, name="bloodBank - donor details"),
+   
+    #  Request Appointment | BloodBank |endpoint : blood-bank/request-appointment/
+    path('request-appointment/', views.requestAppointment, name="bloodBank - donor details"),
 ]
