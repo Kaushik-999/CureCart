@@ -2,6 +2,8 @@ import React from "react";
 import Carousel from "./components/Carousel";
 import { bestselldata, tdata } from "./cards/trendingdata";
 import { useState, useEffect } from "react";
+import { MedicineContext } from './MedicineContext';
+import { useContext } from 'react';
 
 import Cards from "./cards/Cards";
 import Banner from "./cards/Banner";
@@ -10,45 +12,50 @@ import Dotd from "./components/Dotd";
 import Deals from "./components/Deals";
 import NewArrival from "./components/NewArrival";
 
+
+
 const images = [
   "https://www.ashland.com/file_source/Ashland/images/Slider_antaronSoja_desktop%20c.jpg",
   "https://www.ashland.com/file_source/Ashland/images/Slider_sensiveGoNat_desktopFINAL.jpg",
   "https://www.ashland.com/file_source/Ashland/images/Slider_caressense_desktop-final.jpg",
 ];
-const array = [];
-for (let i = 0; i < 8; i++) {
-  array.push(bestselldata[i]);
-}
+
 
 function Homepage() {
-  const [data, setData] = useState(null);
+//   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "http://127.0.0.1:8000/pharmacy-vendor/get-medicine/"
-      );
-      if (response.ok) {
-        const jsonData = await response.json();
-        setData(jsonData);
-      } else {
-        console.error("Request failed with status:", response.status);
-      }
-    } catch (error) {
-      console.error("Request failed:", error);
-    }
-  };
-  // const newdata = data['meds'].filter((med) => med.link !== 'None');
- console.log(data)
+//   const fetchData = async () => {
+//     try {
+//       const response = await fetch(
+//         "http://127.0.0.1:8000/pharmacy-vendor/get-medicine/"
+//       );
+//       if (response.ok) {
+//         const jsonData = await response.json();
+//         setData(jsonData);
+//       } else {
+//         console.error("Request failed with status:", response.status);
+//       }
+//     } catch (error) {
+//       console.error("Request failed:", error);
+//     }
+//   };
+//   // const newdata = data['meds'].filter((med) => med.link !== 'None');
+//  console.log(data)
  
 
   //for timer
 
   //for card carousel buttons
+  const [medicine,loading] = useContext(MedicineContext)
+const medis = medicine && medicine.filter((item)=> item.link !== "None")
+const array = [];
+for (let i = 0; i < 8; i++) {
+  array.push(medis[i]);
+}
 
   return (
     <>

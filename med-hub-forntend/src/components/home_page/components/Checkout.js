@@ -309,41 +309,7 @@ function Checkout() {
         <div className="bg-gray-200 mt-3 w-4/5">
           <div className="pt-4 ml-2">Payment Method</div>
           <div className="space-y-2 mt-3 ml-2">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                className="form-radio"
-                name="paymentOption"
-                value="phonepe"
-                checked={selectedOption === "phonepe"}
-                onChange={handleOptionChange}
-              />
-              <span className="ml-2 text-gray-600">PhonePe</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="radio"
-                className="form-radio"
-                name="paymentOption"
-                value="paytm"
-                checked={selectedOption === "paytm"}
-                onChange={handleOptionChange}
-              />
-              <span className="ml-2 text-gray-600">Paytm</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="radio"
-                className="form-radio "
-                name="paymentOption"
-                value="upi"
-                checked={selectedOption === "upi"}
-                onChange={handleOptionChange}
-              />
-              <span className="ml-2 text-gray-600">UPI</span>
-            </label>
+            
 
             <label className="flex items-center">
               <input
@@ -353,6 +319,7 @@ function Checkout() {
                 value="cod"
                 checked={selectedOption === "cod"}
                 onChange={handleOptionChange}
+                required
               />
               <span className="ml-2 text-gray-600">COD</span>
             </label>

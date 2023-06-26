@@ -1,9 +1,10 @@
 import {React,useState,useEffect,useRef} from 'react'
-import { bestselldata } from '../cards/trendingdata';
+// import { bestselldata } from '../cards/trendingdata';
 import Cards from '../cards/Cards';
 import gift from '../cards/gift.png';
 import { Link } from 'react-router-dom';
-
+import { MedicineContext } from '../MedicineContext';
+import { useContext } from 'react';
 
 function Dotd() {
     const [days, setDays] = useState(0);
@@ -32,17 +33,20 @@ function Dotd() {
   
     const btnpressprev = () => {
       let width = ref.current.clientWidth;
-      console.log(ref);
+      // console.log(ref);
       ref.current.scrollLeft = ref.current.scrollLeft - width / 4;
-      console.log(width);
+      // console.log(width);
     };
   
     const btnpressnext = () => {
       let width = ref.current.clientWidth;
       ref.current.scrollLeft = ref.current.scrollLeft + width / 4;
-      console.log(width);
+      // console.log(width);
     };
-  
+    // eslint-disable-next-line
+    const [medicine,loading] = useContext(MedicineContext)
+    const medis = medicine && medicine.filter((item)=> item.link !== "None")
+    console.log(medis)
   return (
     <div className="flex flex-row p-0 ">
         <div className="group w-4/5 relative bg-white mt-3 mb-3 ml-4 h-auto rounded-md border-teal-600 border-2">
@@ -102,7 +106,7 @@ function Dotd() {
             ref={ref}
           >
             <div className=" flex w-fit ">
-              {bestselldata.map((val, index) => (
+              {medis && medis.map((val, index) => (
                 <Cards
                   link={val.link}
                   key={index}

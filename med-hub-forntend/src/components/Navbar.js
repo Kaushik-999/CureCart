@@ -1,30 +1,21 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link,  } from "react-router-dom";
+
 import "react-toastify/dist/ReactToastify.css";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
+
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const handleLogout = (e) =>{
-    e.preventDefault();
+  
+  
 
-    // remove jwt token
-    localStorage.removeItem("token")
-    navigate("/sign-in")
-
-    // Display success toast notification
-    toast.success('Logout successful!', {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 2000, // Duration in milliseconds
-    });
-
-  }
+  
 
   return (
     <>
       <nav className="bg-teal-700 sticky top-0 z-20">
-        <ul className="flex px-16 py-4 text-lg">
-          <li className="px-2 cursor-pointer text-white text-xl font-bold font-sans">
+        <ul className="flex px-16 py-4 text-lg ">
+          <li className="px-2 cursor-pointer text-white text-2xl font-bold font-sans">
             <Link to="/" className=" hover:text-slate-200">
               CureCart
             </Link>
@@ -35,7 +26,7 @@ const Navbar = () => {
                 <input
                   type="text"
                   placeholder="Search for medicines"
-                  className="search-bar rounded-l-full focus:outline-none focus:border-none py-1 px-3"
+                  className="search-bar w-96 rounded-l-full focus:outline-none placeholder-gray-500 text-md font-serif focus:border-none py-1 px-3"
                 />
 
                 <button type="submit" className="">
@@ -67,7 +58,7 @@ const Navbar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mr-3 ml-5  text-sm ">
+          <li className="ml-5  text-sm ">
             <div className="nav-links">
               <div className="group">
                 <Link to="/user">
@@ -84,7 +75,8 @@ const Navbar = () => {
                     />
                   </svg>
                 </Link>
-                <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
+
+                {/* <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
                   <li className="">
                     <Link
                       className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
@@ -118,20 +110,23 @@ const Navbar = () => {
                       Pharmacy Vendor
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
+          </li>
+          <li className=" text-white -mt-1">
+            <Link to="/pharmacy-vendor">
+              <MdOutlineAdminPanelSettings className="w-24 h-7 text-lg" />
+            </Link>
           </li>
         </ul>
       </nav>
       <nav>
-        <ul className="flex px-80 py-1 bg-white ">
+        <ul className="flex px-80 py-1 bg-white justify-evenly">
           <li className="mx-14 text-sm font-bold my-2">
-            <Link to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </li>
-          <li className="mx-14 text-sm  my-2">
+          {/* <li className="mx-14 text-sm  my-2">
             <div className="group">
               <Link className="font-bold">Categories</Link>
               <ul className="absolute hidden z-10 text-gray-700 pt-1 group-hover:block">
@@ -185,7 +180,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </li>
+          </li> */}
           <li className="mx-14 flex text-sm font-bold my-2">
             <svg
               fill="red"
@@ -209,9 +204,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="mx-14 text-sm font-bold my-2">
-            <Link to="/blogs">
-              Blogs
-            </Link>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li className="mx-14 text-sm font-sans my-2">
             <div className="group">
@@ -244,7 +237,7 @@ const Navbar = () => {
               </ul>
             </div>
           </li>
-          <li className="ml-4">
+          {/* <li className="ml-4">
             <Link>
               <div className="w-32 h-10 bg-teal-700 rounded-full flex">
                 <svg
@@ -261,12 +254,16 @@ const Navbar = () => {
                     d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
                   />
                 </svg>
-                <span className="text-xs text-white px-1 py-1">
+
+                <span
+                  className="text-xs text-white pr-2 py-1"
+                  onClick={handleUpload}
+                >
                   Upload Prescription
                 </span>
               </div>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

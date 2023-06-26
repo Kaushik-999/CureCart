@@ -1,9 +1,11 @@
 import React from "react";
 import Productdetails from "./components/Productdetails";
-import { seealldata } from "./cards/trendingdata";
+
 import Seeitemcard from "./cards/Seeitemcard";
 import { useLocation,useParams } from "react-router-dom";
-import { bestselldata } from './cards/trendingdata';
+
+import { MedicineContext } from './MedicineContext';
+import { useContext } from 'react';
 
 function Productpage() {
   //Quantity buttons
@@ -11,10 +13,13 @@ function Productpage() {
   const queryParams = new URLSearchParams(location.search);
   const component = queryParams.get('v');
   const { productId } = useParams();
-  const item =bestselldata.find((p) => p.id === productId);
+// eslint-disable-next-line
+  const [medicine,loading] = useContext(MedicineContext)
+ const medis = medicine && medicine.filter((item)=> item.link !== "None")
+  const item =medis.find((p) => p.id === productId);
 
-  console.log(productId);
-  console.log(item);
+  // console.log(productId);
+  // console.log(item);
 
 
   return (
@@ -102,11 +107,14 @@ function Productpage() {
 
           <div className="col-span-4 mb-10">
 
-          {component === 'seeall' && seealldata.map((val, index) => (
+          {component === 'seeall' && medis.map((val, index) => (
             < Seeitemcard
+            id={val.id}
               link={val.link}
               key={index}
               title={val.title}
+              price={val.price}
+              quantity={1}
               
             />
           ))}

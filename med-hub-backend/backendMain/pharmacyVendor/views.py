@@ -376,6 +376,8 @@ def getMedicineList(request):
         
         try:
              medicines = AddMedicineDB.objects.all()
+             medi = AddMedicineDB.objects.filter(title ="Vitamin B12 1000mcg").update(link="https://demo.wpthemego.com/themes/sw_mallon/wp-content/uploads/2021/06/Vitamin-C-with-Zinc-30-Tablets.jpg")
+             
         except Exception as e:
             print(e)
             return JsonResponse({'error': 'Error occurred while retriving medslist.'})

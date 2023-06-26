@@ -1,16 +1,25 @@
 import React from 'react'
-import { bestselldata } from '../cards/trendingdata';
+
 import Cards from '../cards/Cards';
 import { Link } from 'react-router-dom';
+import { MedicineContext } from '../MedicineContext';
+import { useContext } from 'react';
 function Deals() {
-    const array = [];
+    
+ const [medicine,loading] = useContext(MedicineContext)
+ const medis = medicine && medicine.filter((item)=> item.link !== "None")
+// console.log(medis)
+ const array = [];
 for (let i = 0; i < 8; i++) {
-  array.push(bestselldata[i]);
+   array.push(medis[i]);
 }
-
 
   return (
     <>
+    {
+      loading ? (<div className="vendor-invoices-loading-message">Loading...</div>)
+    :(
+      <>
       <div className="flex mt-16 mb-12 ml-10 mr-10">
         <div className="">
           <span className="pl-5 pt-3 text-3xl font-semibold">
@@ -30,7 +39,7 @@ for (let i = 0; i < 8; i++) {
         </div>
 
         <div className=" grid grid-cols-4 gap-1 ">
-          {array.map((val, index) => (
+          { array && array.map((val, index) => (
             <Cards
               link={val.link}
               key={index}
@@ -42,6 +51,9 @@ for (let i = 0; i < 8; i++) {
           ))}
         </div>
       </div>
+      </>
+    )}
+    
 
     </>
   )

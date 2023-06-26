@@ -5,25 +5,7 @@ import axios from 'axios';
 
 const OrderedItemsPage = () => {
 
-  const list = useSelector((state) => state.cartReducer.list);
-  const len = list.length;
-  const orderedItems = [
-    {
-      id: 1,
-      name: 'Product 1',
-      price: 19.99,
-      quantity: 2,
-      imageUrl: 'https://example.com/product1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      price: 29.99,
-      quantity: 1,
-      imageUrl: 'https://example.com/product2.jpg',
-    },
-    // Add more ordered items if needed
-  ];
+  
   //get ordered list
 
   const [list2, setList] = useState(null);
@@ -94,9 +76,9 @@ const OrderedItemsPage = () => {
           />
           <div className="flex-grow">
             <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600 mb-2">Price: ${item.price}</p>
+            <p className="text-gray-600 mb-2">Price: ₹{item.price}</p>
             <p className="text-gray-600 mb-2">Quantity: {item.quantity}</p>
-            <p className="text-gray-600">Total: ${item.price*item.quantity}</p>
+            <p className="text-gray-600">Total: ₹{item.price*item.quantity}</p>
             <p className="text-gray-600">Date of Delivery: {item.date}</p>
           </div>
         </div>

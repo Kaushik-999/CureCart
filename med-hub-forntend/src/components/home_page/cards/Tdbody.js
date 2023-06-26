@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { useState } from "react";
+// import { useState } from "react";
 import { deleteItem } from "../../actions";
 
 
@@ -14,7 +14,7 @@ function Tdbody(props) {
     quantity : props.quantity,
     price : props.price
   }
-  const [myState, setmyState] = useState(props.quantity);
+  // const [myState, setmyState] = useState(props.quantity);
   
 
 
@@ -56,22 +56,23 @@ function Tdbody(props) {
           <div className="text-xl font-medium text-teal-500">{props.price}</div>
         </td>
         <td className="p-4">
-          <div className="flex border-2 border-slate-100 bg-gray-100">
-            <button
+          <div className="text-xl font-medium text-teal-500">
+            {/* <button
               className="inline pt-0 pb-0 pl-3 text-2xl text-slate-700 "
               onClick={() => (myState > 0 ? setmyState(myState - 1) : 0)}
             >
               -
-            </button>
-            <span className=" pl-4 pr-4 pt-1 pb-1 text-slate-700 text-lg">
-              {myState}
-            </span>
-            <button
+            </button> */}
+            {/* <span className=" pl-4 pr-4 pt-1 pb-1 text-slate-700 text-lg"> */}
+            {props.quantity}
+              
+            {/* </span> */}
+            {/* <button
               className="inline pt-0 pb-0 pr-3 text-2xl text-slate-700 "
               onClick={() => setmyState(myState + 1)}
             >
               +
-            </button>
+            </button> */}
           </div>
         </td>
         <td className="p-5">

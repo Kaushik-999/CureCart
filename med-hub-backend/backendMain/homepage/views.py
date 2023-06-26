@@ -101,7 +101,8 @@ def getOrders(request):
                 data.append(
                     {
                         'list' : json.loads(l.list) ,
-                        'date'  : l.date
+                        'date'  : l.date,
+                        'address' : json.loads(l.address)
                         
                     }
                 )
