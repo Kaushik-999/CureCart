@@ -249,6 +249,6 @@ def requestAppointment(request):
             print(e)
             return JsonResponse({'error': 'Error occurred while saving the data.'})
         else:
-            return JsonResponse({'success': 'Blood Bank Donor added successfully.'})
+            return JsonResponse({'success': 'Request successfully saved.'})
     else:
         return JsonResponse({'error': 'Invalid request method.'}) 
