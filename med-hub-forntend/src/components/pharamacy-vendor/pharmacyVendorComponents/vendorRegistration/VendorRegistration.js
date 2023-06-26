@@ -3,7 +3,9 @@ import SideBar from "../../pharamacyVendorSideBar/SideBar";
 import "./VendorRegistration.css";
 // import jwt_decode from "jwt-decode";
 import axios from "axios";
- 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function VendorRegistration() {
   const [vendorRegistrationData, setVendorRegistrationData] = useState({
     firstName: "",
@@ -28,8 +30,6 @@ function VendorRegistration() {
     }));
   };
 
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -37,7 +37,7 @@ function VendorRegistration() {
     setProcessing(true);
 
     const token = localStorage.getItem("token");
-    try { 
+    try {
       const response = await axios.post(
         "http://127.0.0.1:8000/pharmacy-vendor/register/",
         vendorRegistrationData,
@@ -48,8 +48,31 @@ function VendorRegistration() {
           },
         }
       );
-
       console.log(response.data);
+      if (response.data.success) {
+        // Display success toast notification
+        toast.success("Vendor Registered", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+        });
+        setVendorRegistrationData({
+          firstName: "",
+          lastName: "",
+          workEmail: "",
+          phoneNumber: "",
+          organizationName: "",
+          gstin: "",
+          address: "",
+          district: "",
+          state: "",
+          zipcode: "",
+        });
+      } else {
+        toast.error(response.data.error, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000, // Duration in milliseconds
+        });
+      }
     } catch (error) {
       console.error(error);
     }

@@ -3,7 +3,9 @@ import SideBar from "../../pharamacyVendorSideBar/SideBar";
 import "./VendorAddMedicine.css";
 import axios from "axios";
 
- 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function VendorAddMedicine() {
   const [medicineData, setMedicineData] = useState({
     medicine_name: "",
@@ -26,15 +28,14 @@ function VendorAddMedicine() {
 
   const [processing, setProcessing] = useState(false);
 
-
-  const handleSubmit = async(e) =>{ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (processing) return; // Prevent multiple form submissions
     setProcessing(true);
 
     // console.log(medicineData);
-    
+
     const token = localStorage.getItem("token");
 
     try {
@@ -50,12 +51,34 @@ function VendorAddMedicine() {
       );
 
       console.log(response.data);
+      if (response.data.success) {
+        // Display success toast notification
+        toast.success("Medicine Added!", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+        });
+        setMedicineData({
+          medicine_name: "",
+          price_per_strip: "",
+          composition_name: "",
+          tablet_per_strip: "",
+          number_of_strips: "",
+          manufacturer_name: "",
+          manufacturing_date: "",
+          expiry_date: "",
+        });
+      } else {
+        toast.error(response.data.error, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000, // Duration in milliseconds
+        });
+      }
     } catch (error) {
       console.error(error);
     }
 
     setProcessing(false);
-  }
+  };
 
   return (
     <>
@@ -106,7 +129,7 @@ function VendorAddMedicine() {
                 />
               </div>
               <div className="vendor-add-medicine-input-box">
-                <label htmlFor="numberOfStrips">Number Per Strips</label>
+                <label htmlFor="numberOfStrips">Number of Strips</label>
                 <input
                   type="number"
                   name="number_of_strips"
