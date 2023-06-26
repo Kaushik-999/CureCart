@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
 import { useEffect,useState } from 'react';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ const OrderedItemsPage = () => {
   //get ordered list
 
   const [list2, setList] = useState(null);
-  const [dates, setDates] = useState(null);
+  
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getOrderedList = async () => {
@@ -42,8 +42,8 @@ const OrderedItemsPage = () => {
         // console.log(date);
 
         setList(list1);
-        console.log(list2)
-        setDates(date);
+        // console.log(list2)
+        
       } catch (error) {
         console.log(error);
       } finally {

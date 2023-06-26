@@ -1,9 +1,10 @@
 .vendor-registration-main {
+    
     margin-left: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
 }
  
 .vendor-registration-form-container{

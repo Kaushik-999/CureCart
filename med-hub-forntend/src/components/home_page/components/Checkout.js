@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -55,7 +54,7 @@ function Checkout() {
     if (processing) return; // Prevent multiple form submissions
     setProcessing(true); // Set processing state to true
 
-    const data = {list : list , address : formData}
+    // const data = {list : list , address : formData}
     
     const token = localStorage.getItem("token");
     try {
