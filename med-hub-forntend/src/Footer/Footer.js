@@ -45,29 +45,29 @@ const Footer = () => {
               <span></span>
             </div>
           </h3>
-          <ul class="your-ul-class">
+          <ul className="your-ul-class">
             <li>
-              <a href="/" class="your-a-class">
+              <a href="/" className="your-a-class">
                 Home
               </a>
             </li>
             <li>
-              <a href="/services" class="your-a-class">
+              <a href="/services" className="your-a-class">
                 Services
               </a>
             </li>
             <li>
-              <a href="/about" class="your-a-class">
+              <a href="/about" className="your-a-class">
                 About Us
               </a>
             </li>
             <li>
-              <a href="/features" class="your-a-class">
+              <a href="/features" className="your-a-class">
                 Features
               </a>
             </li>
             <li>
-              <a href="/contacts" class="your-a-class">
+              <a href="/contacts" className="your-a-class">
                 Contacts
               </a>
             </li>

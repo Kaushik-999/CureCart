@@ -46,7 +46,7 @@ function Dotd() {
     // eslint-disable-next-line
     const [medicine,loading] = useContext(MedicineContext)
     const medis = medicine && medicine.filter((item)=> item.link !== "None")
-    console.log(medis)
+    // console.log(medis)
   return (
     <div className="flex flex-row p-0 ">
         <div className="group w-4/5 relative bg-white mt-3 mb-3 ml-4 h-auto rounded-md border-teal-600 border-2">
