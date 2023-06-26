@@ -1,7 +1,7 @@
 import React from "react";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { resetStore } from "../../actions";
 import axios from "axios";
@@ -10,7 +10,9 @@ function OrderPlaced() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(resetStore());
-  }, []);
+    
+  }, // eslint-disable-next-line
+  []);
 
   const [list, setList] = useState(null);
 

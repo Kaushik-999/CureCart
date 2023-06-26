@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "./components/Carousel";
 import { bestselldata, tdata } from "./cards/trendingdata";
-import { useState, useEffect } from "react";
 import { MedicineContext } from './MedicineContext';
 import { useContext } from 'react';
 
@@ -50,7 +49,8 @@ function Homepage() {
   //for timer
 
   //for card carousel buttons
-  const [medicine,loading] = useContext(MedicineContext)
+  // eslint-disable-next-line
+ const [medicine,loading] = useContext(MedicineContext)
 const medis = medicine && medicine.filter((item)=> item.link !== "None")
 const array = [];
 for (let i = 0; i < 8; i++) {
@@ -94,13 +94,13 @@ for (let i = 0; i < 8; i++) {
         l={"14"}
         r={"11"}
         title={"New Arrivals"}
-        func={array.map((val, index) => (
+        func={ array && array.map((item, index) => (
           <Cards
-            link={val.link}
+            link={item.link}
             key={index}
-            title={val.title}
-            id={val.id}
-            price={val.price}
+            title={item.title}
+            id={item.id}
+            price={item.price}
             x="30"
           />
         ))}

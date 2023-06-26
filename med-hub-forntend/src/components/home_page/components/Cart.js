@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import Tdbody from "../cards/Tdbody";
 import { Link } from "react-router-dom";
 
