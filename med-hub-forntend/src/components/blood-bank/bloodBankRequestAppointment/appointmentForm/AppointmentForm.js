@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./AppointmentForm.css";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function AppointmentForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,8 +39,17 @@ function AppointmentForm(props) {
       );
 
       console.log(response.data);
+      // Display success toast notification
+      toast.success("Data Added successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
     } catch (error) {
       console.error(error);
+      toast.error("Error Occured!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
     }
   };
 

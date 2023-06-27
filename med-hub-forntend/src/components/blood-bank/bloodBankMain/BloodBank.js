@@ -16,6 +16,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 import BloodBankGallery from '../BloodBankGallery/BloodBankGallery';
 import Accordion from '../accordion/Accordion';
 import BloodAvailable from '../BloodAvailableMain/BloodAvailable';
+import CardGrid from "../cardGrid/CardGrid"
 import "./BloodBank.css"
 function BloodBank() {
   const formRef = useRef(null);
@@ -28,7 +29,7 @@ function BloodBank() {
         {/* <h3>Blood Bank</h3> */}
         <BloodBankCarousel/>
         <BloodDonationJumbotron scrollfunc={scrollToForm}/>
-        {/* <CardGrid/> */}
+        <CardGrid/>
         <BloodBankRequestAppointment formfunc={formRef}/>
         <BloodDonationCardImage/>
         <OpinionCarousel />
