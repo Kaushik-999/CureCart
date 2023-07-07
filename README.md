@@ -43,5 +43,6 @@ The frontend development server should start running at http://localhost:3000.
  #### Kaushik Sarmah
  #### Gourab Das
  #### Damini Datta Chowdhury
+ #### Shravana Sabhapandit
 
 If you have any questions or need further assistance, please contact any of the contributors listed above.
