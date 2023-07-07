@@ -20,7 +20,7 @@ Make sure you have the following software installed on your machine:
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
+   git clone (https://github.com/Kaushik-999/CureCart.git)
 2. Navigate to the Project Directory
    cd curecart
 3. Install frontend dependencies:
