@@ -40,8 +40,8 @@ Make sure you have the following software installed on your machine:
 The frontend development server should start running at http://localhost:3000.
 
 ### Contributors
- # Kaushik Sarmah
- # Gourab Das
- # Damini Datta Chowdhury
+  Kaushik Sarmah
+  Gourab Das
+  Damini Datta Chowdhury
 
 If you have any questions or need further assistance, please contact any of the contributors listed above.
