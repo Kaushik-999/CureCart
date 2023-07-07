@@ -30,7 +30,7 @@ Make sure you have the following software installed on your machine:
    cd ../med-hub-backend/backendMain
    pip install -r requirements.txt
 
-## Development
+### Development
 1. Start the backend server:
    cd med-hub-backend/backendMain
    python manage.py runserver
@@ -39,9 +39,9 @@ Make sure you have the following software installed on your machine:
    npm start
 The frontend development server should start running at http://localhost:3000.
 
-### Contributors
-  Kaushik Sarmah
-  Gourab Das
-  Damini Datta Chowdhury
+## Contributors
+ #### Kaushik Sarmah
+ #### Gourab Das
+ #### Damini Datta Chowdhury
 
 If you have any questions or need further assistance, please contact any of the contributors listed above.
